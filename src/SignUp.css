@@ -1,0 +1,34 @@
+.SignUp-title {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+    color: white;
+  }
+  
+  .LargeText {
+    font-size: 150px; /* Adjust the size as needed */
+  }
+  
+  .SmallText {
+    font-size: 80px; /* Adjust the size as needed */
+  }
+  
+  .SignUp-link {
+    color: #61dafb;
+    font-size: 80px;
+  }
+  
+  .Details {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+    color: white;
+  }
+
+  
