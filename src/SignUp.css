@@ -1,25 +1,63 @@
-.SignUp-title {
+
+.App-logo {
+    height: 10vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 0s linear;
+    }
+  }
+
+  .Logo-title {
     background-color: #282c34;
-    min-height: 100vh;
+    min-height: 0vh;
+    display: flex;
+    flex-direction: column;
+    align-items:first baseline;
+    justify-content: baseline;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    color: rgb(95, 138, 238);
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .SignUp-title {
+    background-color: #282c34;
+    min-height: 0vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: baseline;
-    color: white;
-  }
+    margin: 5px; /* Adjust the margin value as needed */
+    color: rgb(95, 138, 238);
+    font-size: 40px;
+    font-weight: bold;
+}
+
   
-  .LargeText {
-    font-size: 150px; /* Adjust the size as needed */
-  }
-  
-  .SmallText {
-    font-size: 80px; /* Adjust the size as needed */
+  .InputLabel {
+    font-size: 20px;
   }
   
   .SignUp-link {
-    color: #61dafb;
-    font-size: 80px;
+    color: rgb(95, 138, 238);
+    font-size: 20px;
   }
+
+  .InputField {
+    width: 250px;
+    height: 15px;
+    padding: 10px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    align-self: flex-start;
+    font-size: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
   
   .Details {
     background-color: #282c34;
@@ -28,7 +66,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: baseline;
-    color: white;
+    color: rgb(95, 138, 238);
   }
 
+ .SignUpButton {
+    width: 100px;
+    height: 30px;
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    align-items: center;
+    justify-content: baseline;
+    background-color: #3fdf0a;
+    border-radius: 15px;
+    cursor: pointer;
+    margin: 0;
+    box-sizing: border-box;
+  }
   
