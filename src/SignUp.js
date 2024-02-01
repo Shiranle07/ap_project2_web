@@ -1,4 +1,5 @@
-import React from 'react';
+// SignUp.js
+import React, { useState } from 'react';
 import './SignUp.css';
 import logo from './logo.svg';
 import SignUpField from './signUpField/SignUpField';
@@ -13,6 +14,30 @@ function SignUp() {
     { id: 'profilePicture', label: 'Profile Picture', type: 'file', placeholder: 'Upload Profile Picture' },
   ];
 
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [passwordsMatch, setPasswordsMatch] = useState(true);
+
+  const handlePasswordChange = (fieldId, fieldValue) => {
+    if (fieldId === 'password') {
+      setPassword(fieldValue);
+    } else if (fieldId === 'passwordVerify') {
+      setConfirmPassword(fieldValue);
+      setPasswordsMatch(fieldValue === password);
+    }
+  };
+
+  const handleSubmit = () => {
+    // Your form submission logic here
+    if (passwordsMatch) {
+      console.log('Passwords match! Submit the form.');
+      // Additional form submission logic can go here
+    } else {
+      console.log('Passwords do not match. Display an error message or prevent form submission.');
+      // You might want to display an error message or prevent form submission
+    }
+  };
+
   return (
     <div className="SignUp">
       <header className="SignUp-title">
@@ -21,12 +46,38 @@ function SignUp() {
         <p className="Logo-title">We are better than Mark</p>
         <p className="LargeText">SignUp</p>
 
-        {fields.map((field) => (
-          <SignUpField key={field.id} {...field} />
-        ))}
+        {/* Render all fields except the profile picture field */}
+        {fields
+          .filter((field) => field.id !== 'profilePicture')
+          .map((field) => (
+            <SignUpField
+              key={field.id}
+              {...field}
+              isPassword={['password', 'passwordVerify'].includes(field.id)}
+              onPasswordChange={handlePasswordChange}
+            />
+          ))}
 
-        <button>
-            <p className="SignUpButton">SignUp</p>
+        {/* Display an error message if passwords do not match */}
+        {!passwordsMatch && <p className="PasswordCheck">Passwords do not match.</p>}
+
+        {/* Display a message if passwords match */}
+        {passwordsMatch && <p className="PasswordCheck">Passwords match!</p>}
+
+        {/* Render the profile picture field separately */}
+        {fields
+          .filter((field) => field.id === 'profilePicture')
+          .map((field) => (
+            <SignUpField
+              key={field.id}
+              {...field}
+              isPassword={['password', 'passwordVerify'].includes(field.id)}
+              onPasswordChange={handlePasswordChange}
+            />
+          ))}
+
+        <button onClick={handleSubmit}>
+          <p className="SignUpButton">SignUp</p>
         </button>
 
         <a
@@ -35,8 +86,8 @@ function SignUp() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn 
-        </a>    
+          Learn
+        </a>
       </header>
     </div>
   );

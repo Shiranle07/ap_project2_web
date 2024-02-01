@@ -37,6 +37,20 @@
     font-weight: bold;
 }
 
+
+.PasswordCheck {
+    background-color: #282c34;
+    min-height: 0vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+    margin: 5px; /* Adjust the margin value as needed */
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
   
   .InputLabel {
     font-size: 20px;
