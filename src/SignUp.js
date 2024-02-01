@@ -55,14 +55,17 @@ function SignUp() {
               {...field}
               isPassword={['password', 'passwordVerify'].includes(field.id)}
               onPasswordChange={handlePasswordChange}
+              
             />
           ))}
+          
 
         {/* Display an error message if passwords do not match */}
         {!passwordsMatch && <p className="PasswordCheck">Passwords do not match.</p>}
 
         {/* Display a message if passwords match */}
         {passwordsMatch && <p className="PasswordCheck">Passwords match!</p>}
+        <p className="PasswordCheck">Upload profile picture:</p>
 
         {/* Render the profile picture field separately */}
         {fields
@@ -75,6 +78,7 @@ function SignUp() {
               onPasswordChange={handlePasswordChange}
             />
           ))}
+                  <p className="PasswordCheck"> </p>
 
         <button onClick={handleSubmit}>
           <p className="SignUpButton">SignUp</p>
