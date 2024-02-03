@@ -4,7 +4,8 @@ body {
     
   }
   
-.form-floating {
+.form-box {
+    background-color: #ffffff;
     width: 27.5%;
     height: 500px; 
     margin: 200px 350px;
@@ -12,6 +13,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
 }
+
 
 .form-control {
     height: 75px;

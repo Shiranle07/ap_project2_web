@@ -1,0 +1,40 @@
+
+body.dark-mode {
+    background-color: #1f1f1f; /*  dark background color */
+    color: #fff; /* text color in dark mode */
+}
+
+.dark-mode .form-box {
+    background-color: #363434;
+    width: 27.5%;
+    height: 500px; 
+    margin: 200px 350px;
+    float: right;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+}
+
+.dark-mode .form-control {
+    background-color: #5e5e5e;
+    border-color: #6e6e6e;
+    height: 75px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 30px;
+}
+
+.moon-icon-btn {
+  font-size: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  outline: none;
+  margin-left: 10;
+}
+
+
+.dark-mode .moon-icon-btn {
+  color: white; /* icon color in dark mode */
+}
+
