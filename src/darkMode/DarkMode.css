@@ -14,6 +14,10 @@ body.dark-mode {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
 }
 
+.dark-mode .form-box-signUp {
+  background-color: #363434;
+
+}
 .dark-mode .form-control {
     background-color: #5e5e5e;
     border-color: #6e6e6e;
@@ -38,3 +42,12 @@ body.dark-mode {
   color: white; /* icon color in dark mode */
 }
 
+.dark-mode .gender-btn {
+  color: white;
+}
+
+.dark-mode .upload-photo {
+  font-size: 23px;
+  height: 50px !important;
+  background-color: #5e5e5e;
+}

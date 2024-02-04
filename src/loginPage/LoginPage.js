@@ -1,6 +1,7 @@
 import './LoginPage.css';
 
-function LoginPage(){
+
+function LoginPage({toggleForm}){
     return(
         <div className='form-box col-4 justify-content-center align-items-center'>
             <form className="needs-validation" >
@@ -39,7 +40,8 @@ function LoginPage(){
 
             <div className="new-account row justify-content-center align-items-center pt-2">
                 <div className="d-grid gap-2 col-6 mx-auto">
-                    <button type="submit" className="btn btn-success btn-sign">Create new account</button>
+                    <button type="submit" className="btn btn-success btn-sign" onClick={toggleForm} >Create new account
+                    </button>
                 </div>
             </div>
           
