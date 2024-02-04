@@ -1,3 +1,4 @@
+
 // SignUp.js
 import React, { useState } from 'react';
 import './SignUp.css';
@@ -9,6 +10,7 @@ function SignUp() {
     { id: 'fullName', label: 'Full Name', type: 'text', placeholder: 'Full Name' },
     { id: 'userName', label: 'User Name', type: 'text', placeholder: 'User Name' },
     { id: 'email', label: 'Email', type: 'text', placeholder: 'Email' },
+    { id: 'birth', label: 'Birth', type: 'date', placeholder: 'Birth'},
     { id: 'password', label: 'Password', type: 'password', placeholder: 'Password' },
     { id: 'passwordVerify', label: 'Password Verify', type: 'password', placeholder: 'Password Verify' },
     { id: 'profilePicture', label: 'Profile Picture', type: 'file', placeholder: 'Upload Profile Picture' },
@@ -27,6 +29,7 @@ function SignUp() {
     }
   };
 
+
   const handleSubmit = () => {
     // Your form submission logic here
     if (passwordsMatch) {
@@ -38,7 +41,9 @@ function SignUp() {
     }
   };
 
+
   return (
+
     <div className="SignUp">
       <header className="SignUp-title">
         <img src={logo} className="App-logo" alt="logo" />
@@ -46,7 +51,6 @@ function SignUp() {
         <p className="Logo-title">We are better than Mark</p>
         <p className="LargeText">SignUp</p>
 
-        {/* Render all fields except the profile picture field */}
         {fields
           .filter((field) => field.id !== 'profilePicture')
           .map((field) => (
@@ -58,8 +62,8 @@ function SignUp() {
               
             />
           ))}
-          
 
+        
         {/* Display an error message if passwords do not match */}
         {!passwordsMatch && <p className="PasswordCheck">Passwords do not match.</p>}
 
@@ -80,18 +84,41 @@ function SignUp() {
           ))}
                   <p className="PasswordCheck"> </p>
 
-        <button onClick={handleSubmit}>
-          <p className="SignUpButton">SignUp</p>
-        </button>
+          <div className="row justify-content-center align-items-center">
+            <div class="col-md-11">
+                <div class="form-check btn-group align-items-center col-4" role="group">
+                    <label class="form-check-label btn btn-outline-secondary gender-btn" for="gridRadios1">
+                    Male
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1"></input>
+                    </label>
+                </div>
+                <div class="form-check btn-group align-items-center col-4" role="group">
+                    <label class="form-check-label btn btn-outline-secondary gender-btn" for="gridRadios2">
+                    Female
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2"></input>
+                    </label>
+                </div>
+                <div class="form-check btn-group align-items-center col-4" role="group">
+                    <label class="form-check-label btn btn-outline-secondary gender-btn" for="gridRadios3">
+                    Other
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3"></input>
+                    </label>
+                </div>
+            </div>
+        </div>
 
-        <a
-          className="SignUp-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn
-        </a>
+        <div class="form-check">
+         <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" />
+         <label class="form-check-label" for="flexCheckIndeterminate">
+         I agree to the terms
+         </label>
+        </div>
+
+
+        <button type="button" class="SignUpButton">SignUp</button>
+        
+        
+
       </header>
     </div>
   );
