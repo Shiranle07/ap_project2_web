@@ -1,7 +1,7 @@
 .form-box-signUp {
     background-color: #ffffff;
     width: 27.5%;
-    height: 880px; 
+    height: 900px; 
     margin: 100px 350px;
     float: right;
     border-radius: 10px;
@@ -51,10 +51,6 @@
     font-size: 18px;
 }
 
-.birthday {
-margin-top: 10px;
-}
-
 .birthday .form-control {
     font-size: 25px;
 }
@@ -77,6 +73,7 @@ margin-top: 10px;
   .question-icon{
     font-size: 20px;
     size: 40px;
+    padding-left: 15px;
   }
   
   /* Show the password help text when hovering over the parent div */
