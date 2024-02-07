@@ -33,14 +33,25 @@ function SignUp({toggleForm}) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+    
         // Check if passwords match before allowing form submission
         if (!passwordMatch) {
             // Display an error message or take appropriate action
             console.log('Passwords do not match. Please fix it.');
             return;
         }
+    
+        // Check if the password label is displaying a success message
+        if (password.length < 8 || password.length > 20) {
+            // Display an error message or take appropriate action
+            console.log('Password is not valid. Please fix it.');
+            return;
+        }
+    
+        // If all checks pass, proceed with form submission
+        console.log('Form submitted successfully!');
     };
+    
 
     return(
         <div className='form-box-signUp col-4 justify-content-center align-items-center'>
@@ -79,7 +90,7 @@ function SignUp({toggleForm}) {
                             <input 
                                 type="password" 
                                 id="inputPassword6" 
-                                className={`form-control ${(password.length >= 8) ? 'is-valid' : (password.length > 0 ? 'is-invalid' : '') }`} 
+                                className={`form-control ${(password.length >= 8 & password.length <= 20) ? 'is-valid' : (password.length > 0 | password.length > 20 ? 'is-invalid' : '') }`} 
                                 placeholder="New password" 
                                 aria-describedby="passwordHelpInline"  
                                 onChange={handlePasswordChange} 
@@ -93,11 +104,19 @@ function SignUp({toggleForm}) {
                             </span>
                         </div>
                         <div className="row justify-content-center align-items-center">
-                            <label htmlFor="validationCustom03" className="form-label">
-                                {password !== '' ? (password.length >= 8 ? (
-                                    <span className="text-success"></span>) : (
-                                    <span className="text-danger">Password too short</span>)) : ("")}
-                            </label>
+                        <label htmlFor="validationCustom03" className="form-label">
+                            {password !== '' ? (
+                                password.length >= 8 && password.length <= 20 ? (
+                                    <span className="text-success"></span>
+                                ) : (
+                                    password.length < 8 ? (
+                                        <span className="text-danger">Password too short</span>
+                                    ) : (
+                                        <span className="text-danger">Password too long</span>
+                                    )
+                                )
+                            ) : ("")}
+                        </label>
                         </div>
                     </div>
                 </div>
