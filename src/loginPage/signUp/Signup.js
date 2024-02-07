@@ -34,21 +34,14 @@ function SignUp({toggleForm}) {
     const handleSubmit = (e) => {
         e.preventDefault();
     
-        // Check if passwords match before allowing form submission
         if (!passwordMatch) {
-            // Display an error message or take appropriate action
             console.log('Passwords do not match. Please fix it.');
             return;
         }
-    
-        // Check if the password label is displaying a success message
         if (password.length < 8 || password.length > 20) {
-            // Display an error message or take appropriate action
             console.log('Password is not valid. Please fix it.');
             return;
         }
-    
-        // If all checks pass, proceed with form submission
         console.log('Form submitted successfully!');
     };
     
@@ -84,53 +77,30 @@ function SignUp({toggleForm}) {
                     </div>
                 </div>
 
-                <div className="row justify-content-center align-items-center mt-3 mb-2">
-                    <div className="col-12">
-                        <div className="input-group">
-                            <input 
-                                type="password" 
-                                id="inputPassword6" 
-                                className={`form-control ${(password.length >= 8 & password.length <= 20) ? 'is-valid' : (password.length > 0 | password.length > 20 ? 'is-invalid' : '') }`} 
-                                placeholder="New password" 
-                                aria-describedby="passwordHelpInline"  
-                                onChange={handlePasswordChange} 
-                                required
-                            />
-                             <span className='question-icon col-1 mt-3'>
+                <div className="row justify-content-center align-items-center">
+                        <div className="input-group-text col-12 align-items-center">
+                            <input type="password" className={`form-control ${(password.length >= 8 & password.length <= 20) ? 'is-valid' : (password.length > 0 | password.length > 20 ? 'is-invalid' : '') }`} placeholder="New password" aria-describedby="passwordHelpInline"  
+                                onChange={handlePasswordChange} required></input>
+                             <span className='question-icon col-1'>
                                 <i className="bi bi-question-circle"></i>
-                                <span id="passwordHelpInline" className="helper-text col-6">
+                                <span id="passwordHelpInline" className="helper-text">
                                 Must be 8-20 characters long.
                                 </span>
                             </span>
                         </div>
-                        <div className="row justify-content-center align-items-center">
-                        <label htmlFor="validationCustom03" className="form-label">
-                            {password !== '' ? (
-                                password.length >= 8 && password.length <= 20 ? (
-                                    <span className="text-success"></span>
-                                ) : (
-                                    password.length < 8 ? (
-                                        <span className="text-danger">Password too short</span>
-                                    ) : (
-                                        <span className="text-danger">Password too long</span>
-                                    )
-                                )
-                            ) : ("")}
+                        <label for="validationCustom03" className="form-label">
+                            {password !== '' ? (password.length >= 8 && password.length <= 20 ? (<span className="text-success"></span>) : (password.length < 8 ? 
+                            (<span className="text-danger">Password too short</span>) : 
+                            (<span className="text-danger">Password too long</span>))) : ("")}
                         </label>
-                        </div>
-                    </div>
                 </div>
 
 
-                <div className="row justify-content-center align-items-center">
+                <div className="row justify-content-center align-items-center mt-2">
                     <div class="col-md-12">
                     <input type="password" className={`form-control ${(passwordMatch && verifyPassword !== '') ? 'is-valid' : (verifyPassword !== '' ? 'is-invalid' : '') }`}
-                        id="validationCustom03"
-                        placeholder='Password verify'
-                        value={verifyPassword}
-                        onChange={handleVerifyPasswordChange}
-                        required
-                    ></input>
+                        id="validationCustom03" placeholder='Password verify' value={verifyPassword}
+                        onChange={handleVerifyPasswordChange} required ></input>
                     <label for="validationCustom03" class="form-label">
                         {verifyPassword !== '' ? (passwordMatch ? (
                                 <span className="text-success">Passwords match!</span>) : (
