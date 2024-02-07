@@ -1,117 +1,111 @@
 .form-box-signUp {
-    background-color: #ffffff;
-    width: 27.5%;
-    height: 900px; 
-    margin: 100px 350px;
-    float: right;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+  background-color: #ffffff;
+  width: 27.5%;
+  height: 900px; 
+  margin: 100px 350px;
+  float: right;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
 }
 
 .form-box-signUp .form-control{
-    height: 60px;
-
+  height: 60px;
 }
 
 .gender-btn {
-    font-size: 20px; /* Adjust the font size as needed */
-    padding: 10px 40px 10px 20px; /* Adjust the padding as needed */
-    color: black;
-    transition: none; 
+  font-size: 20px;
+  padding: 10px 40px 10px 20px;
+  color: black;
+  transition: none; 
 }
 
 .gender-btn:hover {
-    background-color:transparent !important;; /* Remove hover effect */
-    color: inherit !important; /* Inherit the color */
-
+  background-color:transparent !important;; /* Remove hover effect */
+  color: inherit !important; 
 }
 
 .btn-close{
-    font-size: 23px; 
-    float: right;
-    font-weight: bold;
-    margin: 10px;
+  font-size: 23px; 
+  float: right;
+  font-weight: bold;
+  margin: 10px;
 }
 
 .titleSignup{
-    font-size: 45px; 
-    font-weight: bold;
+  font-size: 45px; 
+  font-weight: bold;
 }
 
 .signupSlogn{
-    font-size: 25px;
-    margin-left: 24px;
-    margin-bottom: 20px;
-    opacity: 80%;
+  font-size: 25px;
+  margin-left: 24px;
+  margin-bottom: 20px;
+  opacity: 80%;
 }
 
 .check-box-gender{
-    margin-top: 20px;
-    margin-left: 15px;
-    font-size: 18px;
+  margin-top: 20px;
+  margin-left: 15px;
+  font-size: 18px;
 }
 
 .birthday .form-control {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 .birthday .form-label {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .form-box-signUp .btn-sign {
-    height: 60px;
-
-
+  height: 60px;
+}
+.question-icon{
+  font-size: 20px;
+  size: 40px;
 }
 
 /* Initially hide the password help text */
 #passwordHelpInline {
-    display: none;
-  }
-
-  .question-icon{
-    font-size: 20px;
-    size: 40px;
-  }
+  display: none;
+}
   
-  /* Show the password help text when hovering over the parent div */
-  .question-icon:hover #passwordHelpInline {
-    display:block;
-  }
-  
-  .helper-text {
-    display: none;
-    position: absolute;
-    background-color: white; /* Adjust the background color as needed */
-    border: 1px solid #ccc; /* Add borders for better visibility */
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
-  }
+/* Show the password help text when hovering over the parent div */
+.question-icon:hover #passwordHelpInline {
+  display:block;
+}
 
-  .input-group-text {
-    background-color: inherit;
-    border: 0px;
-    margin-top: 10px;
-  }
+.helper-text {
+  display: none;
+  position: absolute;
+  background-color: white; 
+  border: 1px solid #ccc; 
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
 
-  .upload-photo {
-    font-size: 23px;
-    height: 50px !important;
-  }
+.input-group-text {
+  background-color: inherit;
+  border: 0px;
+  margin-top: 10px;
+}
 
-  .agree-terms {
-    margin: 10px;
-    display: inline-flex;
-    font-size: 18px;
-  }
+.upload-photo {
+  font-size: 23px;
+  height: 50px !important;
+}
 
-  .agree-terms .form-check-label {
-    margin-left: 40px;
+.agree-terms {
+  margin: 10px;
+  display: inline-flex;
+  font-size: 18px;
+}
 
-  }
+.agree-terms .form-check-label {
+  margin-left: 40px;
+}
 
-  .signup .btn-sign {
-    width: 200px;
-    height: 60px;
-  }
+.signup .btn-sign {
+  width: 200px;
+  height: 60px;
+}

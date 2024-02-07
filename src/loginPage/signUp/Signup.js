@@ -7,15 +7,18 @@ function SignUp({toggleForm}) {
     const [verifyPassword, setVerifyPassword] = useState('');
     const [passwordMatch, setPasswordMatch] = useState(true);
 
+// checks if the password fields match in every change in password field and set the new password
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
         checkPasswordMatch(e.target.value, verifyPassword);
     };
 
+    // set the changed password in every change in the varify password field
     const handleVerifyPasswordChange = (e) => {
         const newPassword = e.target.value;
         setVerifyPassword(newPassword);
     
+        // checks match after the changing
         if (password !== newPassword) {
             setPasswordMatch(false);
         } else {
@@ -23,6 +26,7 @@ function SignUp({toggleForm}) {
         }
     };
 
+// checks if the password fields match
     const checkPasswordMatch = (password, verifyPassword) => {
         if (password !== '' || verifyPassword !== '') {
             setPasswordMatch(password === verifyPassword);
@@ -31,6 +35,7 @@ function SignUp({toggleForm}) {
         }
     };
 
+// can submit only if the passwords match and valid
     const handleSubmit = (e) => {
         e.preventDefault();
     
@@ -95,7 +100,6 @@ function SignUp({toggleForm}) {
                         </label>
                 </div>
 
-
                 <div className="row justify-content-center align-items-center mt-2">
                     <div class="col-md-12">
                     <input type="password" className={`form-control ${(passwordMatch && verifyPassword !== '') ? 'is-valid' : (verifyPassword !== '' ? 'is-invalid' : '') }`}
@@ -108,7 +112,6 @@ function SignUp({toggleForm}) {
                     </div>
                 </div>
 
-                
                 <div className="row justify-content-center align-items-center birthday">
                         <div className="col-md-12">
                                 <label htmlFor="exampleDate" className="form-label">Birthday</label>
@@ -116,7 +119,6 @@ function SignUp({toggleForm}) {
                         </div>
                     </div>
             
-
                 <div className="row check-box-gender">Gender
                     <div class="col-md-12">
                         <div class="form-check btn-group align-items-center col-4" role="group">
@@ -157,8 +159,6 @@ function SignUp({toggleForm}) {
                         </div>
                     </div>
                 </div>
-
-
 
                 <div className="row justify-content-center align-items-center signup">
                     <div class="col-12 text-center">
