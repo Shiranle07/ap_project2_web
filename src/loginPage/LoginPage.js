@@ -8,7 +8,7 @@ import NewAccountButton from './newAccountButton/NewAccountButton';
 import ForgotPasswordLink from './forgotPasswordLink/ForgotPasswordLink';
 
 function LoginPage({toggleForm, userData}) {
-    const [email, setEmail] = useState(userData.Email || '');
+    const [email, setEmail] = useState(userData.Email || ''); //if user hasn't entered email, initilize as empty
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 

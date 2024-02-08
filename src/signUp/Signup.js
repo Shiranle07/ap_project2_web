@@ -30,7 +30,7 @@ function SignUp({ toggleForm, userDataRef }) {
         if (password !== passwordVerify) {
             return;
         }
-
+        // update user data acorrding to the user's input
         userDataRef.current = {
             "First name": firstName,
             "Last name": lastName,
@@ -38,6 +38,7 @@ function SignUp({ toggleForm, userDataRef }) {
             "Password": password,
             "Profile photo": profilePhoto || userDataRef.current["Profile photo"]
         };
+        // change back to log in form
         toggleForm();
 
     };
