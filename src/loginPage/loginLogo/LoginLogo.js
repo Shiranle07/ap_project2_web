@@ -8,8 +8,6 @@ function LoginLogo(){
             <p class="fw-normal">We are better than Mark.</p> 
         </div>
 
-
-
     );
 }
 

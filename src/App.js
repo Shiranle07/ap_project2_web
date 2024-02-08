@@ -22,8 +22,6 @@ function App() {
         <LoginPage toggleForm={toggleForm} />
       )}
         <LoginLogo/>
-        <DarkMode />
-
     </div>
   );
 }
