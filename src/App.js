@@ -1,25 +1,33 @@
 import LoginPage from './loginPage/LoginPage';
 import './App.css';
 import LoginLogo from './loginPage/loginLogo/LoginLogo';
-import { useState } from 'react';
-import React from 'react';
-import DarkMode from './darkMode/DarkMode';
-import SignUp from './loginPage/signUp/Signup';
+import React, { useState, useRef } from 'react';
+import SignUp from './signUp/Signup';
 
 function App() {
 
   const [isSignUp, setIsSignUp] = useState(false);
+  const userDataRef = useRef({
+    "First name": '',
+    "Last name": '',
+    "Email": '',
+    "Password": '',
+    "Profile photo": './signUp/profilePhotoField/defaultProfilePhoto.jpg'
+  });
+
 
   const toggleForm = () => {
     setIsSignUp(!isSignUp);
+    console.log(userDataRef.current)
   };
+
 
   return (
     <div>
         {isSignUp ? (
-        <SignUp toggleForm={toggleForm} />
+        <SignUp toggleForm={toggleForm} userDataRef={userDataRef} />
       ) : (
-        <LoginPage toggleForm={toggleForm} />
+        <LoginPage toggleForm={toggleForm} userData={userDataRef.current} />
       )}
         <LoginLogo/>
     </div>

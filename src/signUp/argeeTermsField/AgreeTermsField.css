@@ -1,0 +1,9 @@
+.agree-terms {
+    margin: 10px;
+    display: inline-flex;
+    font-size: 14px;
+  }
+  
+  .agree-terms .form-check-label {
+    margin-left: 25px;
+  }

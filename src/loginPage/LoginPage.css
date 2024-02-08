@@ -6,7 +6,7 @@ body {
 .form-box {
     background-color: #ffffff;
     width: 27.5%;
-    height: 350px; 
+    height: 360px; 
     margin: 130px 240px;
     float: right;
     border-radius: 10px;
@@ -52,6 +52,11 @@ body {
     background-color: #858282;
     opacity: 50%;
     margin: 15px 0 20px 0;
+}
+
+.error-message {
+    font-size: 14px;
+    color: red;
 }
 
   
