@@ -11,7 +11,7 @@ import AgreeTermsField from './argeeTermsField/AgreeTermsField';
 import LoginLogo from '../loginPage/loginLogo/LoginLogo';
 
 
-function SignUp({ toggleForm, userDataRef }) {
+function SignUp({ toggleForm, userData, setUserData}) {
 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -33,17 +33,18 @@ function SignUp({ toggleForm, userDataRef }) {
             return;
         }
         // update user data acorrding to the user's input
-        userDataRef.current = {
-            FirstName : firstName,
-            LastName : lastName,
-            Email : email,
-            Password : password,
-            ProfilePhoto : profilePhoto || userDataRef.current["ProfilePhoto"]
-        };
+        setUserData({
+            "FirstName" : firstName,
+            "LastName" : lastName,
+            "Email" : email,
+            "Password" : password,
+            "ProfilePhoto" : profilePhoto || userData.ProfilePhoto,
+            "IsLogIn" : false}
+        )
         // change back to log in form
         toggleForm();
+        };
 
-    };
 
     return (
         <div>

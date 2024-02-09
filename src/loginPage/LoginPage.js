@@ -10,7 +10,7 @@ import {useNavigate } from 'react-router-dom';
 import LoginLogo from './loginLogo/LoginLogo';
 
 
-function LoginPage({toggleForm, userData}) {
+function LoginPage({toggleForm, userData, setUserData}) {
     const [email, setEmail] = useState(userData.Email || ''); //if user hasn't entered email, initilize as empty
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -23,6 +23,14 @@ function LoginPage({toggleForm, userData}) {
 
         // Check if email and password match the user data
         if (email==userData.Email && password==userData.Password) {
+            setUserData({
+                "FirstName" : userData.FirstName,
+                "LastName" : userData.LastName,
+                "Email" : userData.Email,
+                "Password" : userData.Password,
+                "ProfilePhoto" : userData.ProfilePhoto,
+                "IsLogIn" : true}
+            )
             setError('');
             navigate('/feed');
         } else {

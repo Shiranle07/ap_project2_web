@@ -5,7 +5,7 @@ import LoginLogo from '../loginPage/loginLogo/LoginLogo';
 
 function Feed({ userData }) {
 
-    if (!userData.Email) {
+    if (!userData.IsLogIn) {
         return(<div>
             <LoginLogo/>
             You must log in first
