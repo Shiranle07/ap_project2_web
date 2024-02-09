@@ -34,11 +34,11 @@ function SignUp({ toggleForm, userDataRef }) {
         }
         // update user data acorrding to the user's input
         userDataRef.current = {
-            "First name": firstName,
-            "Last name": lastName,
-            "Email": email,
-            "Password": password,
-            "Profile photo": profilePhoto || userDataRef.current["Profile photo"]
+            FirstName : firstName,
+            LastName : lastName,
+            Email : email,
+            Password : password,
+            ProfilePhoto : profilePhoto || userDataRef.current["ProfilePhoto"]
         };
         // change back to log in form
         toggleForm();

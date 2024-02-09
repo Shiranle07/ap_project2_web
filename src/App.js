@@ -10,11 +10,11 @@ function App() {
 
   const [isSignUp, setIsSignUp] = useState(true);
   const userDataRef = useRef({
-    "First name": '',
-    "Last name": '',
-    "Email": '',
-    "Password": '',
-    "Profile photo": './signUp/profilePhotoField/defaultProfilePhoto.jpg'
+    FirstName : '',
+    LastName : '',
+    Email : '',
+    Password : '',
+    ProfilePhoto : './signUp/profilePhotoField/defaultProfilePhoto.jpg'
   });
 
 
@@ -32,7 +32,6 @@ function App() {
 
             <Route path="/feed" element={<Feed userData={userDataRef.current}/>}></Route>
           </Routes>
-
         </BrowserRouter>
     </div>
   );
