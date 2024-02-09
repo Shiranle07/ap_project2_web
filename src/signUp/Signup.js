@@ -8,6 +8,8 @@ import TitleSignup from './titleSignUp/TitleSignUp';
 import ProfilePhotoField from './profilePhotoField/ProfilePhotoField';
 import BirthdayField from './birthdayField/BirthdayField';
 import AgreeTermsField from './argeeTermsField/AgreeTermsField';
+import LoginLogo from '../loginPage/loginLogo/LoginLogo';
+
 
 function SignUp({ toggleForm, userDataRef }) {
 
@@ -44,7 +46,8 @@ function SignUp({ toggleForm, userDataRef }) {
     };
 
     return (
-        <div className='form-box-signUp justify-content-center align-items-center'>
+        <div>
+            <div className='form-box-signUp justify-content-center align-items-center'>
             <button type="button" className="btn-close" aria-label="Close" onClick={toggleForm}></button>
 
             <TitleSignup/>
@@ -70,7 +73,10 @@ function SignUp({ toggleForm, userDataRef }) {
                     </div>
                 </div>
             </form>
+            </div>
+            <LoginLogo/>
         </div>
+        
     );
 }
 

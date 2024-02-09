@@ -3,10 +3,12 @@ import './App.css';
 import LoginLogo from './loginPage/loginLogo/LoginLogo';
 import React, { useState, useRef } from 'react';
 import SignUp from './signUp/Signup';
+import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
+import Feed from './feed/Feed';
 
 function App() {
 
-  const [isSignUp, setIsSignUp] = useState(false);
+  const [isSignUp, setIsSignUp] = useState(true);
   const userDataRef = useRef({
     "First name": '',
     "Last name": '',
@@ -18,18 +20,20 @@ function App() {
 
   const toggleForm = () => {
     setIsSignUp(!isSignUp);
-    console.log(userDataRef.current)
   };
-
 
   return (
     <div>
-        {isSignUp ? (
-        <SignUp toggleForm={toggleForm} userDataRef={userDataRef} />
-      ) : (
-        <LoginPage toggleForm={toggleForm} userData={userDataRef.current} />
-      )}
-        <LoginLogo/>
+        <BrowserRouter>
+          <Routes>
+            {isSignUp ? (
+                    <Route path="/" element={<LoginPage toggleForm={toggleForm} userData={userDataRef.current} />}></Route>) : (
+                    <Route path="/" element={<SignUp toggleForm={toggleForm} userDataRef={userDataRef} />}></Route>)}
+
+            <Route path="/feed" element={<Feed userData={userDataRef.current}/>}></Route>
+          </Routes>
+
+        </BrowserRouter>
     </div>
   );
 }

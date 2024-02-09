@@ -6,11 +6,15 @@ import ErrorMessage from './errorMessage/ErrorMessage';
 import LogInButton from './logInButton/LogInButton';
 import NewAccountButton from './newAccountButton/NewAccountButton';
 import ForgotPasswordLink from './forgotPasswordLink/ForgotPasswordLink';
+import {useNavigate } from 'react-router-dom';
+import LoginLogo from './loginLogo/LoginLogo';
+
 
 function LoginPage({toggleForm, userData}) {
     const [email, setEmail] = useState(userData.Email || ''); //if user hasn't entered email, initilize as empty
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
 
 // checks for the login. only signed up users can login
@@ -20,7 +24,7 @@ function LoginPage({toggleForm, userData}) {
         // Check if email and password match the user data
         if (email==userData.Email && password==userData.Password) {
             setError('');
-            console.log('Login successful');
+            navigate('/feed');
         } else {
             // email or password incorrect
             setError('Email or password is incorrect');
@@ -28,27 +32,31 @@ function LoginPage({toggleForm, userData}) {
     };
 
     return (
-        <div className='form-box col-4'>
-            <form className="needs-validation" onSubmit={handleLogin}>
+        <div>
+            <div className='form-box col-4'>
+                <form className="needs-validation" onSubmit={handleLogin}>
 
-                <UsersEmailField email={email} setEmail={setEmail}/>
-                <UsersPasswordField password={password} setPassword={setPassword}/>
+                    <UsersEmailField email={email} setEmail={setEmail}/>
+                    <UsersPasswordField password={password} setPassword={setPassword}/>
 
-                {error && (
-                    <ErrorMessage error={error}/>
-                )}
+                    {error && (
+                        <ErrorMessage error={error}/>
+                    )}
 
-                <LogInButton/>
+                    <LogInButton/>
 
-                <ForgotPasswordLink/>
-            </form>
+                    <ForgotPasswordLink/>
+                </form>
 
-            <div className="new-account row justify-content-center align-items-center">
-                <div className="line"></div>
+                <div className="new-account row justify-content-center align-items-center">
+                    <div className="line"></div>
+                </div>
+
+                <NewAccountButton toggleForm={toggleForm}/>
             </div>
-
-            <NewAccountButton toggleForm={toggleForm}/>
+            <LoginLogo/>
         </div>
+
     );
 }
 
