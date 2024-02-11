@@ -16,7 +16,7 @@ function TopNavbar({userData}){
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <form class="d-flex" role="search">
                         <span class="input-group-text">
-                            <i class="bi bi-search mb-2"></i>
+                            <i class="bi bi-search mb-3"></i>
                         </span>
                         <input class="form-control search-bar" type="search" placeholder="Search Fakebook" aria-label="Search"></input>
                 </form>
