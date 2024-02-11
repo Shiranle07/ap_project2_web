@@ -122,3 +122,35 @@
 #display-user {
     margin-right: 10px;
 }
+
+.post-option {
+    font-size: 23px;
+    margin-right: 8px;
+}
+
+.post-btn:hover {
+    background-color: rgba(226, 231, 235, 0.606);
+    color:rgba(0, 0, 0, 0.596);
+}
+
+#live {
+    color: orangered;
+}
+
+ #photo {
+    color: rgb(13, 151, 13);
+}
+
+#emoji {
+    color: rgb(255, 204, 0);
+}
+
+.post-input {
+    border-radius: 30px;
+    border: 5px;
+    border-color:white;
+    height: 45px;
+    background-color: rgba(226, 231, 235, 0.606);
+    text-align: left;
+    color: rgba(0, 0, 0, 0.599);
+}

@@ -8,7 +8,7 @@ import LeftButtons from "./LeftButtons";
 
 function TopNavbar({userData}){
     return(
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
         <div class="container-fluid">
             <a class="fakebook-brand m-1" href="#">
             <img src={logo} alt="Logo" width="50" height="44" class="d-inline-block align-text-top"></img>
@@ -28,7 +28,7 @@ function TopNavbar({userData}){
                     <CenterButtons iconClass={"bi bi-controller"} infoText={"Gaming"}/>
                 </ul>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <LeftButtons iconClass={"bi bi-three-dots-vertical"} infoText={"Manu"}/>
+                    <LeftButtons iconClass={"bi bi-grid-3x3-gap-fill"} infoText={"Manu"}/>
                     <LeftButtons iconClass={"bi bi-messenger"} infoText={"Messenger"}/>
                     <LeftButtons iconClass={"bi bi-bell-fill"} infoText={"Notifications"}/>
                     <li class="nav-item dropdown">
