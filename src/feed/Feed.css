@@ -1,0 +1,124 @@
+
+
+.input-group {
+    border-radius: 30px;
+}
+
+.navbar{
+    padding: 1px;
+    box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.1); 
+
+}
+
+.navbar .input-group-text {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    height: 100%;
+    pointer-events: none; /* To prevent the icon from being clickable */
+}
+
+.search-bar {
+    padding-left: 2.5rem; /* Adjust according to your icon size */
+    border-radius: 30px;
+    border-color:white;
+    height: 45px;
+    background-color: rgba(226, 231, 235, 0.606);
+}
+
+
+.nav-center {
+    font-size: 25px;
+    margin-left: 20px;
+    width: 100px;
+    border: 0px;
+}
+
+.nav-center:hover {
+    background-color: rgba(226, 231, 235, 0.606);
+    color:rgba(0, 0, 0, 0.596);
+
+}
+
+#home-button {
+    color: rgb(41, 90, 223) !important; /* Change text color to white */
+    margin-left: 70px;
+    border-radius: 0px;
+    border-bottom: 3px solid rgb(41, 90, 223) !important;
+}
+
+#home-button:hover {
+    background-color: initial;
+}
+
+#Button-info {
+    display: none;
+}
+    
+  .nav-center:hover #Button-info {
+    display:block;
+ }
+
+ .nav-left:hover #Button-info {
+    display:block;
+ }
+
+.helper-text {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.699); 
+    color: white;
+    border: 1px solid rgba(0, 0, 0, 0.699); 
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 13px;
+    top: calc(100% + 3px);
+}
+
+.nav-left {
+    background-color: rgba(218, 221, 224, 0.747);
+    border-radius: 100px;
+    margin-right: 10px;
+    height: 40px;
+    margin-top: 9px;
+}
+
+.nav-left:hover {
+    background-color: rgba(171, 174, 177, 0.606);
+
+}
+
+.profile-photo {
+    border-radius: 50px;
+    margin: 0;
+}
+
+.account-dropdown:hover #Button-info {
+    display:block;
+ }
+
+.menu-icon {
+    background-color:  rgba(218, 221, 224, 0.747);
+    font-size: 18px;
+    margin: 2px;
+    margin-right: 10px;
+    padding: 5px 8px;
+    border-radius: 30px;
+}
+
+.dropdown-item{
+    width: 300px;
+    font-weight:500;
+    text-align: left;
+    padding: 10px;
+}
+
+.menu-arrow {
+    float: right;
+    font-size: 25px;
+    position:relative;
+}
+
+#display-user {
+    margin-right: 10px;
+}

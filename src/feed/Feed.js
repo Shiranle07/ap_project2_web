@@ -1,25 +1,24 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import LoginLogo from '../loginPage/loginLogo/LoginLogo';
+import './Feed.css'
+import React from 'react';
+import TopNavbar from './topNavbar/TopNavbar';
+
 
 function Feed({ userData }) {
 
-    if (!userData.IsLogIn) {
-        return(<div>
-            <LoginLogo/>
-            You must log in first
-            <Link to="/">click here to log in</Link>
-        </div>);
-    }
+    
+
+    // if (!userData.IsLogIn) {
+    //     return(<div>
+    //         <LoginLogo/>
+    //         You must log in first
+    //         <Link to="/">click here to log in</Link>
+    //     </div>);
+    // }
     
     return (
         <div>
-            Hello {userData.FirstName} {userData.LastName}!
-            <div>
-                Welcome to fakebook!
-            </div>
-            Photo: <img src={userData.ProfilePhoto} alt="Profile"></img>
+            <TopNavbar userData={userData}/>
         </div>
     );
 }
