@@ -16,37 +16,3 @@
     background-color: rgba(171, 174, 177, 0.606);
 }
 
-.profile-photo {
-    border-radius: 50px;
-    margin: 0;
-}
-
-.account-dropdown:hover #Button-info {
-    display:block;
- }
-
-.menu-icon {
-    background-color:  rgba(218, 221, 224, 0.747);
-    font-size: 18px;
-    margin: 2px;
-    margin-right: 10px;
-    padding: 5px 8px;
-    border-radius: 30px;
-}
-
-.dropdown-item{
-    width: 300px;
-    font-weight:500;
-    text-align: left;
-    padding: 10px;
-}
-
-.menu-arrow {
-    float: right;
-    font-size: 25px;
-    position:relative;
-}
-
-#display-user {
-    margin-right: 10px;
-}

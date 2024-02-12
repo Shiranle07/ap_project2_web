@@ -11,8 +11,6 @@ import CreatePostWindow from './createPost/createPostWindow/CreatePostWindow';
 
 function Feed({ userData }) {
 
-
-
     // if (!userData.IsLogIn) {
     //     return(<div>
     //         <LoginLogo/>

@@ -5,6 +5,7 @@ import React from 'react';
 import CenterButtons from "./CenterButtons";
 import LeftButtons from "./LeftButtons";
 import "./TopNavbar.css"
+import DropdownMenu from "./dropdownMenu/DropdownMenu";
 
 
 function TopNavbar({userData}){
@@ -32,41 +33,7 @@ function TopNavbar({userData}){
                     <LeftButtons iconClass={"bi bi-grid-3x3-gap-fill"} infoText={"Manu"}/>
                     <LeftButtons iconClass={"bi bi-messenger"} infoText={"Messenger"}/>
                     <LeftButtons iconClass={"bi bi-bell-fill"} infoText={"Notifications"}/>
-                    <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle account-dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src={profilePhoto} alt="profile" width="40" height="40" class="d-inline-block align-text-bottom profile-photo"></img>
-                        <span id="Button-info" className="helper-text">
-                                    Account
-                            </span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">
-                        <img src={profilePhoto} alt="profile" width="40" height="40" class="d-inline-block align-text-center profile-photo " id="display-user"></img>
-                            {userData.FirstName} {userData.LastName}</a></li>
-                        <li><hr class="dropdown-divider"></hr></li>
-                            <li><a class="dropdown-item" href="#">
-                                <i class="bi bi-gear-fill menu-icon"></i>
-                                Settings & privacy
-                                <i class="bi bi-arrow-right-short menu-arrow"></i>
-                            </a></li>
-                            <li><a class="dropdown-item" href="#">
-                                <i class="bi bi-question-circle-fill menu-icon"></i>
-                                Help & support
-                                <i class="bi bi-arrow-right-short menu-arrow"></i>
-                                </a></li>
-                            <li><a class="dropdown-item" href="#">
-                                <i class="bi bi-moon-fill menu-icon"></i>
-                                Display & accessibility
-                                <i class="bi bi-arrow-right-short menu-arrow"></i>
-                                </a></li>
-                            <li><a class="dropdown-item" href="#">
-                                <i class="bi bi-chat-left-dots-fill menu-icon"></i>
-                                Give feedback</a></li>
-                            <li><Link class="dropdown-item" to="/">
-                                <i class="bi bi-box-arrow-right menu-icon"></i>
-                                Log out</Link></li>
-                    </ul>
-                    </li>
+                    <DropdownMenu userData={userData}/>
                 </ul>
             </div>
         </div>
