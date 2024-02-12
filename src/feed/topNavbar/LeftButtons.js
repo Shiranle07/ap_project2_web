@@ -1,3 +1,5 @@
+import "./LeftButtons.css"
+
 function LeftButtons({iconClass, infoText}){
     return(
         <button type="button" className='nav-item btn btn-outline nav-left'>

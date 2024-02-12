@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import CenterButtons from "./CenterButtons";
 import LeftButtons from "./LeftButtons";
+import "./TopNavbar.css"
 
 
 function TopNavbar({userData}){
