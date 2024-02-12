@@ -3,10 +3,23 @@
     margin-right: 8px;
 }
 
+.dark-mode .card {
+    background-color: rgb(37, 37, 37);
+}
+
 .post-btn:hover {
     background-color: rgba(226, 231, 235, 0.606);
     color:rgba(0, 0, 0, 0.596);
 }
+
+.dark-mode .post-btn{
+    color: rgb(170, 170, 170);
+}
+
+.dark-mode .post-btn:hover {
+    background-color: rgb(52, 52, 52);
+}
+
 
 .post-input {
     border-radius: 30px;
@@ -17,6 +30,13 @@
     text-align: left;
     color: rgba(0, 0, 0, 0.599);
 }
+
+.dark-mode .post-input {
+    border-color:rgb(26, 26, 26);
+    background-color: rgb(59, 59, 59);
+    color: rgba(255, 255, 255, 0.702);
+}
+
 
 #live {
     color: orangered;

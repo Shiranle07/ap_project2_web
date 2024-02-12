@@ -5,10 +5,22 @@
     border: 0px;
 }
 
+.dark-mode .nav-center {
+    font-size: 25px;
+    margin-left: 20px;
+    width: 100px;
+    border: 0px;
+    color: rgb(176, 176, 176);
+}
+
 .nav-center:hover {
     background-color: rgba(226, 231, 235, 0.606);
     color:rgba(0, 0, 0, 0.596);
+}
 
+.dark-mode .nav-center:hover {
+    background-color: rgba(66, 66, 66, 0.606);
+    color: rgb(176, 176, 176);
 }
 
 #home-button {

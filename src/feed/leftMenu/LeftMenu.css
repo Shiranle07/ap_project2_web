@@ -9,6 +9,14 @@
     font-weight: 500;
 }
 
+.dark-mode .left-menu-item {
+    color: rgb(170, 170, 170);
+}
+
+.dark-mode .left-menu-item:hover {
+    background-color: rgba(86, 86, 86, 0.606);
+}
+
 .left-menu-item .icon-menu{
     color:rgb(41, 138, 223);
     font-size: 23px;

@@ -6,7 +6,6 @@
 .navbar{
     padding: 1px;
     box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.1); 
-
 }
 
 .navbar .input-group-text {
@@ -17,6 +16,10 @@
     pointer-events: none; /* To prevent the icon from being clickable */
 }
 
+.dark-mode .navbar .input-group-text {
+    color: rgba(255, 255, 255, 0.62);
+}
+
 .search-bar {
     padding-left: 2.5rem; /* Adjust according to your icon size */
     border-radius: 30px;
@@ -25,5 +28,16 @@
     background-color: rgba(226, 231, 235, 0.606);
 }
 
+.dark-mode .search-bar {
+    border-color:rgb(26, 26, 26);
+    background-color: rgb(59, 59, 59);
+}
 
+.dark-mode .search-bar::placeholder{
+    color: white;
+}
+
+.dark-mode .container-fluid{
+    background-color: rgb(37, 37, 37);
+}
 

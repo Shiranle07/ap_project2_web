@@ -6,9 +6,23 @@
     font-size: 24px;
 }
 
+.dark-mode #postContent{
+    background-color: rgb(37, 37, 37);
+    color: white;
+} 
+
+.dark-mode .modal-content{
+    background-color: rgb(37, 37, 37);
+    color: rgb(188, 188, 188);
+}
+
 #postContent::placeholder{
     font-size: 24px;
     color: rgb(0, 0, 0);
+}
+
+.dark-mode #postContent::placeholder{
+    color: white;
 }
 
 .new-post-btn:disabled{
@@ -25,6 +39,7 @@
     margin-right: 0px;
     padding: 0 8px;
 }
+
 
 .add:hover{
     background-color: rgba(185, 185, 185, 0.36);
@@ -46,6 +61,11 @@
 
 .post-additionals {
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1); 
+}
+
+.dark-mode .post-additionals{
+    color: rgb(188, 188, 188);
+    box-shadow: 0px 0px 3px rgba(255, 255, 255, 0.1); 
 }
     
 .post-add-btn:hover #Button-info {
