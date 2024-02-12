@@ -1,0 +1,37 @@
+.single_post {
+    margin: 20px auto; /* Center the post horizontally */
+    max-width: 600px; /* Limit the width of the post */
+    max-height: 100px; /* Set a fixed height for the post */
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative; /* Set position to relative */
+    overflow-y: auto; /* Enable vertical scroll */
+}
+
+.title {
+    font-size: 1.2em;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    position: sticky; /* Make the title stick to the top */
+    top: 0; /* Stick to the top */
+    background-color: white; /* Set background color to match the post background */
+    padding: 20px; /* Add padding to the title */
+    z-index: 1; /* Set a higher z-index to keep the title on top of the content */
+}
+
+
+
+.user_name {
+    color: #70757a; /* Adjusted to a darker gray for better visibility */
+    font-size: 0.9em; /* Reduced font size for meta information */
+}
+
+.date {
+    font-style: italic;
+}
+
+.text {
+    font-style: italic;
+}
