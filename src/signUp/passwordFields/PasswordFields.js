@@ -44,7 +44,7 @@ function PasswordFields({setUserPassword, setUserPasswordVerify}){
                     {/* question mark icon that help the user know the password requierments */}
                 <span className='question-icon col-1'>
                     <i className="bi bi-question-circle"></i>
-                    <span id="passwordHelpInline" className="helper-text">
+                    <span id="passwordHelpInline" className="signUp-helper-text">
                         Must be 8-20 characters long.
                     </span>
                 </span>
