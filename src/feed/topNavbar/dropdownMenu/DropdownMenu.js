@@ -5,18 +5,21 @@ import MenuItem from './MenuItem';
 import "./DropdownMenu.css"
 import DisplayMenu from './DisplayMenu';
 
-function DropdownMenu({userData}) {
+function DropdownMenu({ userData }) {
     const [activeMenu, setActiveMenu] = useState('main');
-
 
     const handleMenuChange = (event, menu) => {
         event.stopPropagation();
         setActiveMenu(menu);
     };
 
+    const handleAccountButtonClick = () => {
+        setActiveMenu('main');
+    };
+
     return (
         <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle account-dropdown" href="#" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <a onClick={handleAccountButtonClick} className="nav-link dropdown-toggle account-dropdown" href="#" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src={profilePhoto} alt="profile" width="40" height="40" className="d-inline-block align-text-bottom profile-photo"></img>
                 <span id="Button-info" className="helper-text">Account</span>
             </a>
@@ -31,13 +34,13 @@ function DropdownMenu({userData}) {
                         <MenuArrowItem iconClass={"bi bi-question-circle-fill menu-icon"} text={"Help & support"} />
                         <MenuArrowItem iconClass={"bi bi-moon-fill menu-icon"} text={"Display & accessibility"} onClick={(e) => handleMenuChange(e, "display")} />
                         <MenuItem iconClass={"bi bi-chat-left-dots-fill menu-icon"} text={"Give feedback"} />
-                        <MenuItem iconClass={"bi bi-box-arrow-right menu-icon"} text={"Log out"} path={"/"}/>
+                        <MenuItem iconClass={"bi bi-box-arrow-right menu-icon"} text={"Log out"} path={"/"} />
                     </>
                 )}
                 {activeMenu === 'display' && (
                     <>
                         <MenuItem iconClass={"bi bi-arrow-left menu-icon"} text={"Back"} onClick={(e) => handleMenuChange(e, 'main')} />
-                        <DisplayMenu/>
+                        <DisplayMenu />
                         <MenuItem iconClass={"bi bi-brightness-high-fill menu-icon"} text={"Brightness"} />
                         <MenuItem iconClass={"bi bi-eye-fill menu-icon"} text={"Font size"} />
                     </>

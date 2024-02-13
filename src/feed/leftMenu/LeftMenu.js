@@ -2,6 +2,10 @@ import './LeftMenu.css'
 import profilePhoto from "../../signUp/profilePhotoField/defaultProfilePhoto.jpg";
 import {react, useState} from 'react'
 import LeftMenuItem from './LeftMenuItem';
+import yoga from "./images/yoga.jpg"
+import baking from "./images/baking.png"
+import bioinformatics from "./images/bioinformatics.jpg"
+import Shortcuts from './Shortcuts';
 
 
 function LeftMenu({userData}){
@@ -47,6 +51,14 @@ function LeftMenu({userData}){
         {showMore ? <span> <i class="bi bi-caret-up-fill"></i> See less</span> : 
          <span> <i class="bi bi-caret-down-fill"></i> See more</span> }
             </button>
+
+        <hr></hr>
+        <p className='fw-bolder shortcuts-title'>
+            Your shortcuts
+        </p>
+        <Shortcuts imgSrc={yoga} text={"Yoga for begginers"}/>
+        <Shortcuts imgSrc={baking} text={"Baking together"}/>
+        <Shortcuts imgSrc={bioinformatics} text={"Bioinformatics world"}/>
 
     </div>
     );

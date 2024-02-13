@@ -9,6 +9,7 @@
     font-weight: 500;
 }
 
+
 .dark-mode .left-menu-item {
     color: rgb(170, 170, 170);
 }
@@ -50,4 +51,13 @@
 
 #flag-icon {
     color: orange;
+}
+
+.shortcuts-title {
+    margin-left: 8px;
+}
+
+.shortcut-photo {
+    margin-right: 8px;
+    border-radius: 10px;
 }

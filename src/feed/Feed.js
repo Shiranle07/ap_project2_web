@@ -3,6 +3,7 @@ import './Feed.css'
 import {React, useState} from 'react';
 import TopNavbar from './topNavbar/TopNavbar';
 import LeftMenu from './leftMenu/LeftMenu';
+import RightMenu from './rightMenu/RightMenu';
 import profilePhoto from "../signUp/profilePhotoField/defaultProfilePhoto.jpg";
 import CreatePostField from './createPost/createPostField/CreatePostField';
 import CreatePostWindow from './createPost/createPostWindow/CreatePostWindow';
@@ -29,9 +30,12 @@ function Feed({ userData }) {
                 <div className='col-6'>
                     <CreatePostField userData={userData}/>
                 </div>
+                <div className='col-3'>
+                    <RightMenu/>    
+                </div>
             </div>
-            <CreatePostWindow userData={userData}/>
-        </div>
+                <CreatePostWindow userData={userData}/>
+            </div>
 
         
     );
