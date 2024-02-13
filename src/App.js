@@ -14,7 +14,7 @@ function App() {
     "LastName" : '',
     "Email" : '',
     "Password" : '',
-    "ProfilePhoto" : './signUp/profilePhotoField/defaultProfilePhoto.jpg',
+    "ProfilePhoto" : null,
     "IsLogIn" : false
   });
   console.log(userData)

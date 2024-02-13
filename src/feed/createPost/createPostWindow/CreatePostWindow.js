@@ -24,7 +24,7 @@ function CreatePostWindow({userData}){
                 </div>
                 <div class="modal-body">
                     <div class="d-flex align-items-center">
-                        <img src={profilePhoto} alt="profile" width="40" height="40" class="d-inline-block align-text-center profile-photo mr-2" id="display-user"></img>
+                        <img src={userData.ProfilePhoto ? userData.ProfilePhoto : profilePhoto} alt="profile" width="40" height="40" class="d-inline-block align-text-center profile-photo mr-2" id="display-user"></img>
                         <p class="fw-bolder m-0">
                             {userData.FirstName} {userData.LastName}
                         </p>

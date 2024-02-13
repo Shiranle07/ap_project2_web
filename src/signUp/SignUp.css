@@ -1,7 +1,7 @@
 .form-box-signUp {
   background-color: #ffffff;
   width: 27.5%;
-  height: 600px; 
+  height: 700px; 
   margin: 70px 240px;
   float: right;
   border-radius: 10px;
@@ -43,3 +43,11 @@
 }
 
 
+.form-field {
+  margin: 8px 0;
+}
+
+
+.preview-title{
+  margin: 0;
+}
