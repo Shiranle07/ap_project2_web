@@ -1,0 +1,63 @@
+.left-menu-container {
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+
+.left-menu-item {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0px;
+    font-weight: 500;
+}
+
+
+.dark-mode .left-menu-item {
+    color: rgb(170, 170, 170);
+}
+
+.dark-mode .left-menu-item:hover {
+    background-color: rgba(86, 86, 86, 0.606);
+}
+
+.left-menu-item .icon-menu{
+    color:rgb(41, 138, 223);
+    font-size: 23px;
+    margin-right: 8px;
+
+}
+
+#saved-icon {
+    color: blueviolet;
+}
+
+#blood-icon {
+    color: rgba(161, 0, 0, 0.938);
+}
+
+#events-icon {
+    color: rgb(218, 54, 100);
+}
+
+#fundraisers-icon {
+    color: rgb(202, 93, 53);
+}
+
+#messenger-icon {
+    color: rgb(155, 46, 189);
+}
+
+#wallet-icon {
+    color: black;
+}
+
+#flag-icon {
+    color: orange;
+}
+
+.shortcuts-title {
+    margin-left: 8px;
+}
+
+.shortcut-photo {
+    margin-right: 8px;
+    border-radius: 10px;
+}

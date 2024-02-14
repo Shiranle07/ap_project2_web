@@ -1,0 +1,30 @@
+
+
+.nav-left:hover #Button-info {
+   display:block;
+}
+
+.nav-left {
+   background-color: rgba(218, 221, 224, 0.747);
+   border-radius: 100px;
+   margin-right: 10px;
+   height: 40px;
+   margin-top: 9px;
+}
+
+.dark-mode .nav-left {
+   background-color: rgba(59, 59, 59, 0.997); /* Dark mode background color */
+   border-radius: 100px;
+   margin-right: 10px;
+   height: 40px;
+   margin-top: 9px;
+   color: white;
+}
+
+.nav-left:hover {
+    background-color: rgba(171, 174, 177, 0.606);
+}
+
+.dark-mode .nav-left:hover {
+   background-color: rgba(89, 89, 89, 0.712); /* Dark mode hover background color */
+}
