@@ -48,6 +48,7 @@ function Feed({ userData }) {
             </div>
                 <CreatePostWindow userData={userData}/>
             </div>
+            
 
         
     );

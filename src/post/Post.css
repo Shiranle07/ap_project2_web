@@ -36,3 +36,18 @@
     font-style: italic;
     margin-top: 5px;
 }
+
+.ms-2 {
+    margin-left: 5px;
+}
+
+.share-text {
+    color: black;
+}
+
+.dropdown-toggle {
+    border: 0;
+}
+
+
+
