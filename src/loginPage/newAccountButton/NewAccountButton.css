@@ -1,0 +1,9 @@
+.btn-sign {
+    height: 47px; /* Set the desired height for the button within the form */
+    width: 195px;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: rgba(11, 153, 11, 0.849);
+    border-color: rgb(17, 190, 17, 0.839);
+}

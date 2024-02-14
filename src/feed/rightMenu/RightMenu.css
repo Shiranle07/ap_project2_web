@@ -1,0 +1,35 @@
+.right-menu-item {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0px;
+    font-weight: 500;
+}
+
+.dark-mode .right-menu-item {
+    color: rgb(170, 170, 170);
+}
+
+.dark-mode .right-menu-item:hover {
+    background-color: rgba(86, 86, 86, 0.606);
+}
+
+.user-info {
+    position: relative;
+    display: inline-block; /* Ensures the dot aligns properly */
+}
+.username {
+    margin-left: 10px; /* Adjust as needed */
+}
+.online-dot {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(0, 159, 0);
+    border-radius: 50%; /* Makes it round */
+}
+
+.dark-mode p{
+    color: rgb(191, 191, 191);
+}
+

@@ -1,0 +1,43 @@
+.nav-center {
+    font-size: 25px;
+    margin-left: 20px;
+    width: 100px;
+    border: 0px;
+}
+
+.dark-mode .nav-center {
+    font-size: 25px;
+    margin-left: 20px;
+    width: 100px;
+    border: 0px;
+    color: rgb(176, 176, 176);
+}
+
+.nav-center:hover {
+    background-color: rgba(226, 231, 235, 0.606);
+    color:rgba(0, 0, 0, 0.596);
+}
+
+.dark-mode .nav-center:hover {
+    background-color: rgba(66, 66, 66, 0.606);
+    color: rgb(176, 176, 176);
+}
+
+#home-button {
+    color: rgb(41, 90, 223) !important; /* Change text color to white */
+    margin-left: 70px;
+    border-radius: 0px;
+    border-bottom: 3px solid rgb(41, 90, 223) !important;
+}
+
+#home-button:hover {
+    background-color: initial;
+}
+
+#Button-info {
+    display: none;
+}
+    
+.nav-center:hover #Button-info {
+    display:block;
+}

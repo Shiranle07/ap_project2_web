@@ -1,0 +1,53 @@
+.form-box-signUp {
+  background-color: #ffffff;
+  width: 27.5%;
+  height: 700px; 
+  margin: 70px 240px;
+  float: right;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+}
+
+.form-box-signUp .form-control{
+  height: 40px;
+  font-size: 16px;
+}
+
+.btn-close{
+  font-size: 18px; 
+  float: right;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.form-box-signUp .btn-sign {
+  height: 40px;
+}
+
+
+.input-group-text {
+  background-color: inherit;
+  border: 0px;
+}
+
+.line {
+  width: 90%;
+  height: 1px;
+  background-color: #858282;
+  opacity: 50%;
+  margin: 15px 0 20px 0;
+}
+
+#signUp-line {
+  margin: 5px 0 10px 0;
+}
+
+
+.form-field {
+  margin: 8px 0;
+}
+
+
+.preview-title{
+  margin: 0;
+}
