@@ -3,15 +3,49 @@ import profilePhoto from "../../../signUp/profilePhotoField/defaultProfilePhoto.
 import PostAdditionals from './PostAdditionals';
 import {React, useState} from 'react';
 
-function CreatePostWindow({userData}){
+
+function CreatePostWindow({userData, postsList, setPostsList}){
     const [postContent, setPostContent] = useState('');
     const [isPostDisabled, setIsPostDisabled] = useState(true);
+    const [showPhotoInput, setShowPhotoInput] = useState(false);
+
+    const addNewPost = () => {
+        const post = {
+              "user_firstName" : userData.FirstName,
+              "user_lastName" : userData.LastName,
+              "user_photo" : userData.ProfilePhoto,
+              "postBody" : postContent,
+              "postPhoto" : preview,
+              "likesNumber" : 0,
+              "commantsNumber" : 0,
+              "publication_date" : "now"
+        }
+        setPostsList([post, ...postsList])
+        setPostContent("");
+        setPreview(null);
+      }
 
     const handlePostContentChange = (event) => {
         const content = event.target.value;
         setPostContent(content);
         // Enable or disable the post button based on whether content is present
         setIsPostDisabled(content.trim() === '');
+    };
+
+    const [preview, setPreview] = useState();
+
+    const handleFileChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setPreview(reader.result);
+          
+            };
+            reader.readAsDataURL(file);
+        } else {
+            setPreview(null);
+        }
     };
 
     return(
@@ -30,15 +64,36 @@ function CreatePostWindow({userData}){
                         </p>
                     </div>
                     <form>
-                        <textarea className="form-control mt-3" id="postContent" placeholder={`What's on your mind, ${userData.FirstName}?`} onChange={handlePostContentChange}></textarea>
+                        <textarea className="form-control mt-3" id="postContent" value ={postContent} placeholder={`What's on your mind, ${userData.FirstName}?`} onChange={handlePostContentChange}></textarea>
                     </form> 
+                    
                     <div className='card mt-3 post-additionals'>
+                    {showPhotoInput && (
+                        <div className="justify-content-between">
+                            <input
+                                name="PostPhoto"
+                                className="form-control upload-photo"
+                                type="file"
+                                value={''}
+                                id="postPhoto"
+                                onChange={handleFileChange}/>
+                        </div>
+                    )}
+                    {preview&&(
+                        <div className="col-md-6 mt-2">
+                            <div className="preview-window">
+                                <p className="preview-title">Preview:</p>
+                                    <img src={preview} alt="Preview" className="preview-image" style={{ maxWidth: '100%', maxHeight: '100px' }}/>
+                                
+                            </div>
+                        </div>
+                     )}
                         <div className='row card-body p-2'>
                             <div className="col d-flex align-items-center">
                                 Add to your post
                             </div>
                             <div className="col-auto d-flex align-items-center">
-                                <PostAdditionals iconClass={"btn bi bi-images post-option add"} text={"Photo/video"} id={"photo"}/>
+                                <PostAdditionals iconClass={"btn bi bi-images post-option add"} text={"Photo/video"} id={"photo"} onClick={() => setShowPhotoInput(!showPhotoInput)}/>
                                 <PostAdditionals iconClass={"btn bi bi-person-fill-add add"} text={"Tag people"} id={"people"}/>
                                 <PostAdditionals iconClass={"btn bi bi-emoji-laughing post-option add"} text={"Feeling/activity"} id={"emoji"}/>
                                 <PostAdditionals iconClass={"btn bi bi-geo-alt-fill add"} text={"Check in"} id={"location"}/>
@@ -48,7 +103,7 @@ function CreatePostWindow({userData}){
                     </div>
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <button class="btn btn-primary w-100 new-post-btn" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" disabled={isPostDisabled}>Post</button>
+                    <button class="btn btn-primary w-100 new-post-btn" data-bs-dismiss="modal" onClick={addNewPost} disabled={isPostDisabled}>Post</button>
                 </div>
             </div>
         </div>

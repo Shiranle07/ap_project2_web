@@ -1,9 +1,101 @@
 [
     {
-        "id" : 1,
-        "author" : "Monica Geller-Bing",
-        "post_text" : "Hey there, I'm using Fakebook",
-        "publication_date" : "2024-02-12"
+        "user_firstName" : "Monica",
+        "user_lastName" : "Geller-Bing",
+        "user_photo" : null,
+        "postBody" : "I'm always the hostes!",
+        "postPhoto" : null,
+        "likesNumber" : 100,
+        "commantsNumber" : "30",
+        "publication_date" : "3 days ago"
+    },
+
+    {
+        "user_firstName" : "Rachel Green",
+        "user_lastName" : "Geller-Bing",
+        "user_photo" : null,
+        "postBody" : "Shoping with my girls!! :)",
+        "postPhoto" : null,
+        "likesNumber" : 44,
+        "commantsNumber" : "30",
+        "publication_date" : "3 days ago"
+    },
+
+    {
+        "user_firstName" : "Ross",
+        "user_lastName" : "Geller",
+        "user_photo" : null,
+        "postBody" : "WE WERE ON A BREAK",
+        "postPhoto" : null,
+        "likesNumber" : 12,
+        "commantsNumber" : "30",
+        "publication_date" : "3 days ago"
+    },
+
+    {
+        "user_firstName" : "Monica",
+        "user_lastName" : "Geller-Bing",
+        "user_photo" : null,
+        "postBody" : "Hey there, I'm using Fakebook",
+        "postPhoto" : null,
+        "likesNumber" : 2,
+        "commantsNumber" : "30",
+        "publication_date" : "3 days ago"
+    },
+
+    {
+        "user_firstName" : "Monica",
+        "user_lastName" : "Geller-Bing",
+        "user_photo" : null,
+        "postBody" : "Hey there, I'm using Fakebook",
+        "postPhoto" : null,
+        "likesNumber" : 48,
+        "commantsNumber" : "30",
+        "publication_date" : "3 days ago"
+    },
+
+    {
+        "user_firstName" : "Monica",
+        "user_lastName" : "Geller-Bing",
+        "user_photo" : null,
+        "postBody" : "Hey there, I'm using Fakebook",
+        "postPhoto" : null,
+        "likesNumber" : 13,
+        "commantsNumber" : "30",
+        "publication_date" : "3 days ago"
+    },
+
+    {
+        "user_firstName" : "Monica",
+        "user_lastName" : "Geller-Bing",
+        "user_photo" : null,
+        "postBody" : "Hey there, I'm using Fakebook",
+        "postPhoto" : null,
+        "likesNumber" : 98,
+        "commantsNumber" : "30",
+        "publication_date" : "3 days ago"
+    },
+
+    {
+        "user_firstName" : "Monica",
+        "user_lastName" : "Geller-Bing",
+        "user_photo" : null,
+        "postBody" : "Hey there, I'm using Fakebook",
+        "postPhoto" : null,
+        "likesNumber" : 1,
+        "commantsNumber" : "30",
+        "publication_date" : "3 days ago"
+    },
+
+    {
+        "user_firstName" : "Monica",
+        "user_lastName" : "Geller-Bing",
+        "user_photo" : null,
+        "postBody" : "Hey there, I'm using Fakebook",
+        "postPhoto" : null,
+        "likesNumber" : 66,
+        "commantsNumber" : "30",
+        "publication_date" : "3 days ago"
     }
     
 ]
