@@ -8,9 +8,11 @@ function CreatePostWindow({userData, postsList, setPostsList}){
     const [postContent, setPostContent] = useState('');
     const [isPostDisabled, setIsPostDisabled] = useState(true);
     const [showPhotoInput, setShowPhotoInput] = useState(false);
-
+    var i = 10
     const addNewPost = () => {
+        i+=1
         const post = {
+              "id" : i,
               "user_firstName" : userData.FirstName,
               "user_lastName" : userData.LastName,
               "user_photo" : userData.ProfilePhoto,
@@ -49,7 +51,7 @@ function CreatePostWindow({userData, postsList, setPostsList}){
     };
 
     return(
-        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" tabindex="-1">
+        <div class="modal fade postModal" id="exampleModalToggle" aria-hidden="true" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -83,8 +85,7 @@ function CreatePostWindow({userData, postsList, setPostsList}){
                         <div className="col-md-6 mt-2">
                             <div className="preview-window">
                                 <p className="preview-title">Preview:</p>
-                                    <img src={preview} alt="Preview" className="preview-image" style={{ maxWidth: '100%', maxHeight: '100px' }}/>
-                                
+                                    <img src={preview} alt="Preview" className="preview-image" style={{ maxWidth: '100%', maxHeight: '200px' }}/>
                             </div>
                         </div>
                      )}
