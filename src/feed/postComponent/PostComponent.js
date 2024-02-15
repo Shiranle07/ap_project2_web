@@ -1,6 +1,7 @@
 import profilePhoto from "../../signUp/profilePhotoField/defaultProfilePhoto.jpg";
 import DeletePostModal from "./DeletePostModal";
 import ShareOption from './ShareOption';
+import EditPostWindow from "./EditPostWindow";
 
 
 function PostComponent({post_id, user_firstName, user_lastName, user_photo, postBody, postPhoto, likesNumber, commentsNumber, publication_date, isLiked, setIsLiked, onDeletePost, onEditPost }){
@@ -8,22 +9,17 @@ function PostComponent({post_id, user_firstName, user_lastName, user_photo, post
         setIsLiked(!isLiked);
     };
 
-
-    const handleEditClick = () => {
-        // Call onEditPost with the post_id
-        onEditPost(post_id);
-    };
-
     return(
         <div>
         <div className="editAndDelete">
+        <button className="btn" data-bs-toggle="modal" data-bs-target={`#editPost-${post_id}`}>
+            <i class="bi bi-pencil"></i>
+            </button>
+            <EditPostWindow post_id={post_id} user_firstName={user_firstName} user_lastName={user_lastName} user_photo={user_photo} postBody={postBody} postPhoto={postPhoto} onEditPost={onEditPost}/>
         <button className="btn" data-bs-toggle="modal" data-bs-target="#confirmDelete">
             <i class="bi bi-trash3"></i>
             </button>
                 <DeletePostModal onDeletePost={onDeletePost} post_id={post_id}/>
-            <button className="btn" onClick={handleEditClick}>
-            <i class="bi bi-pencil"></i>
-            </button>
         </div>
         <div class="d-flex align-items-center">
             <img src={user_photo ? user_photo : profilePhoto} alt="profile" width="40" height="40" class="d-inline-block align-text-center profile-photo mr-2" id="display-user"></img>

@@ -21,12 +21,26 @@ function Feed({ userData }) {
 
     const onDeletePost = (postId) => {
         // Filter out the post with the given postId
-        const updatedPosts = postsList.filter(post => post.post_id !== postId);
+        const updatedPosts = postsList.filter(post => post.post_id != postId);
         setPostsList(updatedPosts);
     };
 
-    const onEditPost = (postId) => {
-        // Logic to handle editing the post with the given postId
+    const onEditPost = (postId, newPostContent, newPostPhoto) => {
+        // Find the index of the post in the posts array using its ID
+        const postIndex = postsList.findIndex(post => post.post_id === postId);
+        
+        if (postIndex !== -1) {
+            // Create a new array with the updated post at the correct index
+            const updatedPosts = [...postsList];
+            updatedPosts[postIndex] = {
+                ...updatedPosts[postIndex],
+                postBody: newPostContent,
+                postPhoto: newPostPhoto
+            };  
+
+            // Update the state with the new array of posts
+            setPostsList(updatedPosts);
+        }
     };
 
     // if (!userData.IsLogIn) {

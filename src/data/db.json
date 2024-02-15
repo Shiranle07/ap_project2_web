@@ -9,30 +9,26 @@
         "likesNumber": 85,
         "commentsNumber": "25",
         "publication_date": "1 day ago",
-        "comments" : [{
-            "commenter_firstName" : "Monica",
-            "commenter_lastName" : "Geller",
-            "commenter_photo" : null,
-            "commentBody" : "Make the presents!"
-        },
-        {
-            "commenter_firstName" : "Monica",
-            "commenter_lastName" : "Geller",
-            "commenter_photo" : null,
-            "commentBody" : "Make the presents!"
-        },
-        {
-            "commenter_firstName" : "Monica",
-            "commenter_lastName" : "Geller",
-            "commenter_photo" : null,
-            "commentBody" : "Make the presents!"
-        },
-        {
-            "commenter_firstName" : "Monica",
-            "commenter_lastName" : "Geller",
-            "commenter_photo" : null,
-            "commentBody" : "Make the presents!"
-        }]
+        "comments": [
+            {
+                "commenter_firstName": "Ross",
+                "commenter_lastName": "Geller",
+                "commenter_photo": null,
+                "commentBody": "Could you *be* any funnier, Chandler?"
+            },
+            {
+                "commenter_firstName": "Phoebe",
+                "commenter_lastName": "Buffay",
+                "commenter_photo": null,
+                "commentBody": "Love your sarcasm, Chandler!"
+            },
+            {
+                "commenter_firstName": "Rachel",
+                "commenter_lastName": "Green",
+                "commenter_photo": null,
+                "commentBody": "Classic Chandler!"
+            }
+        ]
     },
     {
         "post_id": 2,
@@ -44,12 +40,26 @@
         "likesNumber": 150,
         "commentsNumber": "40",
         "publication_date": "2 days ago",
-        "comments" : [{
-            "commenter_firstName" : "Monica",
-            "commenter_lastName" : "Geller",
-            "commenter_photo" : null,
-            "commentBody" : "Make the presents!"
-        }]
+        "comments": [
+            {
+                "commenter_firstName": "Monica",
+                "commenter_lastName": "Geller",
+                "commenter_photo": null,
+                "commentBody": "Hey Joey, still using that line?"
+            },
+            {
+                "commenter_firstName": "Chandler",
+                "commenter_lastName": "Bing",
+                "commenter_photo": null,
+                "commentBody": "Smooth as always, Joey!"
+            },
+            {
+                "commenter_firstName": "Ross",
+                "commenter_lastName": "Geller",
+                "commenter_photo": null,
+                "commentBody": "Joey, you're a legend!"
+            }
+        ]
     },
     {
         "post_id": 3,
@@ -61,12 +71,20 @@
         "likesNumber": 203,
         "commentsNumber": "35",
         "publication_date": "5 days ago",
-        "comments" : [{
-            "commenter_firstName" : "Monica",
-            "commenter_lastName" : "Geller",
-            "commenter_photo" : null,
-            "commentBody" : "Make the presents!"
-        }]
+        "comments": [
+            {
+                "commenter_firstName": "Ross",
+                "commenter_lastName": "Geller",
+                "commenter_photo": null,
+                "commentBody": "Phoebe, you're the best!"
+            },
+            {
+                "commenter_firstName": "Monica",
+                "commenter_lastName": "Geller",
+                "commenter_photo": null,
+                "commentBody": "Love this song!"
+            }
+        ]
     },
     {
         "post_id": 4,
@@ -78,12 +96,20 @@
         "likesNumber": 70,
         "commentsNumber": "20",
         "publication_date": "2 days ago",
-        "comments" : [{
-            "commenter_firstName" : "Monica",
-            "commenter_lastName" : "Geller",
-            "commenter_photo" : null,
-            "commentBody" : "Make the presents!"
-        }]
+        "comments": [
+            {
+                "commenter_firstName": "Ross",
+                "commenter_lastName": "Geller",
+                "commenter_photo": null,
+                "commentBody": "Looking great, Rachel!"
+            },
+            {
+                "commenter_firstName": "Monica",
+                "commenter_lastName": "Geller",
+                "commenter_photo": null,
+                "commentBody": "Stunning as always!"
+            }
+        ]
     },
     {
         "post_id": 5,
@@ -95,12 +121,26 @@
         "likesNumber": 35,
         "commentsNumber": "15",
         "publication_date": "4 days ago",
-        "comments" : [{
-            "commenter_firstName" : "Monica",
-            "commenter_lastName" : "Geller",
-            "commenter_photo" : null,
-            "commentBody" : "Make the presents!"
-        }]
+        "comments": [
+            {
+                "commenter_firstName": "Ross",
+                "commenter_lastName": "Geller",
+                "commenter_photo": null,
+                "commentBody": "Ross Geller, the paleontologist!"
+            },
+            {
+                "commenter_firstName": "Monica",
+                "commenter_lastName": "Geller",
+                "commenter_photo": null,
+                "commentBody": "Wow, that sounds exciting!"
+            },
+            {
+                "commenter_firstName": "Chandler",
+                "commenter_lastName": "Bing",
+                "commenter_photo": null,
+                "commentBody": "You never cease to amaze, Ross!"
+            }
+        ]
     },
     {
         "post_id": 6,
@@ -112,12 +152,20 @@
         "likesNumber": 120,
         "commentsNumber": "30",
         "publication_date": "3 days ago",
-        "comments" : [{
-            "commenter_firstName" : "Monica",
-            "commenter_lastName" : "Geller",
-            "commenter_photo" : null,
-            "commentBody" : "Make the presents!"
-        }]
+        "comments": [
+            {
+                "commenter_firstName": "Ross",
+                "commenter_lastName": "Geller",
+                "commenter_photo": null,
+                "commentBody": "Janice, you're hilarious!"
+            },
+            {
+                "commenter_firstName": "Monica",
+                "commenter_lastName": "Geller",
+                "commenter_photo": null,
+                "commentBody": "Oh my god, indeed!"
+            }
+        ]
     },
     {
         "post_id": 7,
@@ -129,12 +177,20 @@
         "likesNumber": 90,
         "commentsNumber": "20",
         "publication_date": "2 days ago",
-        "comments" : [{
-            "commenter_firstName" : "Monica",
-            "commenter_lastName" : "Geller",
-            "commenter_photo" : null,
-            "commentBody" : "Make the presents!"
-        }]
+        "comments": [
+            {
+                "commenter_firstName": "Ross",
+                "commenter_lastName": "Geller",
+                "commenter_photo": null,
+                "commentBody": "Monica, you're the cleanest!"
+            },
+            {
+                "commenter_firstName": "Rachel",
+                "commenter_lastName": "Green",
+                "commenter_photo": null,
+                "commentBody": "You're a neat freak, Monica!"
+            }
+        ]
     },
     {
         "post_id": 8,
@@ -146,12 +202,20 @@
         "likesNumber": 55,
         "commentsNumber": "10",
         "publication_date": "1 day ago",
-        "comments" : [{
-            "commenter_firstName" : "Monica",
-            "commenter_lastName" : "Geller",
-            "commenter_photo" : null,
-            "commentBody" : "Make the presents!"
-        }]
+        "comments": [
+            {
+                "commenter_firstName": "Ross",
+                "commenter_lastName": "Geller",
+                "commenter_photo": null,
+                "commentBody": "Love Central Perk!"
+            },
+            {
+                "commenter_firstName": "Monica",
+                "commenter_lastName": "Geller",
+                "commenter_photo": null,
+                "commentBody": "Best coffee in town!"
+            }
+        ]
     },
     {
         "post_id": 9,
@@ -163,12 +227,20 @@
         "likesNumber": 42,
         "commentsNumber": "15",
         "publication_date": "3 days ago",
-        "comments" : [{
-            "commenter_firstName" : "Monica",
-            "commenter_lastName" : "Geller",
-            "commenter_photo" : null,
-            "commentBody" : "Make the presents!"
-        }]
+        "comments": [
+            {
+                "commenter_firstName": "Ross",
+                "commenter_lastName": "Geller",
+                "commenter_photo": null,
+                "commentBody": "Enjoy, Rachel!\n I mean.. Emily! Enjoy, Emily!"
+            },
+            {
+                "commenter_firstName": "Monica",
+                "commenter_lastName": "Geller",
+                "commenter_photo": null,
+                "commentBody": "Wish I was there!"
+            }
+        ]
     },
     {
         "post_id": 10,
@@ -180,11 +252,19 @@
         "likesNumber": 28,
         "commentsNumber": "8",
         "publication_date": "2 days ago",
-        "comments" : [{
-            "commenter_firstName" : "Monica",
-            "commenter_lastName" : "Geller",
-            "commenter_photo" : null,
-            "commentBody" : "Make the presents!"
-        }]
+        "comments": [
+            {
+                "commenter_firstName": "Ross",
+                "commenter_lastName": "Geller",
+                "commenter_photo": null,
+                "commentBody": "Best of luck, Mike!"
+            },
+            {
+                "commenter_firstName": "Monica",
+                "commenter_lastName": "Geller",
+                "commenter_photo": null,
+                "commentBody": "Exciting times ahead!"
+            }
+        ]
     }
 ]
