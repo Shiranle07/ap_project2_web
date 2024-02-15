@@ -15,6 +15,7 @@ import PostCard from "./postCard/PostCard";
 
 
 
+
 function Feed({ userData }) {
     const [postsList, setPostsList] = useState(posts);
 
@@ -60,7 +61,6 @@ function Feed({ userData }) {
                 </div>
             </div>
             
-
             <CreatePostWindow userData={userData} postsList={postsList} setPostsList={setPostsList}/>
             </div>
     );
