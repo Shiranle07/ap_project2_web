@@ -28,12 +28,12 @@
 }
 
 
-.ms-2 {
-    margin-left: 5px;
-}
-
 .share-text {
     color: black;
+}
+
+.dark-mode .share-text{
+    color: #f1f1f1;
 }
 
 .dropdown-toggle {
@@ -45,5 +45,20 @@
 
 }
 
+.comment-card {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    width: fit-content;
+    padding: 5px;
+}
 
+#comment-input{
+    width: 600px;
+    margin: 0;
 
+}
+
+.comment{
+    float: left;
+}
