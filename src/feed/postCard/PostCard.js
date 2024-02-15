@@ -46,22 +46,33 @@ function PostCard({user_firstName, user_lastName, user_photo, postBody, postPhot
                 <a href="#" class="card-link comments-info">{commantsNumber} commants</a>
                 </div>
                 <hr></hr>
-                <div className="btn-row justify-content-between">
+                <div className="btn-row d-flex justify-content-between">
                     <button 
-                        className="btn btn-post-card col-4 align-items-center" onClick={handleLikeClick}>
+                        className="btn btn-post-card align-items-center" onClick={handleLikeClick}>
                         <i className={`text-primary ${isLiked ? "bi bi-hand-thumbs-up-fill" : "bi bi-hand-thumbs-up"}`}></i>
                         <span className={isLiked ? "liked-text" : ""}>Like</span>
-                        
                     </button>
-                    <button class="btn btn-post-card col-4 align-items-center">
+                    <button class="btn btn-post-card align-items-center">
                         <i class="bi bi-chat text-primary"></i>
                         Comment
                     </button>
-                    <button class="btn btn-post-card col-4 align-items-center">
-                        <i class="bi bi-share text-primary"></i>
-                        Share
-                    </button>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle bg-transparent p-2" type="button" id="shareDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-share text-primary"></i>
+                            <span class="ms-2 share-text"> Share </span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="shareDropdown" style={{ maxHeight: '200px', overflowY: 'auto' }}>
+                            <li><a class="dropdown-item" href="#">Share to Feed</a></li>
+                            <li><a class="dropdown-item" href="#">In a group</a></li>
+                            <li><a class="dropdown-item" href="#">On a friend's profile</a></li>
+                            <li><a class="dropdown-item" href="#">Message</a></li>
+                            <li><a class="dropdown-item" href="#">WhatsApp</a></li>
+                            <li><a class="dropdown-item" href="#">Fakegram</a></li>
+                            <li><a class="dropdown-item" href="#">Share External</a></li>
+                        </ul>
+                    </div>
                 </div>
+
                 </div>
             </div>
         </div>
