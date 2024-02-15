@@ -71,25 +71,25 @@ function CreatePostWindow({userData, postsList, setPostsList}){
                     </form> 
                     
                     <div className='card mt-3 post-additionals'>
-                    {showPhotoInput && (
-                        <div className="justify-content-between">
-                            <input
-                                name="PostPhoto"
-                                className="form-control upload-photo"
-                                type="file"
-                                value={''}
-                                id="postPhoto"
-                                onChange={handleFileChange}/>
-                        </div>
-                    )}
-                    {preview&&(
-                        <div className="col-md-6 mt-2">
-                            <div className="preview-window">
-                                <p className="preview-title">Preview:</p>
-                                    <img src={preview} alt="Preview" className="preview-image" style={{ maxWidth: '100%', maxHeight: '200px' }}/>
+                        {showPhotoInput && (
+                            <div className="justify-content-between">
+                                <input
+                                    name="PostPhoto"
+                                    className="form-control upload-photo"
+                                    type="file"
+                                    value={''}
+                                    id="postPhoto"
+                                    onChange={handleFileChange}/>
                             </div>
-                        </div>
-                     )}
+                        )}
+                        {preview&&(
+                            <div className="col-md-6 mt-2">
+                                <div className="preview-window">
+                                    <p className="preview-title">Preview:</p>
+                                        <img src={preview} alt="Preview" className="preview-image" style={{ maxWidth: '100%', maxHeight: '200px' }}/>
+                                </div>
+                            </div>
+                        )}
                         <div className='row card-body p-2'>
                             <div className="col d-flex align-items-center">
                                 Add to your post

@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import profilePhoto from "../../signUp/profilePhotoField/defaultProfilePhoto.jpg";
+import PostAdditionals from '../createPost/createPostWindow/PostAdditionals';
 
 
 function EditPostWindow({post_id, user_firstName, user_lastName, user_photo, postBody, postPhoto, onEditPost }) {
     const [postContent, setPostContent] = useState(postBody);
     const [preview, setPreview] = useState(postPhoto || null);
+    const [showPhotoInput, setShowPhotoInput] = useState(false);
+
 
         const handleEditClick = () => {
         // Call onEditPost with the post_id
@@ -52,14 +55,39 @@ function EditPostWindow({post_id, user_firstName, user_lastName, user_photo, pos
                         <form>
                             <textarea className="form-control mt-3" id="postContent" value={postContent} onChange={handlePostContentChange}></textarea>
                         </form>
-                        {preview && (
+                        <div className='card mt-3 post-additionals'>
+                        {showPhotoInput && (
+                            <div className="justify-content-between">
+                                <input
+                                    name="PostPhoto"
+                                    className="form-control upload-photo"
+                                    type="file"
+                                    value={''}
+                                    id="postPhoto"
+                                    onChange={handleFileChange}/>
+                            </div>
+                        )}
+                        {preview&&(
                             <div className="col-md-6 mt-2">
                                 <div className="preview-window">
                                     <p className="preview-title">Preview:</p>
-                                    <img src={preview} alt="Preview" className="preview-image" style={{ maxWidth: '100%', maxHeight: '200px' }} />
+                                        <img src={preview} alt="Preview" className="preview-image" style={{ maxWidth: '100%', maxHeight: '200px' }}/>
                                 </div>
                             </div>
                         )}
+                        <div className='row card-body p-2'>
+                            <div className="col d-flex align-items-center">
+                                Add to your post
+                            </div>
+                            <div className="col-auto d-flex align-items-center">
+                                <PostAdditionals iconClass={"btn bi bi-images post-option add"} text={"Photo/video"} id={"photo"} onClick={() => setShowPhotoInput(!showPhotoInput)}/>
+                                <PostAdditionals iconClass={"btn bi bi-person-fill-add add"} text={"Tag people"} id={"people"}/>
+                                <PostAdditionals iconClass={"btn bi bi-emoji-laughing post-option add"} text={"Feeling/activity"} id={"emoji"}/>
+                                <PostAdditionals iconClass={"btn bi bi-geo-alt-fill add"} text={"Check in"} id={"location"}/>
+                                <PostAdditionals iconClass={"btn bi bi-filetype-gif add"} text={"GIF"} id={"gif"}/>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                     <div className="modal-footer justify-content-center">
                         <button className="btn btn-primary w-100 new-post-btn" data-bs-dismiss="modal" onClick={() => handleEditClick()}>Save Changes</button>
