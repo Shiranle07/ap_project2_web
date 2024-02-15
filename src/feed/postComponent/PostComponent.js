@@ -50,12 +50,10 @@ function PostComponent({post_id, user_firstName, user_lastName, user_photo, post
                 <i className={`text-primary ${isLiked ? "bi bi-hand-thumbs-up-fill" : "bi bi-hand-thumbs-up"}`}></i>
                 <span className={isLiked ? "liked-text" : ""}>Like</span>
             </button>
-            <button type="button" class="btn btn-post-card align-items-center transparent-bg" onclick="openPostPage()" data-bs-toggle="modal" data-bs-target={`#exampleModalToggle-post-${post_id}`}>
+            <button type="button" class="btn btn-post-card align-items-center transparent-bg" data-bs-toggle="modal" data-bs-target={`#exampleModalToggle-post-${post_id}`}>
                 <i class="bi bi-chat text-primary"></i>
                 Comment
             </button>
-
-
             <div class="dropup">
                 <button class="btn btn-secondary dropdown-toggle bg-transparent p-2" type="button" id="shareDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi bi-share text-primary"></i>

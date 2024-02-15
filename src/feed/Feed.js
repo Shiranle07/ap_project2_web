@@ -12,17 +12,20 @@ import LoginLogo from '../loginPage/loginLogo/LoginLogo';
 import posts from "../data/db.json"
 import PostCard from "./postCard/PostCard";
 
-
-
-
-
 function Feed({ userData }) {
     const [postsList, setPostsList] = useState(posts);
 
     const onDeletePost = (postId) => {
         // Filter out the post with the given postId
-        const updatedPosts = postsList.filter(post => post.post_id != postId);
-        setPostsList(updatedPosts);
+        const updatedPosts = postsList.filter(post => post.post_id !== postId);
+    
+        // If you need to re-index the remaining posts, you can do it here
+        const reindexedPosts = updatedPosts.map((post, index) => ({
+            ...post,
+            post_id: index + 1 // Assuming post IDs start from 1
+        }));
+    
+        setPostsList(reindexedPosts);
     };
 
     const onEditPost = (postId, newPostContent, newPostPhoto) => {
@@ -74,7 +77,7 @@ function Feed({ userData }) {
                         <div className='post-list'>
                             {
                                 postsList.map((post, index) => 
-                                    <PostCard key={index} {...post} onDeletePost={onDeletePost} onEditPost={onEditPost}/>
+                                    <PostCard key={index} {...post} onDeletePost={onDeletePost} onEditPost={onEditPost} userData={userData}/>
                                 )
                             }
                         </div>

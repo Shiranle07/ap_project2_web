@@ -3,7 +3,7 @@
         "post_id": 1,
         "user_firstName": "Chandler",
         "user_lastName": "Bing",
-        "user_photo": null,
+        "user_photo": "chandler.jpg",
         "postBody": "Could I *be* any more sarcastic?",
         "postPhoto": null,
         "likesNumber": 85,
@@ -13,7 +13,7 @@
             {
                 "commenter_firstName": "Ross",
                 "commenter_lastName": "Geller",
-                "commenter_photo": null,
+                "commenter_photo": "dinosaur.jpg",
                 "commentBody": "Could you *be* any funnier, Chandler?"
             },
             {
@@ -34,7 +34,7 @@
         "post_id": 2,
         "user_firstName": "Joey",
         "user_lastName": "Tribbiani",
-        "user_photo": null,
+        "user_photo": "pizza.jpg",
         "postBody": "How you doin'?",
         "postPhoto": null,
         "likesNumber": 150,
@@ -44,19 +44,19 @@
             {
                 "commenter_firstName": "Monica",
                 "commenter_lastName": "Geller",
-                "commenter_photo": null,
+                "commenter_photo": "clean.png",
                 "commentBody": "Hey Joey, still using that line?"
             },
             {
                 "commenter_firstName": "Chandler",
                 "commenter_lastName": "Bing",
-                "commenter_photo": null,
+                "commenter_photo": "chandler.jpg",
                 "commentBody": "Smooth as always, Joey!"
             },
             {
                 "commenter_firstName": "Ross",
                 "commenter_lastName": "Geller",
-                "commenter_photo": null,
+                "commenter_photo": "dinosaur.jpg",
                 "commentBody": "Joey, you're a legend!"
             }
         ]
@@ -81,7 +81,7 @@
             {
                 "commenter_firstName": "Monica",
                 "commenter_lastName": "Geller",
-                "commenter_photo": null,
+                "commenter_photo": "clean.png",
                 "commentBody": "Love this song!"
             }
         ]
@@ -106,7 +106,7 @@
             {
                 "commenter_firstName": "Monica",
                 "commenter_lastName": "Geller",
-                "commenter_photo": null,
+                "commenter_photo": "clean.png",
                 "commentBody": "Stunning as always!"
             }
         ]
@@ -115,7 +115,7 @@
         "post_id": 5,
         "user_firstName": "Ross",
         "user_lastName": "Geller",
-        "user_photo": null,
+        "user_photo": "dinosaur.jpg",
         "postBody": "Just finished a dinosaur excavation!",
         "postPhoto": null,
         "likesNumber": 35,
@@ -125,13 +125,13 @@
             {
                 "commenter_firstName": "Ross",
                 "commenter_lastName": "Geller",
-                "commenter_photo": null,
+                "commenter_photo": "dinosaur.jpg",
                 "commentBody": "Ross Geller, the paleontologist!"
             },
             {
                 "commenter_firstName": "Monica",
                 "commenter_lastName": "Geller",
-                "commenter_photo": null,
+                "commenter_photo": "clean.png",
                 "commentBody": "Wow, that sounds exciting!"
             },
             {
@@ -156,13 +156,13 @@
             {
                 "commenter_firstName": "Ross",
                 "commenter_lastName": "Geller",
-                "commenter_photo": null,
+                "commenter_photo": "dinosaur.jpg",
                 "commentBody": "Janice, you're hilarious!"
             },
             {
                 "commenter_firstName": "Monica",
                 "commenter_lastName": "Geller",
-                "commenter_photo": null,
+                "commenter_photo": "clean.png",
                 "commentBody": "Oh my god, indeed!"
             }
         ]
@@ -171,7 +171,7 @@
         "post_id": 7,
         "user_firstName": "Monica",
         "user_lastName": "Geller",
-        "user_photo": null,
+        "user_photo": "clean.png",
         "postBody": "Cleaned the apartment top to bottom! #MonicaClean",
         "postPhoto": null,
         "likesNumber": 90,
@@ -181,7 +181,7 @@
             {
                 "commenter_firstName": "Ross",
                 "commenter_lastName": "Geller",
-                "commenter_photo": null,
+                "commenter_photo": "dinosaur.jpg",
                 "commentBody": "Monica, you're the cleanest!"
             },
             {
@@ -198,7 +198,7 @@
         "user_lastName": null,
         "user_photo": null,
         "postBody": "Another day at Central Perk ☕",
-        "postPhoto": null,
+        "postPhoto": "coffee.jpg",
         "likesNumber": 55,
         "commentsNumber": "10",
         "publication_date": "1 day ago",
@@ -206,13 +206,13 @@
             {
                 "commenter_firstName": "Ross",
                 "commenter_lastName": "Geller",
-                "commenter_photo": null,
+                "commenter_photo": "dinosaur.jpg",
                 "commentBody": "Love Central Perk!"
             },
             {
                 "commenter_firstName": "Monica",
                 "commenter_lastName": "Geller",
-                "commenter_photo": null,
+                "commenter_photo": "clean.png",
                 "commentBody": "Best coffee in town!"
             }
         ]
@@ -221,9 +221,9 @@
         "post_id": 9,
         "user_firstName": "Emily",
         "user_lastName": "Waltham",
-        "user_photo": null,
+        "user_photo": "phone-booth.jpg",
         "postBody": "Enjoying a lovely day in London!",
-        "postPhoto": null,
+        "postPhoto": "big-ben.jpg",
         "likesNumber": 42,
         "commentsNumber": "15",
         "publication_date": "3 days ago",
@@ -231,13 +231,13 @@
             {
                 "commenter_firstName": "Ross",
                 "commenter_lastName": "Geller",
-                "commenter_photo": null,
+                "commenter_photo": "dinosaur.jpg",
                 "commentBody": "Enjoy, Rachel!\n I mean.. Emily! Enjoy, Emily!"
             },
             {
                 "commenter_firstName": "Monica",
                 "commenter_lastName": "Geller",
-                "commenter_photo": null,
+                "commenter_photo": "clean.png",
                 "commentBody": "Wish I was there!"
             }
         ]
@@ -256,13 +256,13 @@
             {
                 "commenter_firstName": "Ross",
                 "commenter_lastName": "Geller",
-                "commenter_photo": null,
+                "commenter_photo": "dinosaur.jpg",
                 "commentBody": "Best of luck, Mike!"
             },
             {
                 "commenter_firstName": "Monica",
                 "commenter_lastName": "Geller",
-                "commenter_photo": null,
+                "commenter_photo": "clean.png",
                 "commentBody": "Exciting times ahead!"
             }
         ]

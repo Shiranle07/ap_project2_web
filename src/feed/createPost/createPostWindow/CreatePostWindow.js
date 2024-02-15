@@ -14,7 +14,7 @@ function CreatePostWindow({userData, postsList, setPostsList}){
         countId.current = countId.current + 1;
         console.log(countId.current);
         const post = {
-              "id" : countId.current,
+              "post_id" : countId.current,
               "user_firstName" : userData.FirstName,
               "user_lastName" : userData.LastName,
               "user_photo" : userData.ProfilePhoto,

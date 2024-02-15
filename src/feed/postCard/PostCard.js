@@ -8,7 +8,7 @@ import Post from '../../post/Post.js';
 import PostComponent from '../postComponent/PostComponent.js';
 
 
-function PostCard({ post_id, user_firstName, user_lastName, user_photo, postBody, postPhoto, likesNumber, commentsNumber, publication_date, comments, onDeletePost, onEditPost }) {
+function PostCard({ post_id, user_firstName, user_lastName, user_photo, postBody, postPhoto, likesNumber, commentsNumber, publication_date, comments, onDeletePost, onEditPost, userData}) {
     const [isLiked, setIsLiked] = useState(false); // State to track if button is liked
 
     useEffect(() => {
@@ -25,7 +25,7 @@ function PostCard({ post_id, user_firstName, user_lastName, user_photo, postBody
                 </div>
             </div>
 
-            <Post post_id={post_id} user_firstName={user_firstName} user_lastName={user_lastName} user_photo={user_photo} postBody={postBody} postPhoto={postPhoto} likesNumber={likesNumber} commentsNumber={commentsNumber} publication_date={publication_date} comments={comments} isLiked={isLiked} setIsLiked={setIsLiked} onDeletePost={onDeletePost} onEditPost={onEditPost}/>
+            <Post post_id={post_id} user_firstName={user_firstName} user_lastName={user_lastName} user_photo={user_photo} postBody={postBody} postPhoto={postPhoto} likesNumber={likesNumber} commentsNumber={commentsNumber} publication_date={publication_date} comments={comments} isLiked={isLiked} setIsLiked={setIsLiked} onDeletePost={onDeletePost} onEditPost={onEditPost} userData={userData}/>
 
         </div>
         

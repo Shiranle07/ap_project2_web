@@ -5,13 +5,31 @@ import CommentCard from './CommentCard';
 import ShareOption from '../feed/postComponent/ShareOption';
 import PostComponent from '../feed/postComponent/PostComponent';
 
-function Post({post_id, user_firstName, user_lastName, user_photo, postBody, postPhoto, likesNumber, commentsNumber, publication_date, comments, isLiked, setIsLiked, onDeletePost, onEditPost}) {
+function Post({post_id, user_firstName, user_lastName, user_photo, postBody, postPhoto, likesNumber, commentsNumber, publication_date, comments, isLiked, setIsLiked, onDeletePost, onEditPost, userData}) {
     const [commentsList, setCommentsList] = useState(comments);
+    const [newComment, setNewComment] = useState("");
 
     useEffect(() => {
         // Update the commentsList state whenever the comments prop changes
         setCommentsList(comments);
     }, [comments]);
+
+    const handleCommentChange = (event) => {
+        setNewComment(event.target.value);
+    };
+
+    const handleAddComment = () => {
+        if (newComment.trim() !== "") {
+            const updatedCommentsList = [...commentsList, {
+                commenter_firstName : userData.FirstName,
+                commenter_lastName : userData.LastName,
+                commenter_photo : userData.ProfilePhoto,
+                commentBody : newComment
+            }];
+            setCommentsList(updatedCommentsList);
+            setNewComment(""); // Clear the comment input field
+        }
+    };
 
 
     return (
@@ -33,8 +51,8 @@ function Post({post_id, user_firstName, user_lastName, user_photo, postBody, pos
                         </div>
                     </div>
                     <div className="modal-footer">
-                        <textarea className="col-11 post-input form-control" placeholder="Write a comment..." aria-label="Write a comment"></textarea>
-                        <button type="button" className="btn btn-primary">Add comment</button>
+                        <textarea className="col-11 post-input form-control" placeholder="Write a comment.." aria-label="Write a comment" value={newComment} onChange={handleCommentChange}> </textarea>
+                        <button type="button" className="btn btn-primary" onClick={handleAddComment}>Add comment</button>
                     </div>
                 </div>
             </div>
