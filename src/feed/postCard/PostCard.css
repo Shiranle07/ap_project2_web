@@ -1,0 +1,60 @@
+.text-primary {
+    margin-right: 5px;
+}
+
+.btn-post-card:hover {
+    background-color: rgba(232, 232, 232, 0.74);
+}
+
+.dark-mode .btn-post-card{
+    color:  rgb(188, 188, 188);
+}
+
+.post-date{
+    float: left;
+    font-size: 12px;
+}
+
+.like-and-comment a{
+    display: flex;
+    align-items: center; /* Align items vertically center if needed */
+}
+
+.dark-mode .like-info{
+    color:  rgb(188, 188, 188);
+}
+
+.liked-text {
+    font-weight:600;
+    color: rgb(38, 91, 249); /* Change the color of the text when liked */
+}
+
+.like-icon{
+    background-color: rgba(45, 75, 226, 0.89);
+    color: white;
+    border-radius: 30px;
+    font-weight: lighter;
+    font-size: 12px;
+    padding: 2px 4px;
+    margin-right: 5px;
+}
+
+
+.like-and-comment {
+    display: flex; /* Make the elements display in a row */
+    justify-content: space-between; /* Add space between elements */
+}
+
+.comments-info {
+    float: right; /* Float comments link to the right */
+    text-decoration: none; /* Remove underline by default */
+    color: gray; /* Inherit text color */
+}
+
+.comments-info:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.editAndDelete {
+    float: right;
+}

@@ -24,3 +24,40 @@ body.dark-mode {
     top: calc(100% + 3px);
 }
 
+#rightMenu{
+    float: right;
+    position: sticky;
+    top: 0;
+}
+
+
+.middle-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px; /* Adjust as needed */
+    margin-bottom: 10px;
+    max-height: calc(100vh - 100px); /* Adjust 100px according to your top navbar height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.post-list {
+    width: 100%;
+    
+}
+
+.left-section {
+    max-height: calc(100vh - 100px); /* Adjust 100px according to your top navbar height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */ 
+}
+
+.right-section {
+    max-height: calc(100vh - 100px); /* Adjust 100px according to your top navbar height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */ 
+}
