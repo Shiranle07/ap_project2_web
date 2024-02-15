@@ -27,8 +27,8 @@
         "user_lastName": "Buffay",
         "user_photo": null,
         "postBody": "Smelly cat, smelly cat, what are they feeding you?",
-        "postPhoto": null,
-        "likesNumber": 200,
+        "postPhoto": "smelly_cat.jpg",
+        "likesNumber": 203,
         "commantsNumber": "35",
         "publication_date": "5 days ago"
     },
