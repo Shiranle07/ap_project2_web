@@ -1,18 +1,20 @@
 import "./CreatePostWindow.css"
 import profilePhoto from "../../../signUp/profilePhotoField/defaultProfilePhoto.jpg";
 import PostAdditionals from './PostAdditionals';
-import {React, useState} from 'react';
+import {React, useRef, useState} from 'react';
 
 
 function CreatePostWindow({userData, postsList, setPostsList}){
     const [postContent, setPostContent] = useState('');
     const [isPostDisabled, setIsPostDisabled] = useState(true);
+    const [preview, setPreview] = useState();
     const [showPhotoInput, setShowPhotoInput] = useState(false);
-    var i = 10
+    const countId = useRef(10);
     const addNewPost = () => {
-        i+=1
+        countId.current = countId.current + 1;
+        console.log(countId.current);
         const post = {
-              "id" : i,
+              "id" : countId.current,
               "user_firstName" : userData.FirstName,
               "user_lastName" : userData.LastName,
               "user_photo" : userData.ProfilePhoto,
@@ -20,7 +22,8 @@ function CreatePostWindow({userData, postsList, setPostsList}){
               "postPhoto" : preview,
               "likesNumber" : 0,
               "commantsNumber" : 0,
-              "publication_date" : "now"
+              "publication_date" : "now",
+              "comments" : []
         }
         setPostsList([post, ...postsList])
         setPostContent("");
@@ -33,8 +36,6 @@ function CreatePostWindow({userData, postsList, setPostsList}){
         // Enable or disable the post button based on whether content is present
         setIsPostDisabled(content.trim() === '');
     };
-
-    const [preview, setPreview] = useState();
 
     const handleFileChange = (e) => {
         const file = e.target.files[0];

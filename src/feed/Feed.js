@@ -19,6 +19,16 @@ import PostCard from "./postCard/PostCard";
 function Feed({ userData }) {
     const [postsList, setPostsList] = useState(posts);
 
+    const onDeletePost = (postId) => {
+        // Filter out the post with the given postId
+        const updatedPosts = postsList.filter(post => post.post_id !== postId);
+        setPostsList(updatedPosts);
+    };
+
+    const onEditPost = (postId) => {
+        // Logic to handle editing the post with the given postId
+    };
+
     // if (!userData.IsLogIn) {
     //     return( 
     //         <div>
@@ -50,7 +60,7 @@ function Feed({ userData }) {
                         <div className='post-list'>
                             {
                                 postsList.map((post, index) => 
-                                    <PostCard key={index} {...post} />
+                                    <PostCard key={index} {...post} onDeletePost={onDeletePost} onEditPost={onEditPost}/>
                                 )
                             }
                         </div>
