@@ -59,6 +59,7 @@ function Feed({ userData }) {
                     </div>
                 </div>
             </div>
+            
 
             <CreatePostWindow userData={userData} postsList={postsList} setPostsList={setPostsList}/>
             </div>

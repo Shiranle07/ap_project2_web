@@ -20,7 +20,7 @@ function TopNavbar({userData}){
                         <span class="input-group-text">
                             <i class="bi bi-search mb-3"></i>
                         </span>
-                        <input class="form-control search-bar" type="search" placeholder="Search Fakebook" aria-label="Search"></input>
+                        <input class="form-control search-bar" type="search" placeholder="Search in Fakebook" aria-label="Search"></input>
                 </form>
                 <ul className='navbar-nav justify-content-center'>
                     <CenterButtons iconClass={"bi bi-house-door-fill"} infoText={"Home"} id="home-button"/>
