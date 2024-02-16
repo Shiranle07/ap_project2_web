@@ -28,18 +28,6 @@
 }
 
 
-.share-text {
-    color: black;
-}
-
-.dark-mode .share-text{
-    color: #f1f1f1;
-}
-
-.dropdown-toggle {
-    border: 0;
-}
-
 .post-page {
     max-width: 600px;
 
@@ -53,10 +41,17 @@
     padding: 5px;
 }
 
+.dark-mode .comment-card {
+    background-color: #3b3b3b;
+}
+
 #comment-input{
     width: 600px;
     margin: 0;
+}
 
+.dark-mode #comment-input::placeholder{
+color: #f1f1f1;
 }
 
 .comment{
@@ -98,4 +93,13 @@
 
 .comment-edit textarea{
     min-width: 300px;
+}
+
+.dark-mode .comment-edit textarea{
+   background-color: #3b3b3b;
+   color: #f1f1f1;
+}
+
+.dark-mode .comment-send{
+    color: #f1f1f1;
 }

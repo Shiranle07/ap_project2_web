@@ -80,8 +80,8 @@ function Post({post_id, user_firstName, user_lastName, user_photo, postBody, pos
                     <div class="comment">
                         <img src={userData.ProfilePhoto ? userData.ProfilePhoto : profilePhoto} alt="profile" width="40" height="40" class="d-inline-block float-left profile-photo" id="display-user"></img>
                     </div>
-                        <textarea className="post-input form-control" placeholder="Write a comment.." aria-label="Write a comment" value={newComment} id="comment-input" onChange={handleCommentChange}> </textarea>
-                        <button type="button" className="btn d-flex inline-block" onClick={handleAddComment}><i class="bi bi-send-fill"></i></button>
+                        <textarea className="post-input form-control" placeholder="Write a comment..." aria-label="Write a comment" value={newComment} id="comment-input" onChange={handleCommentChange}> </textarea>
+                        <button type="button" className="btn d-flex inline-block" onClick={handleAddComment}><i class="bi bi-send-fill comment-send"></i></button>
                     </div>
                 </div>
             </div>

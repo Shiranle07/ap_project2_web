@@ -2,6 +2,7 @@ import profilePhoto from "../../signUp/profilePhotoField/defaultProfilePhoto.jpg
 import DeletePostModal from "./DeletePostModal";
 import ShareOption from './ShareOption';
 import EditPostWindow from "./EditPostWindow";
+import "./PostComponent.css"
 
 
 function PostComponent({post_id, user_firstName, user_lastName, user_photo, postBody, postPhoto, likesNumber, commentsNumber, publication_date, isLiked, setIsLiked, onDeletePost, onEditPost}){
@@ -13,11 +14,11 @@ function PostComponent({post_id, user_firstName, user_lastName, user_photo, post
         <div>
         <div className="editAndDelete">
         <button className="btn" data-bs-toggle="modal" data-bs-target={`#editPost-${post_id}`}>
-            <i class="bi bi-pencil"></i>
+            <i class="bi bi-pencil editAndDelete-icon"></i>
             </button>
             <EditPostWindow post_id={post_id} user_firstName={user_firstName} user_lastName={user_lastName} user_photo={user_photo} postBody={postBody} postPhoto={postPhoto} onEditPost={onEditPost}/>
         <button className="btn" data-bs-toggle="modal" data-bs-target={`#confirmDelete-${post_id}`}>
-            <i class="bi bi-trash3"></i>
+            <i class="bi bi-trash3 editAndDelete-icon"></i>
             </button>
                 <DeletePostModal onDeletePost={onDeletePost} post_id={post_id}/>
         </div>
@@ -27,7 +28,7 @@ function PostComponent({post_id, user_firstName, user_lastName, user_photo, post
                 {user_firstName} {user_lastName}
             </p>
         </div>
-        <p class="card-subtitle mt-1 text-body-secondary post-date">{publication_date}</p>
+        <p class="card-subtitle mt-1 post-date">{publication_date}</p>
         <br></br>
         <p class="card-text pt-2">{postBody}</p>
         {postPhoto && (

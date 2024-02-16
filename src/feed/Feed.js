@@ -90,23 +90,23 @@ function Feed({ userData, postsList, setPostsList}) {
         }
     };
 
-    // if (!userData.IsLogIn) {
-    //     return( 
-    //         <div>
-    //             <div className='form-box col-4 d-flex flex-column align-items-center justify-content-center'>
-    //                 <h2 className='error-noLogIn'>
-    //             You must log in first
-    //             </h2>
-    //             <Link to="/" style={{ display: 'block', textAlign: 'center', margin: '10px 0' }}>
-    //                 <button className='btn btn-primary'>
-    //                     Click here to log in
-    //                 </button>
-    //                 </Link>
-    //             </div>
-    //             <LoginLogo/>
-    //         </div>
-    //     );
-    // }
+    if (!userData.IsLogIn) {
+        return( 
+            <div>
+                <div className='form-box col-4 d-flex flex-column align-items-center justify-content-center'>
+                    <h2 className='error-noLogIn'>
+                You must log in first
+                </h2>
+                <Link to="/" style={{ display: 'block', textAlign: 'center', margin: '10px 0' }}>
+                    <button className='btn btn-primary'>
+                        Click here to log in
+                    </button>
+                    </Link>
+                </div>
+                <LoginLogo/>
+            </div>
+        );
+    }
     
     return (
         <div>
