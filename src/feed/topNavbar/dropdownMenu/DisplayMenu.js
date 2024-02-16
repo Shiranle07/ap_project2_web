@@ -1,27 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import MenuItem from './MenuItem';
 
-function DisplayMenu({}){
-    const [darkMode, setDarkMode] = useState(() => {
-        // Load dark mode preference from local storage
-        return localStorage.getItem('darkMode') === 'true';
-    });
-
-    useEffect(() => {
-        // Apply dark mode styles
-        document.body.classList.toggle('dark-mode', darkMode);
-        // Save dark mode preference to local storage
-        localStorage.setItem('darkMode', darkMode);
-    }, [darkMode]);
-
+function DisplayMenu({ darkMode, setDarkMode }) {
     const handleDarkModeChange = () => {
-        setDarkMode(!darkMode);
+        console.log("Toggle dark mode");
+        setDarkMode(prevDarkMode => !prevDarkMode);
     };
 
-    
-    return(
+    console.log("darkMode:", darkMode);
+    return (
         <div>
-            <MenuItem iconClass={"bi bi-moon-fill menu-icon"} text={"Dark mode"}/>
+            <MenuItem iconClass={"bi bi-moon-fill menu-icon"} text={"Dark mode"} />
             <div className='row choose-mode'>
                 <div className='col-11'>
                     <div className="form-check">

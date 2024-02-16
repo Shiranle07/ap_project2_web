@@ -58,3 +58,13 @@
 .editAndDelete {
     float: right;
 }
+
+.share-menu {
+    max-height: 250px;
+    overflow-y: auto;
+    scrollbar-width:thin;
+}
+
+.share-menu i{
+    margin-right: 8px;
+}

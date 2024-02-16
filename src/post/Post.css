@@ -1,8 +1,8 @@
 .single_post {
     margin: 20px auto; /* Center the post horizontally */
     max-width: 600px; /* Limit the width of the post */
-    max-height: 100px; /* Set a fixed height for the post */
-    padding: 20px;
+    max-height: 600px; /* Set a fixed height for the post */
+    padding: 10px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -22,32 +22,84 @@
 }
 
 
-
 .user_name {
     color: #70757a; /* Adjusted to a darker gray for better visibility */
     font-size: 0.9em; /* Reduced font size for meta information */
 }
 
-.date {
-    font-style: italic;
+
+.post-page {
+    max-width: 600px;
+
 }
 
-.text {
-    font-style: italic;
-    margin-top: 5px;
+.comment-card {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    width: fit-content;
+    padding: 5px;
 }
 
-.ms-2 {
-    margin-left: 5px;
+.dark-mode .comment-card {
+    background-color: #3b3b3b;
 }
 
-.share-text {
-    color: black;
+#comment-input{
+    width: 600px;
+    margin: 0;
 }
 
-.dropdown-toggle {
-    border: 0;
+.dark-mode #comment-input::placeholder{
+color: #f1f1f1;
+}
+
+.comment{
+    float: left;
+}
+
+.comment-menu{
+    float: right
+}
+
+.dropend .dropdown-toggle::after {
+    display: none;
 }
 
 
+.comment-dropdown {
+    width: fit-content;
+    text-align: center;
+    font-size: 16px;
+}
+.dropdown-menu .dropdown-item a {
+    text-align: center;
+    
+}
 
+.dropdown-menu .dropdown-item a:hover{
+    cursor: pointer;
+}
+
+.comment-edit .btn{
+    font-size: 15px;
+    padding: 0; /* Adjust the padding as needed */
+    margin: 0;
+}
+
+.close-edit{
+    font-size: 15px;
+}
+
+.comment-edit textarea{
+    min-width: 300px;
+}
+
+.dark-mode .comment-edit textarea{
+   background-color: #3b3b3b;
+   color: #f1f1f1;
+}
+
+.dark-mode .comment-send{
+    color: #f1f1f1;
+}

@@ -1,112 +1,281 @@
 [
     {
-        "id": 1,
+        "post_id": 1,
         "user_firstName": "Chandler",
         "user_lastName": "Bing",
-        "user_photo": null,
+        "user_photo": "chandler.jpg",
         "postBody": "Could I *be* any more sarcastic?",
         "postPhoto": null,
         "likesNumber": 85,
-        "commantsNumber": "25",
-        "publication_date": "1 day ago"
+        "publication_date": "1 day ago",
+        "comments": [
+            {
+                "comment_id" : "1#1",
+                "commenter_firstName": "Ross",
+                "commenter_lastName": "Geller",
+                "commenter_photo": "dinosaur.jpg",
+                "commentBody": "Could you *be* any funnier, Chandler?"
+            },
+            {   "comment_id" : "1#2",
+                "commenter_firstName": "Phoebe",
+                "commenter_lastName": "Buffay",
+                "commenter_photo": null,
+                "commentBody": "Love your sarcasm, Chandler!"
+            },
+            {   "comment_id" : "1#3",
+                "commenter_firstName": "Rachel",
+                "commenter_lastName": "Green",
+                "commenter_photo": null,
+                "commentBody": "Classic Chandler!"
+            }
+        ]
     },
     {
-        "id": 2,
+        "post_id": 2,
         "user_firstName": "Joey",
         "user_lastName": "Tribbiani",
-        "user_photo": null,
+        "user_photo": "pizza.jpg",
         "postBody": "How you doin'?",
         "postPhoto": null,
         "likesNumber": 150,
-        "commantsNumber": "40",
-        "publication_date": "2 days ago"
+        "publication_date": "2 days ago",
+        "comments": [
+            {
+                "comment_id": "2#1",
+                "commenter_firstName": "Monica",
+                "commenter_lastName": "Geller",
+                "commenter_photo": "clean.png",
+                "commentBody": "Hey Joey, still using that line?"
+            },
+            {
+                "comment_id": "2#2",
+                "commenter_firstName": "Chandler",
+                "commenter_lastName": "Bing",
+                "commenter_photo": "chandler.jpg",
+                "commentBody": "Smooth as always, Joey!"
+            },
+            {
+                "comment_id": "2#3",
+                "commenter_firstName": "Ross",
+                "commenter_lastName": "Geller",
+                "commenter_photo": "dinosaur.jpg",
+                "commentBody": "Joey, you're a legend!"
+            }
+        ]
     },
     {
-        "id": 3,
+        "post_id": 3,
         "user_firstName": "Phoebe",
         "user_lastName": "Buffay",
         "user_photo": null,
         "postBody": "Smelly cat, smelly cat, what are they feeding you?",
         "postPhoto": "smelly_cat.jpg",
         "likesNumber": 203,
-        "commantsNumber": "35",
-        "publication_date": "5 days ago"
+        "publication_date": "5 days ago",
+        "comments": [
+            {
+                "comment_id": "3#1",
+                "commenter_firstName": "Ross",
+                "commenter_lastName": "Geller",
+                "commenter_photo": null,
+                "commentBody": "Phoebe, you're the best!"
+            },
+            {
+                "comment_id": "3#2",
+                "commenter_firstName": "Monica",
+                "commenter_lastName": "Geller",
+                "commenter_photo": "clean.png",
+                "commentBody": "Love this song!"
+            }
+        ]
     },
     {
-        "id": 4,
+        "post_id": 4,
         "user_firstName": "Rachel",
         "user_lastName": "Green",
         "user_photo": null,
         "postBody": "New hair, new me!",
         "postPhoto": null,
         "likesNumber": 70,
-        "commantsNumber": "20",
-        "publication_date": "2 days ago"
+        "publication_date": "2 days ago",
+        "comments": [
+            {
+                "comment_id": "4#1",
+                "commenter_firstName": "Ross",
+                "commenter_lastName": "Geller",
+                "commenter_photo": null,
+                "commentBody": "Looking great, Rachel!"
+            },
+            {
+                "comment_id": "4#2",
+                "commenter_firstName": "Monica",
+                "commenter_lastName": "Geller",
+                "commenter_photo": "clean.png",
+                "commentBody": "Stunning as always!"
+            }
+        ]
     },
     {
-        "id": 5,
+        "post_id": 5,
         "user_firstName": "Ross",
         "user_lastName": "Geller",
-        "user_photo": null,
+        "user_photo": "dinosaur.jpg",
         "postBody": "Just finished a dinosaur excavation!",
         "postPhoto": null,
         "likesNumber": 35,
-        "commantsNumber": "15",
-        "publication_date": "4 days ago"
+        "publication_date": "4 days ago",
+        "comments": [
+            {
+                "comment_id": "5#1",
+                "commenter_firstName": "Ross",
+                "commenter_lastName": "Geller",
+                "commenter_photo": "dinosaur.jpg",
+                "commentBody": "Ross Geller, the paleontologist!"
+            },
+            {
+                "comment_id": "5#2",
+                "commenter_firstName": "Monica",
+                "commenter_lastName": "Geller",
+                "commenter_photo": "clean.png",
+                "commentBody": "Wow, that sounds exciting!"
+            },
+            {
+                "comment_id": "5#3",
+                "commenter_firstName": "Chandler",
+                "commenter_lastName": "Bing",
+                "commenter_photo": null,
+                "commentBody": "You never cease to amaze, Ross!"
+            }
+        ]
     },
     {
-        "id": 6,
+        "post_id": 6,
         "user_firstName": "Janice",
         "user_lastName": "Litman-Goralnik",
         "user_photo": null,
         "postBody": "Oh. My. God!",
         "postPhoto": null,
         "likesNumber": 120,
-        "commantsNumber": "30",
-        "publication_date": "3 days ago"
+        "publication_date": "3 days ago",
+        "comments": [
+            {
+                "comment_id": "6#1",
+                "commenter_firstName": "Ross",
+                "commenter_lastName": "Geller",
+                "commenter_photo": "dinosaur.jpg",
+                "commentBody": "Janice, you're hilarious!"
+            },
+            {
+                "comment_id": "6#2",
+                "commenter_firstName": "Monica",
+                "commenter_lastName": "Geller",
+                "commenter_photo": "clean.png",
+                "commentBody": "Oh my god, indeed!"
+            }
+        ]
     },
     {
-        "id": 7,
+        "post_id": 7,
         "user_firstName": "Monica",
         "user_lastName": "Geller",
-        "user_photo": null,
+        "user_photo": "clean.png",
         "postBody": "Cleaned the apartment top to bottom! #MonicaClean",
         "postPhoto": null,
         "likesNumber": 90,
-        "commantsNumber": "20",
-        "publication_date": "2 days ago"
+        "publication_date": "2 days ago",
+        "comments": [
+            {
+                "comment_id": "7#1",
+                "commenter_firstName": "Ross",
+                "commenter_lastName": "Geller",
+                "commenter_photo": "dinosaur.jpg",
+                "commentBody": "Monica, you're the cleanest!"
+            },
+            {
+                "comment_id": "7#2",
+                "commenter_firstName": "Rachel",
+                "commenter_lastName": "Green",
+                "commenter_photo": null,
+                "commentBody": "You're a neat freak, Monica!"
+            }
+        ]
     },
     {
-        "id": 8,
+        "post_id": 8,
         "user_firstName": "Gunther",
         "user_lastName": null,
         "user_photo": null,
         "postBody": "Another day at Central Perk ☕",
-        "postPhoto": null,
+        "postPhoto": "coffee.jpg",
         "likesNumber": 55,
-        "commantsNumber": "10",
-        "publication_date": "1 day ago"
+        "publication_date": "1 day ago",
+        "comments": [
+            {
+                "comment_id": "8#1",
+                "commenter_firstName": "Ross",
+                "commenter_lastName": "Geller",
+                "commenter_photo": "dinosaur.jpg",
+                "commentBody": "Love Central Perk!"
+            },
+            {
+                "comment_id": "8#2",
+                "commenter_firstName": "Monica",
+                "commenter_lastName": "Geller",
+                "commenter_photo": "clean.png",
+                "commentBody": "Best coffee in town!"
+            }
+        ]
     },
     {
-        "id": 9,
+        "post_id": 9,
         "user_firstName": "Emily",
         "user_lastName": "Waltham",
-        "user_photo": null,
+        "user_photo": "phone-booth.jpg",
         "postBody": "Enjoying a lovely day in London!",
-        "postPhoto": null,
+        "postPhoto": "big-ben.jpg",
         "likesNumber": 42,
-        "commantsNumber": "15",
-        "publication_date": "3 days ago"
+        "publication_date": "3 days ago",
+        "comments": [
+            {
+                "comment_id": "9#1",
+                "commenter_firstName": "Ross",
+                "commenter_lastName": "Geller",
+                "commenter_photo": "dinosaur.jpg",
+                "commentBody": "Enjoy, Rachel!\n I mean.. Emily! Enjoy, Emily!"
+            },
+            {
+                "comment_id": "9#2",
+                "commenter_firstName": "Monica",
+                "commenter_lastName": "Geller",
+                "commenter_photo": "clean.png",
+                "commentBody": "Wish I was there!"
+            }
+        ]
     },
     {
-        "id": 10,
+        "post_id": 10,
         "user_firstName": "Mike",
         "user_lastName": "Hannigan",
         "user_photo": null,
         "postBody": "Thinking about proposing... again!",
         "postPhoto": null,
         "likesNumber": 28,
-        "commantsNumber": "8",
-        "publication_date": "2 days ago"
+        "publication_date": "2 days ago",
+        "comments": [
+            {
+                "comment_id": "10#1",
+                "commenter_firstName": "Ross",
+                "commenter_lastName": "Geller",
+                "commenter_photo": "dinosaur.jpg",
+                "commentBody": "Best of luck, Mike!"
+            },
+            {
+                "comment_id": "10#2",
+                "commenter_firstName": "Monica",
+                "commenter_lastName": "Geller",
+                "commenter_photo": "clean.png",
+                "commentBody": "Exciting times ahead!"
+            }
+        ]
     }
 ]

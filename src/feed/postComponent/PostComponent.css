@@ -1,0 +1,36 @@
+.dark-mode .share-text{
+    color: #d4d3d3d3;
+}
+
+.dropdown-toggle {
+    border: 0;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.share-text {
+    color: black;
+}
+
+.share-btn:hover {
+    background-color: #f0f0f0; /* Change the color to your desired background color */
+}
+
+.dark-mode .btn-post-card:hover{
+    background-color: #515151d3;
+}
+
+.post-date{
+    color: rgba(0, 0, 0, 0.695);
+}
+
+.dark-mode .post-date{
+    color: rgb(184, 184, 184);
+}
+
+
+.dark-mode .editAndDelete-icon{
+    color: rgb(184, 184, 184);
+}

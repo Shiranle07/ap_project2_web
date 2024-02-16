@@ -31,6 +31,7 @@
 .dark-mode .search-bar {
     border-color:rgb(26, 26, 26);
     background-color: rgb(59, 59, 59);
+    color: rgba(194, 194, 194, 0.825);
 }
 
 .dark-mode .search-bar::placeholder{

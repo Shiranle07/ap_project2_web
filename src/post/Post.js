@@ -1,88 +1,87 @@
 import './Post.css';
-import {React, useState} from 'react';
+import React, { useState, useEffect } from 'react';
+import profilePhoto from "../signUp/profilePhotoField/defaultProfilePhoto.jpg";
+import CommentCard from './CommentCard';
+import ShareOption from '../feed/postComponent/ShareOption';
+import PostComponent from '../feed/postComponent/PostComponent';
 
-function Post({ user_firstName, user_lastName, user_photo, postBody, postPhoto, likesNumber, commantsNumber, publication_date }) {
-    
-    const [isLiked, setIsLiked] = useState(false);
+function Post({post_id, user_firstName, user_lastName, user_photo, postBody, postPhoto, likesNumber, publication_date, comments, isLiked, setIsLiked, onDeletePost, onEditPost, userData, addCommentToPost, deleteCommentFromPost}) {
+    const [commentsList, setCommentsList] = useState(comments);
+    const [newComment, setNewComment] = useState("");
 
-    const handleLikeClick = () => {
-        setIsLiked(!isLiked);
+    useEffect(() => {
+        // Update the commentsList state whenever the comments prop changes
+        setCommentsList(comments);
+    }, [comments]);
+
+    const handleCommentChange = (event) => {
+        setNewComment(event.target.value);
     };
 
+    const handleAddComment = () => {
+        if (newComment.trim() !== "") {
+            const index = commentsList.length; // Get the current number of comments
+            const comment_id = `${post_id}#${index+1}`; // Create the comment_id
+            const updatedCommentsList = [
+                ...commentsList,
+                {
+                    comment_id: comment_id,
+                    commenter_firstName: userData.FirstName,
+                    commenter_lastName: userData.LastName,
+                    commenter_photo: userData.ProfilePhoto,
+                    commentBody: newComment
+                }
+            ];
+            setCommentsList(updatedCommentsList);
+            addCommentToPost(post_id, comment_id, newComment);
+            setNewComment(""); // Clear the comment input field
+        }
+    };
+
+    const onDeleteComment = (comment_id) => {
+        // Filter out the comment with the given comment_id
+        const updatedCommentsList = commentsList.filter(comment => comment.comment_id !== comment_id);
+        setCommentsList(updatedCommentsList);
+        deleteCommentFromPost(post_id, comment_id)
+    };
+
+    const onSaveComment = (comment_id, editedComment) => {
+        // Update the comment with the given comment_id
+        const updatedCommentsList = commentsList.map(comment => {
+            if (comment.comment_id === comment_id) {
+                return { ...comment, commentBody: editedComment };
+            }
+            return comment;
+        });
+        setCommentsList(updatedCommentsList);
+    };
+
+
+
     return (
-        
-        <div>
-            <div className="modal fade" id={`exampleModalToggle11`} aria-hidden="true" tabIndex="-1">
-                <div className="modal-dialog modal-dialog-scrollable">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h1 className="modal-title fs-5 text-center flex-grow-1" id={`exampleModalToggleLabel1`}>{user_firstName} {user_lastName}'s post</h1>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div className="modal-body">
-                            <div className="modal-dialog modal-dialog-scrollable">
-                                <div className="user_info">
-                                <div class="d-flex align-items-center">
-                                <img src={user_photo ? user_photo : profilePhoto} alt="profile" width="40" height="40" class="d-inline-block align-text-center profile-photo mr-2" id="display-user"></img>
-                                <p class="fw-bolder m-0">
-                                    {user_firstName} {user_lastName} {publication_date}
-                                </p>
-                                 </div>
-                                    <div className='text'>
-                                        <strong></strong> {postBody}
-                                    </div>
-                                </div>
-                            </div>
+        <div className="modal fade" id={`exampleModalToggle-post-${post_id}`} aria-hidden="true" tabIndex="-1">
+            <div className="modal-dialog modal-lg modal-dialog-scrollable">
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <h1 className="modal-title fs-5 text-center flex-grow-1">{user_firstName} {user_lastName}'s post</h1>
+                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div className="modal-body">
+                    <PostComponent post_id={post_id} user_firstName={user_firstName} user_lastName={user_lastName} user_photo={user_photo} postBody={postBody} postPhoto={postPhoto} likesNumber={likesNumber} commentsNumber={commentsList.length} publication_date={publication_date} comments={comments} isLiked={isLiked} setIsLiked={setIsLiked} onDeletePost={onDeletePost} onEditPost={onEditPost}/>
+                        <hr />
 
-                        {/* comments */}                        
-                        <div className="comments">
-                            <div className="comment">
-                                <div className="commenter_info">
-                                    <strong>Commenter Name:</strong> {user_firstName} &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <strong>Date:</strong> {publication_date}
-                                </div>
-                                <div className="comment_text">
-                                    <p>{postBody}</p>
-                                </div>    
-                            </div>
-                            <hr></hr>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <button className="btn btn-post-card col-4 align-items-center" onClick={handleLikeClick}>
-                                    <i className={`text-primary ${isLiked ? "bi bi-hand-thumbs-up-fill" : "bi bi-hand-thumbs-up"}`}></i>
-                                    <span className={isLiked ? "liked-text" : ""}>Like</span>
-                                </button>
-
-                                <span class="me-2 d-flex align-items-center">
-                                    <i class="bi bi-chat text-primary"></i>
-                                    <div class="ms-2"> Comment </div>
-                                </span>
-
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle bg-transparent p-2" type="button" id="shareDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="bi bi-share text-primary"></i>
-                                        <span class="ms-2 share-text"> Share </span>
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="shareDropdown" style={{ maxHeight: '200px', overflowY: 'auto' }}>
-                                        <li><a class="dropdown-item" href="#">Share to Feed</a></li>
-                                        <li><a class="dropdown-item" href="#">In a group</a></li>
-                                        <li><a class="dropdown-item" href="#">On a friend's profile</a></li>
-                                        <li><a class="dropdown-item" href="#">Message</a></li>
-                                        <li><a class="dropdown-item" href="#">WhatsApp</a></li>
-                                        <li><a class="dropdown-item" href="#">Fakegram</a></li>
-                                        <li><a class="dropdown-item" href="#">Share External</a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
+                        <div className='post-list'>
+                            {commentsList.map((comment, index) =>
+                                <CommentCard key={index} {...comment} onDeleteComment={onDeleteComment} onSaveComment={onSaveComment}/>
+                            )}
                         </div>
-                        <div class="sticky-bottom">
-                        <textarea class="col-11 post-input form-control" placeholder="Write a comment.." aria-label="Write a comment"></textarea>
-                        </div>
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-primary">Add comment</button>
-                        </div>
+                    </div>
+                    <div className="modal-footer justify-content-center" id="comment">
+                    <div class="comment">
+                        <img src={userData.ProfilePhoto ? userData.ProfilePhoto : profilePhoto} alt="profile" width="40" height="40" class="d-inline-block float-left profile-photo" id="display-user"></img>
+                    </div>
+                        <textarea className="post-input form-control" placeholder="Write a comment..." aria-label="Write a comment" value={newComment} id="comment-input" onChange={handleCommentChange}> </textarea>
+                        <button type="button" className="btn d-flex inline-block" onClick={handleAddComment}><i class="bi bi-send-fill comment-send"></i></button>
                     </div>
                 </div>
             </div>
