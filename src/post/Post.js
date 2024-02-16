@@ -5,7 +5,7 @@ import CommentCard from './CommentCard';
 import ShareOption from '../feed/postComponent/ShareOption';
 import PostComponent from '../feed/postComponent/PostComponent';
 
-function Post({post_id, user_firstName, user_lastName, user_photo, postBody, postPhoto, likesNumber, commentsNumber, publication_date, comments, isLiked, setIsLiked, onDeletePost, onEditPost, userData}) {
+function Post({post_id, user_firstName, user_lastName, user_photo, postBody, postPhoto, likesNumber, publication_date, comments, isLiked, setIsLiked, onDeletePost, onEditPost, userData, addCommentToPost, deleteCommentFromPost}) {
     const [commentsList, setCommentsList] = useState(comments);
     const [newComment, setNewComment] = useState("");
 
@@ -20,16 +20,42 @@ function Post({post_id, user_firstName, user_lastName, user_photo, postBody, pos
 
     const handleAddComment = () => {
         if (newComment.trim() !== "") {
-            const updatedCommentsList = [...commentsList, {
-                commenter_firstName : userData.FirstName,
-                commenter_lastName : userData.LastName,
-                commenter_photo : userData.ProfilePhoto,
-                commentBody : newComment
-            }];
+            const index = commentsList.length; // Get the current number of comments
+            const comment_id = `${post_id}#${index+1}`; // Create the comment_id
+            const updatedCommentsList = [
+                ...commentsList,
+                {
+                    comment_id: comment_id,
+                    commenter_firstName: userData.FirstName,
+                    commenter_lastName: userData.LastName,
+                    commenter_photo: userData.ProfilePhoto,
+                    commentBody: newComment
+                }
+            ];
             setCommentsList(updatedCommentsList);
+            addCommentToPost(post_id, comment_id, newComment);
             setNewComment(""); // Clear the comment input field
         }
     };
+
+    const onDeleteComment = (comment_id) => {
+        // Filter out the comment with the given comment_id
+        const updatedCommentsList = commentsList.filter(comment => comment.comment_id !== comment_id);
+        setCommentsList(updatedCommentsList);
+        deleteCommentFromPost(post_id, comment_id)
+    };
+
+    const onSaveComment = (comment_id, editedComment) => {
+        // Update the comment with the given comment_id
+        const updatedCommentsList = commentsList.map(comment => {
+            if (comment.comment_id === comment_id) {
+                return { ...comment, commentBody: editedComment };
+            }
+            return comment;
+        });
+        setCommentsList(updatedCommentsList);
+    };
+
 
 
     return (
@@ -41,12 +67,12 @@ function Post({post_id, user_firstName, user_lastName, user_photo, postBody, pos
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
-                    <PostComponent post_id={post_id} user_firstName={user_firstName} user_lastName={user_lastName} user_photo={user_photo} postBody={postBody} postPhoto={postPhoto} likesNumber={likesNumber} commentsNumber={commentsNumber} publication_date={publication_date} comments={comments} isLiked={isLiked} setIsLiked={setIsLiked} onDeletePost={onDeletePost} onEditPost={onEditPost}/>
+                    <PostComponent post_id={post_id} user_firstName={user_firstName} user_lastName={user_lastName} user_photo={user_photo} postBody={postBody} postPhoto={postPhoto} likesNumber={likesNumber} commentsNumber={commentsList.length} publication_date={publication_date} comments={comments} isLiked={isLiked} setIsLiked={setIsLiked} onDeletePost={onDeletePost} onEditPost={onEditPost}/>
                         <hr />
 
                         <div className='post-list'>
                             {commentsList.map((comment, index) =>
-                                <CommentCard key={index} {...comment} />
+                                <CommentCard key={index} {...comment} onDeleteComment={onDeleteComment} onSaveComment={onSaveComment}/>
                             )}
                         </div>
                     </div>

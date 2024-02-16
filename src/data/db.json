@@ -7,22 +7,22 @@
         "postBody": "Could I *be* any more sarcastic?",
         "postPhoto": null,
         "likesNumber": 85,
-        "commentsNumber": "25",
         "publication_date": "1 day ago",
         "comments": [
             {
+                "comment_id" : "1#1",
                 "commenter_firstName": "Ross",
                 "commenter_lastName": "Geller",
                 "commenter_photo": "dinosaur.jpg",
                 "commentBody": "Could you *be* any funnier, Chandler?"
             },
-            {
+            {   "comment_id" : "1#2",
                 "commenter_firstName": "Phoebe",
                 "commenter_lastName": "Buffay",
                 "commenter_photo": null,
                 "commentBody": "Love your sarcasm, Chandler!"
             },
-            {
+            {   "comment_id" : "1#3",
                 "commenter_firstName": "Rachel",
                 "commenter_lastName": "Green",
                 "commenter_photo": null,
@@ -38,22 +38,24 @@
         "postBody": "How you doin'?",
         "postPhoto": null,
         "likesNumber": 150,
-        "commentsNumber": "40",
         "publication_date": "2 days ago",
         "comments": [
             {
+                "comment_id": "2#1",
                 "commenter_firstName": "Monica",
                 "commenter_lastName": "Geller",
                 "commenter_photo": "clean.png",
                 "commentBody": "Hey Joey, still using that line?"
             },
             {
+                "comment_id": "2#2",
                 "commenter_firstName": "Chandler",
                 "commenter_lastName": "Bing",
                 "commenter_photo": "chandler.jpg",
                 "commentBody": "Smooth as always, Joey!"
             },
             {
+                "comment_id": "2#3",
                 "commenter_firstName": "Ross",
                 "commenter_lastName": "Geller",
                 "commenter_photo": "dinosaur.jpg",
@@ -69,16 +71,17 @@
         "postBody": "Smelly cat, smelly cat, what are they feeding you?",
         "postPhoto": "smelly_cat.jpg",
         "likesNumber": 203,
-        "commentsNumber": "35",
         "publication_date": "5 days ago",
         "comments": [
             {
+                "comment_id": "3#1",
                 "commenter_firstName": "Ross",
                 "commenter_lastName": "Geller",
                 "commenter_photo": null,
                 "commentBody": "Phoebe, you're the best!"
             },
             {
+                "comment_id": "3#2",
                 "commenter_firstName": "Monica",
                 "commenter_lastName": "Geller",
                 "commenter_photo": "clean.png",
@@ -94,16 +97,17 @@
         "postBody": "New hair, new me!",
         "postPhoto": null,
         "likesNumber": 70,
-        "commentsNumber": "20",
         "publication_date": "2 days ago",
         "comments": [
             {
+                "comment_id": "4#1",
                 "commenter_firstName": "Ross",
                 "commenter_lastName": "Geller",
                 "commenter_photo": null,
                 "commentBody": "Looking great, Rachel!"
             },
             {
+                "comment_id": "4#2",
                 "commenter_firstName": "Monica",
                 "commenter_lastName": "Geller",
                 "commenter_photo": "clean.png",
@@ -119,22 +123,24 @@
         "postBody": "Just finished a dinosaur excavation!",
         "postPhoto": null,
         "likesNumber": 35,
-        "commentsNumber": "15",
         "publication_date": "4 days ago",
         "comments": [
             {
+                "comment_id": "5#1",
                 "commenter_firstName": "Ross",
                 "commenter_lastName": "Geller",
                 "commenter_photo": "dinosaur.jpg",
                 "commentBody": "Ross Geller, the paleontologist!"
             },
             {
+                "comment_id": "5#2",
                 "commenter_firstName": "Monica",
                 "commenter_lastName": "Geller",
                 "commenter_photo": "clean.png",
                 "commentBody": "Wow, that sounds exciting!"
             },
             {
+                "comment_id": "5#3",
                 "commenter_firstName": "Chandler",
                 "commenter_lastName": "Bing",
                 "commenter_photo": null,
@@ -150,16 +156,17 @@
         "postBody": "Oh. My. God!",
         "postPhoto": null,
         "likesNumber": 120,
-        "commentsNumber": "30",
         "publication_date": "3 days ago",
         "comments": [
             {
+                "comment_id": "6#1",
                 "commenter_firstName": "Ross",
                 "commenter_lastName": "Geller",
                 "commenter_photo": "dinosaur.jpg",
                 "commentBody": "Janice, you're hilarious!"
             },
             {
+                "comment_id": "6#2",
                 "commenter_firstName": "Monica",
                 "commenter_lastName": "Geller",
                 "commenter_photo": "clean.png",
@@ -175,16 +182,17 @@
         "postBody": "Cleaned the apartment top to bottom! #MonicaClean",
         "postPhoto": null,
         "likesNumber": 90,
-        "commentsNumber": "20",
         "publication_date": "2 days ago",
         "comments": [
             {
+                "comment_id": "7#1",
                 "commenter_firstName": "Ross",
                 "commenter_lastName": "Geller",
                 "commenter_photo": "dinosaur.jpg",
                 "commentBody": "Monica, you're the cleanest!"
             },
             {
+                "comment_id": "7#2",
                 "commenter_firstName": "Rachel",
                 "commenter_lastName": "Green",
                 "commenter_photo": null,
@@ -200,16 +208,17 @@
         "postBody": "Another day at Central Perk ☕",
         "postPhoto": "coffee.jpg",
         "likesNumber": 55,
-        "commentsNumber": "10",
         "publication_date": "1 day ago",
         "comments": [
             {
+                "comment_id": "8#1",
                 "commenter_firstName": "Ross",
                 "commenter_lastName": "Geller",
                 "commenter_photo": "dinosaur.jpg",
                 "commentBody": "Love Central Perk!"
             },
             {
+                "comment_id": "8#2",
                 "commenter_firstName": "Monica",
                 "commenter_lastName": "Geller",
                 "commenter_photo": "clean.png",
@@ -225,16 +234,17 @@
         "postBody": "Enjoying a lovely day in London!",
         "postPhoto": "big-ben.jpg",
         "likesNumber": 42,
-        "commentsNumber": "15",
         "publication_date": "3 days ago",
         "comments": [
             {
+                "comment_id": "9#1",
                 "commenter_firstName": "Ross",
                 "commenter_lastName": "Geller",
                 "commenter_photo": "dinosaur.jpg",
                 "commentBody": "Enjoy, Rachel!\n I mean.. Emily! Enjoy, Emily!"
             },
             {
+                "comment_id": "9#2",
                 "commenter_firstName": "Monica",
                 "commenter_lastName": "Geller",
                 "commenter_photo": "clean.png",
@@ -250,16 +260,17 @@
         "postBody": "Thinking about proposing... again!",
         "postPhoto": null,
         "likesNumber": 28,
-        "commentsNumber": "8",
         "publication_date": "2 days ago",
         "comments": [
             {
+                "comment_id": "10#1",
                 "commenter_firstName": "Ross",
                 "commenter_lastName": "Geller",
                 "commenter_photo": "dinosaur.jpg",
                 "commentBody": "Best of luck, Mike!"
             },
             {
+                "comment_id": "10#2",
                 "commenter_firstName": "Monica",
                 "commenter_lastName": "Geller",
                 "commenter_photo": "clean.png",

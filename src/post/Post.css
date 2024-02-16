@@ -62,3 +62,40 @@
 .comment{
     float: left;
 }
+
+.comment-menu{
+    float: right
+}
+
+.dropend .dropdown-toggle::after {
+    display: none;
+}
+
+
+.comment-dropdown {
+    width: fit-content;
+    text-align: center;
+    font-size: 16px;
+}
+.dropdown-menu .dropdown-item a {
+    text-align: center;
+    
+}
+
+.dropdown-menu .dropdown-item a:hover{
+    cursor: pointer;
+}
+
+.comment-edit .btn{
+    font-size: 15px;
+    padding: 0; /* Adjust the padding as needed */
+    margin: 0;
+}
+
+.close-edit{
+    font-size: 15px;
+}
+
+.comment-edit textarea{
+    min-width: 300px;
+}

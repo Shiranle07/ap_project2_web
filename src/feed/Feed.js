@@ -9,25 +9,69 @@ import profilePhoto from "../signUp/profilePhotoField/defaultProfilePhoto.jpg";
 import CreatePostField from './createPost/createPostField/CreatePostField';
 import CreatePostWindow from './createPost/createPostWindow/CreatePostWindow';
 import LoginLogo from '../loginPage/loginLogo/LoginLogo';
-import posts from "../data/db.json"
 import PostCard from "./postCard/PostCard";
 
-function Feed({ userData }) {
-    const [postsList, setPostsList] = useState(posts);
+function Feed({ userData, postsList, setPostsList}) {
 
-    const onDeletePost = (postId) => {
-        // Filter out the post with the given postId
-        const updatedPosts = postsList.filter(post => post.post_id !== postId);
-    
-        // If you need to re-index the remaining posts, you can do it here
-        const reindexedPosts = updatedPosts.map((post, index) => ({
-            ...post,
-            post_id: index + 1 // Assuming post IDs start from 1
-        }));
-    
-        setPostsList(reindexedPosts);
+    const addCommentToPost = (postId, comment_id, newComment) => {
+        const postIndex = postsList.findIndex(post => post.post_id === postId);
+        if (postIndex !== -1) {
+            // Create a new array with the updated post at the correct index
+            const updatedPosts = [...postsList];
+            // Find the post where the new comment will be added
+            const postToUpdate = updatedPosts[postIndex];
+            // Create a new comments array with the existing comments plus the new comment
+            const updatedComments = [
+                ...postToUpdate.comments,
+                {
+                    comment_id: comment_id, // Use the comment_id of the new comment
+                    commenter_firstName: userData.FirstName,
+                    commenter_lastName: userData.LastName,
+                    commenter_photo: userData.ProfilePhoto,
+                    commentBody: newComment
+                }
+            ];
+            // Update the post with the new comments array
+            updatedPosts[postIndex] = {
+                ...postToUpdate,
+                comments: updatedComments
+            };
+            // Update the state with the new array of posts
+            setPostsList(updatedPosts);
+        }
+        
     };
 
+    const deleteCommentFromPost = (postId, commentIdToDelete) => {
+        // Find the index of the post in the postsList array
+        const postIndex = postsList.findIndex(post => post.post_id === postId);
+        if (postIndex !== -1) {
+            // Create a new array with the updated post at the correct index
+            const updatedPosts = [...postsList];
+            // Find the post where the comment will be deleted
+            const postToUpdate = updatedPosts[postIndex];
+            // Filter out the comment to delete from the comments array
+            const updatedComments = postToUpdate.comments.filter(comment => comment.comment_id !== commentIdToDelete);
+            // Update the post with the new comments array
+            updatedPosts[postIndex] = {
+                ...postToUpdate,
+                comments: updatedComments
+            };
+            // Update the state with the new array of posts
+            setPostsList(updatedPosts);
+        }
+    };
+    
+    const onDeletePost = (postId) => {
+        console.log(`deleting post... ${postId}`)
+        // Filter out the post with the given postId
+        const updatedPosts = postsList.filter(post => post.post_id !== postId);
+        
+        // Update the state with the filtered posts
+        setPostsList(updatedPosts);
+    };
+    
+  
     const onEditPost = (postId, newPostContent, newPostPhoto) => {
         // Find the index of the post in the posts array using its ID
         const postIndex = postsList.findIndex(post => post.post_id === postId);
@@ -40,7 +84,7 @@ function Feed({ userData }) {
                 postBody: newPostContent,
                 postPhoto: newPostPhoto
             };  
-
+  
             // Update the state with the new array of posts
             setPostsList(updatedPosts);
         }
@@ -75,11 +119,17 @@ function Feed({ userData }) {
                     <div className='col-6 middle-section'>
                         <CreatePostField userData={userData}/>
                         <div className='post-list'>
-                            {
-                                postsList.map((post, index) => 
-                                    <PostCard key={index} {...post} onDeletePost={onDeletePost} onEditPost={onEditPost} userData={userData}/>
-                                )
-                            }
+                            {postsList.map(post => (
+                                <PostCard
+                                    key={post.post_id}
+                                    {...post}
+                                    onDeletePost={onDeletePost}
+                                    onEditPost={onEditPost}
+                                    userData={userData}
+                                    addCommentToPost={addCommentToPost}
+                                    deleteCommentFromPost={deleteCommentFromPost}
+                                />
+                            ))}
                         </div>
                     </div>
                     <div className='col-3 right-section'>

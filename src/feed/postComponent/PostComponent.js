@@ -4,7 +4,7 @@ import ShareOption from './ShareOption';
 import EditPostWindow from "./EditPostWindow";
 
 
-function PostComponent({post_id, user_firstName, user_lastName, user_photo, postBody, postPhoto, likesNumber, commentsNumber, publication_date, isLiked, setIsLiked, onDeletePost, onEditPost }){
+function PostComponent({post_id, user_firstName, user_lastName, user_photo, postBody, postPhoto, likesNumber, commentsNumber, publication_date, isLiked, setIsLiked, onDeletePost, onEditPost}){
     const handleLikeClick = () => {
         setIsLiked(!isLiked);
     };
@@ -16,7 +16,7 @@ function PostComponent({post_id, user_firstName, user_lastName, user_photo, post
             <i class="bi bi-pencil"></i>
             </button>
             <EditPostWindow post_id={post_id} user_firstName={user_firstName} user_lastName={user_lastName} user_photo={user_photo} postBody={postBody} postPhoto={postPhoto} onEditPost={onEditPost}/>
-        <button className="btn" data-bs-toggle="modal" data-bs-target="#confirmDelete">
+        <button className="btn" data-bs-toggle="modal" data-bs-target={`#confirmDelete-${post_id}`}>
             <i class="bi bi-trash3"></i>
             </button>
                 <DeletePostModal onDeletePost={onDeletePost} post_id={post_id}/>

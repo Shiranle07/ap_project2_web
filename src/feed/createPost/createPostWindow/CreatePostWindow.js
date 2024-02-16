@@ -1,7 +1,7 @@
 import "./CreatePostWindow.css"
 import profilePhoto from "../../../signUp/profilePhotoField/defaultProfilePhoto.jpg";
 import PostAdditionals from './PostAdditionals';
-import {React, useRef, useState} from 'react';
+import { React, useRef, useState, useEffect } from 'react';
 
 
 function CreatePostWindow({userData, postsList, setPostsList}){
@@ -10,9 +10,13 @@ function CreatePostWindow({userData, postsList, setPostsList}){
     const [preview, setPreview] = useState();
     const [showPhotoInput, setShowPhotoInput] = useState(false);
     const countId = useRef(10);
+
+    useEffect(() => {
+        setIsPostDisabled(postContent.trim() === '');
+    }, [postContent]);
+
     const addNewPost = () => {
         countId.current = countId.current + 1;
-        console.log(countId.current);
         const post = {
               "post_id" : countId.current,
               "user_firstName" : userData.FirstName,
@@ -21,7 +25,6 @@ function CreatePostWindow({userData, postsList, setPostsList}){
               "postBody" : postContent,
               "postPhoto" : preview,
               "likesNumber" : 0,
-              "commantsNumber" : 0,
               "publication_date" : "now",
               "comments" : []
         }
