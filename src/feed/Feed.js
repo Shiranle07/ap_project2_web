@@ -1,11 +1,9 @@
-import { useNavigate } from 'react-router-dom';
 import './Feed.css'
-import {React, useState} from 'react';
+import {React} from 'react';
 import { Link } from 'react-router-dom';
 import TopNavbar from './topNavbar/TopNavbar';
 import LeftMenu from './leftMenu/LeftMenu';
 import RightMenu from './rightMenu/RightMenu';
-import profilePhoto from "../signUp/profilePhotoField/defaultProfilePhoto.jpg";
 import CreatePostField from './createPost/createPostField/CreatePostField';
 import CreatePostWindow from './createPost/createPostWindow/CreatePostWindow';
 import LoginLogo from '../loginPage/loginLogo/LoginLogo';

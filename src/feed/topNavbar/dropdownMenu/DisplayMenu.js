@@ -3,11 +3,9 @@ import MenuItem from './MenuItem';
 
 function DisplayMenu({ darkMode, setDarkMode }) {
     const handleDarkModeChange = () => {
-        console.log("Toggle dark mode");
         setDarkMode(prevDarkMode => !prevDarkMode);
     };
 
-    console.log("darkMode:", darkMode);
     return (
         <div>
             <MenuItem iconClass={"bi bi-moon-fill menu-icon"} text={"Dark mode"} />

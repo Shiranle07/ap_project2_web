@@ -1,7 +1,7 @@
 function ShareOption({iconClass, text}) {
     return(
-        <li><a class="dropdown-item share-option" href="#">
-        <i class={iconClass}></i>
+        <li><a className="dropdown-item share-option" href="#">
+        <i className={iconClass}></i>
             {text}</a></li>
     );
 }

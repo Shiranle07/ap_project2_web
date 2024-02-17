@@ -53,7 +53,7 @@ function EditPostWindow({post_id, user_firstName, user_lastName, user_photo, pos
                             </p>
                         </div>
                         <form>
-                            <textarea className="form-control mt-3" id="postContent" value={postContent} onChange={handlePostContentChange}></textarea>
+                            <textarea className="form-control mt-3" data-testid="postContent" id="postContent" value={postContent} onChange={handlePostContentChange}></textarea>
                         </form>
                         <div className='card mt-3 post-additionals'>
                         {showPhotoInput && (

@@ -16,9 +16,9 @@ function LeftMenu({userData}){
     };
 
     return(
-    <div class="left-menu-container list-group mt-2" style={{ height: menuHeight - 85}}>
-        <a href="#" class="list-group-item list-group-item-action left-menu-item">
-            <img src={userData.ProfilePhoto ? userData.ProfilePhoto : profilePhoto} alt="profile" width="40" height="40" class="d-inline-block align-text-center    profile-photo " id="display-user"></img>
+    <div className="left-menu-container list-group mt-2" style={{ height: menuHeight - 85}}>
+        <a href="#" className="list-group-item list-group-item-action left-menu-item">
+            <img src={userData.ProfilePhoto ? userData.ProfilePhoto : profilePhoto} alt="profile" width="40" height="40" className="d-inline-block align-text-center    profile-photo " id="display-user"></img>
              {userData.FirstName} {userData.LastName}
         </a>
 
@@ -27,7 +27,7 @@ function LeftMenu({userData}){
         <LeftMenuItem classIcon={"bi bi-bookmark-fill icon-menu"} text={"Saved"} id={"saved-icon"}/>
         <LeftMenuItem classIcon={"bi bi-people-fill icon-menu"} text={"Groups"}/>
         <LeftMenuItem classIcon={"bi bi-play-btn icon-menu"} text={"Video"}/>
-
+        {/** see more implement */}
         {showMore && (
                 <>
                     <LeftMenuItem classIcon={"bi bi-bar-chart-fill icon-menu"} text={"Ads Manager"}/>
@@ -47,9 +47,9 @@ function LeftMenu({userData}){
                 </>
             )}
 
-        <button class="list-group-item list-group-item-action left-menu-item" onClick={toggleMenu}>
-        {showMore ? <span> <i class="bi bi-caret-up-fill"></i> See less</span> : 
-         <span> <i class="bi bi-caret-down-fill"></i> See more</span> }
+        <button className="list-group-item list-group-item-action left-menu-item" onClick={toggleMenu}>
+        {showMore ? <span> <i className="bi bi-caret-up-fill"></i> See less</span> : 
+         <span> <i className="bi bi-caret-down-fill"></i> See more</span> }
             </button>
 
         <hr></hr>

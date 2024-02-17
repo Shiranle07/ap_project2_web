@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 
 function MenuItem({iconClass, text, path, onClick}){
     return(
-        <li><Link class="dropdown-item" to={path} onClick={onClick}>
-        <i class={iconClass}></i>
+        <li><Link className="dropdown-item" to={path} onClick={onClick}>
+        <i className={iconClass}></i>
         {text}</Link></li>
     );
 }

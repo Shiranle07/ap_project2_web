@@ -14,23 +14,23 @@ function PostComponent({post_id, user_firstName, user_lastName, user_photo, post
         <div>
         <div className="editAndDelete">
         <button className="btn" data-bs-toggle="modal" data-bs-target={`#editPost-${post_id}`}>
-            <i class="bi bi-pencil editAndDelete-icon"></i>
+            <i className="bi bi-pencil editAndDelete-icon"></i>
             </button>
             <EditPostWindow post_id={post_id} user_firstName={user_firstName} user_lastName={user_lastName} user_photo={user_photo} postBody={postBody} postPhoto={postPhoto} onEditPost={onEditPost}/>
         <button className="btn" data-bs-toggle="modal" data-bs-target={`#confirmDelete-${post_id}`}>
-            <i class="bi bi-trash3 editAndDelete-icon"></i>
+            <i className="bi bi-trash3 editAndDelete-icon"></i>
             </button>
                 <DeletePostModal onDeletePost={onDeletePost} post_id={post_id}/>
         </div>
-        <div class="d-flex align-items-center">
-            <img src={user_photo ? user_photo : profilePhoto} alt="profile" width="40" height="40" class="d-inline-block align-text-center profile-photo mr-2" id="display-user"></img>
-            <p class="fw-bolder m-0">
+        <div className="d-flex align-items-center">
+            <img src={user_photo ? user_photo : profilePhoto} alt="profile" width="40" height="40" className="d-inline-block align-text-center profile-photo mr-2" id="display-user"></img>
+            <p className="fw-bolder m-0">
                 {user_firstName} {user_lastName}
             </p>
         </div>
-        <p class="card-subtitle mt-1 post-date">{publication_date}</p>
+        <p className="card-subtitle mt-1 post-date">{publication_date}</p>
         <br></br>
-        <p class="card-text pt-2">{postBody}</p>
+        <p className="card-text pt-2">{postBody}</p>
         {postPhoto && (
             <div className="photo-window d-flex justify-content-center align-items-center">
                 <img src={postPhoto} alt="Photo" className="image" style={{ maxWidth: '100%', maxHeight: '500px', margin: 'auto' }} />
@@ -38,11 +38,11 @@ function PostComponent({post_id, user_firstName, user_lastName, user_photo, post
         )}
 
         <div className="like-and-comment mt-2">
-            <span class="card-link like-info">
-                <i class="bi bi-hand-thumbs-up-fill like-icon"></i>
+            <span className="card-link like-info">
+                <i className="bi bi-hand-thumbs-up-fill like-icon"></i>
                 {isLiked && likesNumber === 0 ? 'You liked this post' : (isLiked ? `You and ${likesNumber} others` : likesNumber)}
             </span>
-            <a href="#" class="card-link comments-info">{commentsNumber} comments</a>
+            <a href="#" className="card-link comments-info">{commentsNumber} comments</a>
         </div>
         <hr></hr>
         <div className="btn-row d-flex justify-content-between">
@@ -51,16 +51,16 @@ function PostComponent({post_id, user_firstName, user_lastName, user_photo, post
                 <i className={`text-primary ${isLiked ? "bi bi-hand-thumbs-up-fill" : "bi bi-hand-thumbs-up"}`}></i>
                 <span className={isLiked ? "liked-text" : ""}>Like</span>
             </button>
-            <button type="button" class="btn btn-post-card align-items-center transparent-bg" data-bs-toggle="modal" data-bs-target={`#exampleModalToggle-post-${post_id}`}>
-                <i class="bi bi-chat text-primary"></i>
+            <button type="button" className="btn btn-post-card align-items-center transparent-bg" data-bs-toggle="modal" data-bs-target={`#exampleModalToggle-post-${post_id}`}>
+                <i className="bi bi-chat text-primary"></i>
                 Comment
             </button>
-            <div class="dropup">
-                <button class="btn btn-secondary dropdown-toggle bg-transparent p-2" type="button" id="shareDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-share text-primary"></i>
-                    <span class="ms-2 share-text"> Share </span>
+            <div className="dropup">
+                <button className="btn btn-secondary dropdown-toggle bg-transparent p-2" type="button" id="shareDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i className="bi bi-share text-primary"></i>
+                    <span className="ms-2 share-text"> Share </span>
                 </button>
-                <ul class="dropdown-menu share-menu" aria-labelledby="shareDropdown">
+                <ul className="dropdown-menu share-menu" aria-labelledby="shareDropdown">
                     <ShareOption iconClass={"bi bi-send"} text={"Share now (only me)"}/>
                     <ShareOption iconClass={"bi bi-pencil-square"} text={"Share to Feed"}/>
                     <ShareOption iconClass={"bi bi-messenger"} text={"Send in Messenger"}/>

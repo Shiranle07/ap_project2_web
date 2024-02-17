@@ -13,7 +13,7 @@ import Contact from './Contact';
 
 function RightMenu(){
     return(
-        <div class="right-menu-container list-group mt-2" >
+        <div className="right-menu-container list-group mt-2" >
             <p className="fw-bolder">
                 Sponsored
             </p>
