@@ -21,7 +21,6 @@ function DropdownMenu({ userData }) {
     useEffect(() => {
         // Apply dark mode styles
         document.body.classList.toggle('dark-mode', darkMode);
-        // Save dark mode preference to local storage
     }, [darkMode]);
 
     return (

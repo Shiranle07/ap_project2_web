@@ -1,9 +1,8 @@
 import './Post.css';
 import React, { useState, useEffect } from 'react';
-import profilePhoto from "../signUp/profilePhotoField/defaultProfilePhoto.jpg";
+import profilePhoto from "../../signUp/profilePhotoField/defaultProfilePhoto.jpg";
 import CommentCard from './CommentCard';
-import ShareOption from '../feed/postComponent/ShareOption';
-import PostComponent from '../feed/postComponent/PostComponent';
+import PostComponent from '../postComponent/PostComponent';
 
 function Post({post_id, user_firstName, user_lastName, user_photo, postBody, postPhoto, likesNumber, publication_date, comments, isLiked, setIsLiked, onDeletePost, onEditPost, userData, addCommentToPost, deleteCommentFromPost}) {
     const [commentsList, setCommentsList] = useState(comments);
@@ -31,7 +30,7 @@ function Post({post_id, user_firstName, user_lastName, user_photo, postBody, pos
                     commenter_photo: userData.ProfilePhoto,
                     commentBody: newComment
                 }
-            ];
+            ]; 
             setCommentsList(updatedCommentsList);
             addCommentToPost(post_id, comment_id, newComment);
             setNewComment(""); // Clear the comment input field
@@ -77,11 +76,11 @@ function Post({post_id, user_firstName, user_lastName, user_photo, postBody, pos
                         </div>
                     </div>
                     <div className="modal-footer justify-content-center" id="comment">
-                    <div class="comment">
-                        <img src={userData.ProfilePhoto ? userData.ProfilePhoto : profilePhoto} alt="profile" width="40" height="40" class="d-inline-block float-left profile-photo" id="display-user"></img>
+                    <div className="comment">
+                        <img src={userData.ProfilePhoto ? userData.ProfilePhoto : profilePhoto} alt="profile" width="40" height="40" className="d-inline-block float-left profile-photo" id="display-user"></img>
                     </div>
                         <textarea className="post-input form-control" placeholder="Write a comment..." aria-label="Write a comment" value={newComment} id="comment-input" onChange={handleCommentChange}> </textarea>
-                        <button type="button" className="btn d-flex inline-block" onClick={handleAddComment}><i class="bi bi-send-fill comment-send"></i></button>
+                        <button data-testid="Send" type="button" className="btn d-flex inline-block" onClick={handleAddComment}><i className="bi bi-send-fill comment-send"></i></button>
                     </div>
                 </div>
             </div>

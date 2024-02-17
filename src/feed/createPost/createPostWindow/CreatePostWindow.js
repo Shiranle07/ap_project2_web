@@ -55,24 +55,24 @@ function CreatePostWindow({userData, postsList, setPostsList}){
     };
 
     return(
-        <div class="modal fade postModal" id="exampleModalToggle" aria-hidden="true" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5 text-center flex-grow-1" id="exampleModalToggleLabel">Create post</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div className="modal fade postModal" id="exampleModalToggle" aria-hidden="true" tabindex="-1">
+        <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content">
+                <div className="modal-header">
+                    <h1 className="modal-title fs-5 text-center flex-grow-1" id="exampleModalToggleLabel">Create post</h1>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <div class="d-flex align-items-center">
-                        <img src={userData.ProfilePhoto ? userData.ProfilePhoto : profilePhoto} alt="profile" width="40" height="40" class="d-inline-block align-text-center profile-photo mr-2" id="display-user"></img>
-                        <p class="fw-bolder m-0">
+                <div className="modal-body">
+                    <div className="d-flex align-items-center">
+                        <img src={userData.ProfilePhoto ? userData.ProfilePhoto : profilePhoto} alt="profile" width="40" height="40" className="d-inline-block align-text-center profile-photo mr-2" id="display-user"></img>
+                        <p className="fw-bolder m-0">
                             {userData.FirstName} {userData.LastName}
                         </p>
                     </div>
                     <form>
                         <textarea className="form-control mt-3" id="postContent" value ={postContent} placeholder={`What's on your mind, ${userData.FirstName}?`} onChange={handlePostContentChange}></textarea>
                     </form> 
-                    
+                    {/* displaying preview only if user upload photo */}
                     <div className='card mt-3 post-additionals'>
                         {showPhotoInput && (
                             <div className="justify-content-between">
@@ -84,7 +84,7 @@ function CreatePostWindow({userData, postsList, setPostsList}){
                                     id="postPhoto"
                                     onChange={handleFileChange}/>
                             </div>
-                        )}
+                        )} 
                         {preview&&(
                             <div className="col-md-6 mt-2">
                                 <div className="preview-window">
@@ -107,8 +107,9 @@ function CreatePostWindow({userData, postsList, setPostsList}){
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer justify-content-center">
-                    <button class="btn btn-primary w-100 new-post-btn" data-bs-dismiss="modal" onClick={addNewPost} disabled={isPostDisabled}>Post</button>
+                {/** disable to post an empty post */}
+                <div className="modal-footer justify-content-center">
+                    <button className="btn btn-primary w-100 new-post-btn" data-bs-dismiss="modal" onClick={addNewPost} disabled={isPostDisabled}>Post</button>
                 </div>
             </div>
         </div>
