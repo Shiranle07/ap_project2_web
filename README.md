@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# AP_Project - Ex2 web
+### link to repository
+https://github.com/Shiranle07/ap_project2_web.git
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Fakebook is a social networking platform that enables users to create profiles, log in, post content, and interact with existing posts through likes and comments.
 
-## Available Scripts
+In its present iteration, the platform allows for the registration of a single user and loads ten predefined posts from a JSON file upon login. Refreshing the application will result in the deletion of the registered user's information along with any content created during the session.
 
-In the project directory, you can run:
+Registration is contingent upon users being aged 14 or older.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## How to use?
+#### 1. Prerequisites
+Clone the repository to your local machine.
+#### 2. Compile the code
+   * Make sure you are in the right path, where you cloned the repository.
+   * Open the terminal and install dependencies: 
+   
+```Terminal
+npm install
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### 3. start the application:
 
-### `npm test`
+```Terminal
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Open http://localhost:3000 to view the application in your browser. 
 
-### `npm run build`
+To register, it is necessary to complete all fields within the registration form, adhering to the instructions provided. Users who do not want to upload a profile picture will be assigned a default profile image.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Following registration, you can sign in using the email address and password provided during registration. Access to the feed page is restricted to logged-in users exclusively.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+On the feed page, you can see existing posts, and create new posts of your own.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Moreover, within the menu located on the right-hand side, under the "display and accessibility" section, you have the option to switch to dark mode.
 
-### `npm run eject`
+Selecting the logout option will redirect you back to the login page.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Work Flow
+First, we read the task in its entirety together and checked that we correctly understood what was assigned to us.
+Together we came up with ideas for implementation in a general way and divided between us the general tasks that we added to JIRA. 
+The first task was to divide the work, we decided that each one creates a different page in the application.
+We used different branches on GitHub for every feature, and merge the branches only after making sure the code works.
+The code is structured into components to facilitate organization and allow for easier modifications.
+The code also incorporates tests for the primary components. These tests ensure the functionality of features such as toggling the menu, submitting login credentials, creating and editing posts, and creating and deleting comments.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
