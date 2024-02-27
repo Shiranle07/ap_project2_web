@@ -32,6 +32,9 @@ function LoginPage({toggleForm, userData, setUserData}) {
                 "IsLogIn" : true}
             )
             setError('');
+            // call to the server to get all the posts
+
+            
             navigate('/feed');
         } else {
             // email or password incorrect

@@ -15,20 +15,29 @@ function CreatePostWindow({userData, postsList, setPostsList}){
         setIsPostDisabled(postContent.trim() === '');
     }, [postContent]);
 
-    const addNewPost = () => {
-        countId.current = countId.current + 1;
-        const post = {
-              "post_id" : countId.current,
-              "user_firstName" : userData.FirstName,
-              "user_lastName" : userData.LastName,
-              "user_photo" : userData.ProfilePhoto,
-              "postBody" : postContent,
-              "postPhoto" : preview,
-              "likesNumber" : 0,
-              "publication_date" : "now",
-              "comments" : []
-        }
-        setPostsList([post, ...postsList])
+    async function addNewPost(){
+        // countId.current = countId.current + 1;
+        // const post = {
+        //       "post_id" : countId.current, // from db?
+        //       "user_firstName" : userData.FirstName, //from server?
+        //       "user_lastName" : userData.LastName, //from server?
+        //       "user_photo" : userData.ProfilePhoto, //from server?
+        //       "postBody" : postContent,
+        //       "postPhoto" : preview,
+        //       "likesNumber" : 0, // ?
+        //       "publication_date" : "now", //from server?
+        //       "comments" : [] //from...?
+        // }
+        const data = await fetch('http://localhost:8080/feed', { //posts or feed?
+            method: "POST",
+            headers: {
+                "Content-Type" : "application/json",
+            },
+            body: JSON.stringify({postBody: postContent, postPhoto: preview})
+        })
+        posts = await data.json()
+        setPostsList(posts)
+        // setPostsList([post, ...postsList])
         setPostContent("");
         setPreview(null);
       }
