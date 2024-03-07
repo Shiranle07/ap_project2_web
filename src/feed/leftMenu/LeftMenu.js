@@ -6,6 +6,7 @@ import yoga from "./images/yoga.jpg"
 import baking from "./images/baking.png"
 import bioinformatics from "./images/bioinformatics.jpg"
 import Shortcuts from './Shortcuts';
+import { Link } from 'react-router-dom';
 
 
 function LeftMenu({userData}){
@@ -17,10 +18,10 @@ function LeftMenu({userData}){
 
     return(
     <div class="left-menu-container list-group mt-2" style={{ height: menuHeight - 85}}>
-        <a href="#" class="list-group-item list-group-item-action left-menu-item">
+        <Link to='/user' className="list-group-item list-group-item-action left-menu-item">
             <img src={userData.ProfilePhoto ? userData.ProfilePhoto : profilePhoto} alt="profile" width="40" height="40" class="d-inline-block align-text-center    profile-photo " id="display-user"></img>
              {userData.FirstName} {userData.LastName}
-        </a>
+        </Link>
 
         <LeftMenuItem classIcon={"bi bi-person-fill icon-menu"} text={"Friends"}/>
         <LeftMenuItem classIcon={"bi bi-clock icon-menu"} text={"Memories"}/>

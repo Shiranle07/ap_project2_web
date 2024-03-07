@@ -1,0 +1,7 @@
+.user-card{
+    height: 200px;
+}
+
+.user-card .profile-photo{
+    border-radius: 50%;
+}

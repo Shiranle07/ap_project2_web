@@ -9,9 +9,10 @@ import ProfilePhotoField from './profilePhotoField/ProfilePhotoField';
 import BirthdayField from './birthdayField/BirthdayField';
 import AgreeTermsField from './argeeTermsField/AgreeTermsField';
 import LoginLogo from '../loginPage/loginLogo/LoginLogo';
+import {useNavigate} from 'react-router-dom';
 
 
-function SignUp({ toggleForm, userData, setUserData}) {
+ function SignUp({ userData, setUserData}) {
 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -19,9 +20,10 @@ function SignUp({ toggleForm, userData, setUserData}) {
     const [password, setPassword] = useState('');
     const [passwordVerify, setPasswordVerify] = useState('');
     const [profilePhoto, setProfilePhoto] = useState('');
+    const navigate = useNavigate();
 
 
-    const handleSignUp = (e) => {
+    async function handleSignUp(e){
         e.preventDefault();
         // Password length validation
         if (password.length < 8 || password.length > 20) {
@@ -33,23 +35,42 @@ function SignUp({ toggleForm, userData, setUserData}) {
             return;
         }
         // update user data acorrding to the user's input
-        setUserData({
-            "FirstName" : firstName,
-            "LastName" : lastName,
-            "Email" : email,
-            "Password" : password,
-            "ProfilePhoto" : profilePhoto || userData.ProfilePhoto,
-            "IsLogIn" : false}
-        )
-        // change back to log in form
-        toggleForm();
+        const newUser ={
+            "firstName" : firstName,
+            "lastName" : lastName,
+            "email" : email,
+            "password" : password,
+            "profilePhoto" : profilePhoto
+        }
+        
+
+        const data = await fetch('http://localhost:8080/users', { 
+            method: "POST",
+            headers: {
+                "Content-Type" : "application/json",
+            },
+            body: JSON.stringify(newUser)
+        })
+        if (data.status === 409) {
+            // Handle the case where email already exists
+            console.error("Email already exists");
+        } else {
+            const user = await data.json();
+            if (user) {
+                navigate('/tokens');
+            }
         };
+    }
+
+        const handleClose = (e) => {
+            navigate('/')
+        }
 
 
     return (
         <div>
             <div className='form-box-signUp justify-content-center align-items-center'>
-            <button type="button" className="btn-close" aria-label="Close" onClick={toggleForm}></button>
+            <button type="button" className="btn-close" aria-label="Close" onClick={handleClose}></button>
 
             <TitleSignup/>
 

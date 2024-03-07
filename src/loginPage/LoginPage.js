@@ -10,7 +10,7 @@ import {useNavigate } from 'react-router-dom';
 import LoginLogo from './loginLogo/LoginLogo';
 
 
-function LoginPage({toggleForm, userData, setUserData}) {
+function LoginPage({userData, setUserData}) {
     const [email, setEmail] = useState(userData.Email || ''); //if user hasn't entered email, initilize as empty
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -18,28 +18,45 @@ function LoginPage({toggleForm, userData, setUserData}) {
 
 
 // checks for the login. only signed up users can login
-    const handleLogin = (e) => {
+    async function handleLogin(e){
         e.preventDefault();
+        const user = {
+            email: email,
+            password: password
+        }
 
-        // Check if email and password match the user data
-        if (email==userData.Email && password==userData.Password) {
-            setUserData({
-                "FirstName" : userData.FirstName,
-                "LastName" : userData.LastName,
-                "Email" : userData.Email,
-                "Password" : userData.Password,
-                "ProfilePhoto" : userData.ProfilePhoto,
-                "IsLogIn" : true}
-            )
-            setError('');
-            // call to the server to get all the posts
+        const res = await fetch("http://localhost:8080/api/tokens", {
+            method: "POST",
+            headers: {
+                "Content-Type" : "application/json",
+            },
+            body: JSON.stringify(user)
+        })
+
+        const data = await res.json()
+        const userToken = data.headers.get('Authorization').split(' ')[1];
+
+
+
+        // // Check if email and password match the user data
+        // if (email==userData.Email && password==userData.Password) {
+        //     setUserData({
+        //         "FirstName" : userData.FirstName,
+        //         "LastName" : userData.LastName,
+        //         "Email" : userData.Email,
+        //         "Password" : userData.Password,
+        //         "ProfilePhoto" : userData.ProfilePhoto,
+        //         "IsLogIn" : true}
+        //     )
+        //     setError('');
+        //     // call to the server to get all the posts
 
             
-            navigate('/feed');
-        } else {
-            // email or password incorrect
-            setError('Email or password is incorrect');
-        }
+        //     navigate('/posts');
+        // } else {
+        //     // email or password incorrect
+        //     setError('Email or password is incorrect');
+        // }
     };
 
     return (
@@ -63,7 +80,7 @@ function LoginPage({toggleForm, userData, setUserData}) {
                     <div className="line"></div>
                 </div>
 
-                <NewAccountButton toggleForm={toggleForm}/>
+                <NewAccountButton/>
             </div>
             <LoginLogo/>
         </div>
