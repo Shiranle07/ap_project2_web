@@ -36,7 +36,10 @@ function App() {
 
             <Route path="/feed" element={<Feed userData={userData} postsList={postsList} setPostsList={setPostsList}/>}></Route>
 
-            <Route path="/user" element={<ProfilePage user={userData}/>}></Route>
+            <Route path="/users/:id" element={<ProfilePage user={userData}/>}></Route>
+            <Route path="/users/:id/posts" element={<ProfilePage user={userData}/>}></Route>
+            <Route path="/users/:id/friends" element={<ProfilePage user={userData}/>}></Route>
+
 
           </Routes>
         </BrowserRouter>

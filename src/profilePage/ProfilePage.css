@@ -1,7 +1,40 @@
-.user-card{
-    height: 200px;
-}
 
 .user-card .profile-photo{
     border-radius: 50%;
+}
+
+.user-card{
+    padding: 5px 20px 0px 20px;
+}
+
+.profile-options{
+    font-weight:500;
+    color: rgb(82, 82, 82);
+    border: 0;
+} 
+
+.profile-options:hover{
+    background-color: rgb(223, 223, 223);
+    border: 0;
+}
+
+.active{
+    color:  rgb(41, 90, 223) !important;
+    border-radius: 0px;
+    border-bottom: 3px solid rgb(41, 90, 223) !important;
+    border: 0;
+}
+
+.active:hover{
+    background-color: initial;
+    border: 0;
+
+}
+
+
+.posts-card{
+    margin: 10px;
+    font-size: 20px;
+    padding: 10px;
+
 }

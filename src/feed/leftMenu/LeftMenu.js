@@ -18,7 +18,7 @@ function LeftMenu({userData}){
 
     return(
     <div class="left-menu-container list-group mt-2" style={{ height: menuHeight - 85}}>
-        <Link to='/user' className="list-group-item list-group-item-action left-menu-item">
+        <Link to='/users/:id' className="list-group-item list-group-item-action left-menu-item">
             <img src={userData.ProfilePhoto ? userData.ProfilePhoto : profilePhoto} alt="profile" width="40" height="40" class="d-inline-block align-text-center    profile-photo " id="display-user"></img>
              {userData.FirstName} {userData.LastName}
         </Link>
