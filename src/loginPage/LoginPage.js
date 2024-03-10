@@ -25,7 +25,7 @@ function LoginPage({userData, setUserData}) {
             password: password
         }
 
-        const res = await fetch("http://localhost:8080/api/tokens", {
+        const res = await fetch("http://localhost:8080/tokens", {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json",
@@ -35,6 +35,7 @@ function LoginPage({userData, setUserData}) {
 
         const data = await res.json()
         const userToken = data.headers.get('Authorization').split(' ')[1];
+        console.log(userToken);
 
 
 
