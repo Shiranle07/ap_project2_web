@@ -34,8 +34,8 @@ function DropdownMenu({ userData }) {
                 {activeMenu === 'main' && (
                     <>
                         <li><a className="dropdown-item" href="#">
-                            <img src={userData.ProfilePhoto ? userData.ProfilePhoto : profilePhoto} alt="profile" width="40" height="40" className="d-inline-block align-text-center profile-photo " id="display-user" />
-                            {userData.FirstName} {userData.LastName}</a></li>
+                            <img src={userData.profilePhoto ? userData.profilePhoto : profilePhoto} alt="profile" width="40" height="40" className="d-inline-block align-text-center profile-photo " id="display-user" />
+                            {userData.firstName} {userData.lastName}</a></li>
                         <li><hr className="dropdown-divider" /></li>
                         <MenuArrowItem iconClass={"bi bi-gear-fill menu-icon"} text={"Settings & privacy"} />
                         <MenuArrowItem iconClass={"bi bi-question-circle-fill menu-icon"} text={"Help & support"} />

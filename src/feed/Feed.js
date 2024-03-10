@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Feed.css'
 import {React, useState} from 'react';
 import { Link } from 'react-router-dom';
@@ -11,7 +11,13 @@ import CreatePostWindow from './createPost/createPostWindow/CreatePostWindow';
 import LoginLogo from '../loginPage/loginLogo/LoginLogo';
 import PostCard from "./postCard/PostCard";
 
-function Feed({ userData, postsList, setPostsList}) {
+function Feed({ postsList, setPostsList}) {
+    const location = useLocation();
+    const token = location.state.token;
+    const userData = location.state.user;
+    console.log("Token received in Feed component:", token)
+    console.log("The looged in user:", userData)
+
 
     const addCommentToPost = (postId, comment_id, newComment) => {
         const postIndex = postsList.findIndex(post => post.post_id === postId);
@@ -25,9 +31,9 @@ function Feed({ userData, postsList, setPostsList}) {
                 ...postToUpdate.comments,
                 {
                     comment_id: comment_id, // Use the comment_id of the new comment
-                    commenter_firstName: userData.FirstName,
-                    commenter_lastName: userData.LastName,
-                    commenter_photo: userData.ProfilePhoto,
+                    commenter_firstName: userData.firstName,
+                    commenter_lastName: userData.lastName,
+                    commenter_photo: userData.profilePhoto,
                     commentBody: newComment
                 }
             ];
@@ -90,23 +96,23 @@ function Feed({ userData, postsList, setPostsList}) {
         }
     };
 
-    // if (!userData.IsLogIn) {
-    //     return( 
-    //         <div>
-    //             <div className='form-box col-4 d-flex flex-column align-items-center justify-content-center'>
-    //                 <h2 className='error-noLogIn'>
-    //             You must log in first
-    //             </h2>
-    //             <Link to="/" style={{ display: 'block', textAlign: 'center', margin: '10px 0' }}>
-    //                 <button className='btn btn-primary'>
-    //                     Click here to log in
-    //                 </button>
-    //                 </Link>
-    //             </div>
-    //             <LoginLogo/>
-    //         </div>
-    //     );
-    // }
+    if (!userData) {
+        return( 
+            <div>
+                <div className='form-box col-4 d-flex flex-column align-items-center justify-content-center'>
+                    <h2 className='error-noLogIn'>
+                You must log in first
+                </h2>
+                <Link to="/tokens" style={{ display: 'block', textAlign: 'center', margin: '10px 0' }}>
+                    <button className='btn btn-primary'>
+                        Click here to log in
+                    </button>
+                    </Link>
+                </div>
+                <LoginLogo/>
+            </div>
+        );
+    }
     
     return (
         <div>

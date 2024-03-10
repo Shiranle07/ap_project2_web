@@ -73,13 +73,13 @@ function CreatePostWindow({userData, postsList, setPostsList}){
                 </div>
                 <div class="modal-body">
                     <div class="d-flex align-items-center">
-                        <img src={userData.ProfilePhoto ? userData.ProfilePhoto : profilePhoto} alt="profile" width="40" height="40" class="d-inline-block align-text-center profile-photo mr-2" id="display-user"></img>
+                        <img src={userData.profilePhoto ? userData.profilePhoto : profilePhoto} alt="profile" width="40" height="40" class="d-inline-block align-text-center profile-photo mr-2" id="display-user"></img>
                         <p class="fw-bolder m-0">
-                            {userData.FirstName} {userData.LastName}
+                            {userData.firstName} {userData.lastName}
                         </p>
                     </div>
                     <form>
-                        <textarea className="form-control mt-3" id="postContent" value ={postContent} placeholder={`What's on your mind, ${userData.FirstName}?`} onChange={handlePostContentChange}></textarea>
+                        <textarea className="form-control mt-3" id="postContent" value ={postContent} placeholder={`What's on your mind, ${userData.firstName}?`} onChange={handlePostContentChange}></textarea>
                     </form> 
                     
                     <div className='card mt-3 post-additionals'>

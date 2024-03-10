@@ -25,7 +25,7 @@ function LoginPage({userData, setUserData}) {
             password: password
         }
 
-        const res = await fetch("http://localhost:8080/tokens", {
+        const response = await fetch("http://localhost:8080/tokens", {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json",
@@ -33,9 +33,16 @@ function LoginPage({userData, setUserData}) {
             body: JSON.stringify(user)
         })
 
-        const data = await res.json()
-        const userToken = data.headers.get('Authorization').split(' ')[1];
-        console.log(userToken);
+        if (response.status !== 201) {
+            alert('Invalid username and/or password');
+            return;
+          }
+
+          const json = await response.json();
+          const userToken = json.token;
+          const loggedUser = json.user
+          navigate('/feed', { state: { token: userToken, user: loggedUser } });
+
 
 
 
