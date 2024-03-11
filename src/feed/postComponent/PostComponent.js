@@ -3,9 +3,10 @@ import DeletePostModal from "./DeletePostModal";
 import ShareOption from './ShareOption';
 import EditPostWindow from "./EditPostWindow";
 import "./PostComponent.css"
+import { Link } from "react-router-dom";
 
 
-function PostComponent({post_id, user_firstName, user_lastName, user_photo, postBody, postPhoto, likesNumber, commentsNumber, publication_date, isLiked, setIsLiked, onDeletePost, onEditPost}){
+function PostComponent({post_id, user_email, user_firstName, user_lastName, user_photo, postBody, postPhoto, likesNumber, commentsNumber, publication_date, isLiked, setIsLiked, onDeletePost, onEditPost}){
     const handleLikeClick = () => {
         setIsLiked(!isLiked);
     };
@@ -22,12 +23,12 @@ function PostComponent({post_id, user_firstName, user_lastName, user_photo, post
             </button>
                 <DeletePostModal onDeletePost={onDeletePost} post_id={post_id}/>
         </div>
-        <div class="d-flex align-items-center">
+        <Link to={`/api/users/${user_email}`} class="d-flex align-items-center">
             <img src={user_photo ? user_photo : profilePhoto} alt="profile" width="40" height="40" class="d-inline-block align-text-center profile-photo mr-2" id="display-user"></img>
             <p class="fw-bolder m-0">
                 {user_firstName} {user_lastName}
             </p>
-        </div>
+        </Link>
         <p class="card-subtitle mt-1 post-date">{publication_date}</p>
         <br></br>
         <p class="card-text pt-2">{postBody}</p>
