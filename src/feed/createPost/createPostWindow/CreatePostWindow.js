@@ -4,7 +4,7 @@ import PostAdditionals from './PostAdditionals';
 import { React, useRef, useState, useEffect } from 'react';
 
 
-function CreatePostWindow({userData, postsList, setPostsList}){
+function CreatePostWindow({userToken, userData, postsList, setPostsList, getPosts}){
     const [postContent, setPostContent] = useState('');
     const [isPostDisabled, setIsPostDisabled] = useState(true);
     const [preview, setPreview] = useState();
@@ -28,15 +28,16 @@ function CreatePostWindow({userData, postsList, setPostsList}){
         //       "publication_date" : "now", //from server?
         //       "comments" : [] //from...?
         // }
-        const data = await fetch('http://localhost:8080/api/feed', { //posts or feed?
+        const data = await fetch('http://localhost:8080/feed', { //posts or feed?
             method: "POST",
             headers: {
-                "Content-Type" : "application/json"
+                "Content-Type" : "application/json",
+                'authorization': 'bearer ' + userToken // attach the token
             },
             body: JSON.stringify({postBody: postContent, postPhoto: preview})
         })
-        const posts = await data.json()
-        setPostsList(posts)
+        getPosts();
+        // setPostsList(posts)
         // setPostsList([post, ...postsList])
         setPostContent("");
         setPreview(null);

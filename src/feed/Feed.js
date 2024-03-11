@@ -1,6 +1,6 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import './Feed.css'
-import {React, useState} from 'react';
+import {React, useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import TopNavbar from './topNavbar/TopNavbar';
 import LeftMenu from './leftMenu/LeftMenu';
@@ -11,14 +11,32 @@ import CreatePostWindow from './createPost/createPostWindow/CreatePostWindow';
 import LoginLogo from '../loginPage/loginLogo/LoginLogo';
 import PostCard from "./postCard/PostCard";
 
-function Feed({ postsList, setPostsList}) {
+function Feed({postsList, setPostsList, getPosts}) {
     const location = useLocation();
-    const token = location.state.token;
-    const userData = location.state.user;
+    const token = location.state?.token || null;
+    const userData = location.state?.user;
     console.log("Token received in Feed component:", token)
     console.log("The looged in user:", userData)
 
 
+    if (!token) {
+        return( 
+            <div>
+                <div className='form-box col-4 d-flex flex-column align-items-center justify-content-center'>
+                    <h2 className='error-noLogIn'>
+                You must log in first
+                </h2>
+                <Link to="/tokens" style={{ display: 'block', textAlign: 'center', margin: '10px 0' }}>
+                    <button className='btn btn-primary'>
+                        Click here to log in
+                    </button>
+                    </Link>
+                </div>
+                <LoginLogo/>
+            </div>
+        );
+    }
+    
     const addCommentToPost = (postId, comment_id, newComment) => {
         const postIndex = postsList.findIndex(post => post.post_id === postId);
         if (postIndex !== -1) {
@@ -96,23 +114,7 @@ function Feed({ postsList, setPostsList}) {
         }
     };
 
-    if (!userData) {
-        return( 
-            <div>
-                <div className='form-box col-4 d-flex flex-column align-items-center justify-content-center'>
-                    <h2 className='error-noLogIn'>
-                You must log in first
-                </h2>
-                <Link to="/tokens" style={{ display: 'block', textAlign: 'center', margin: '10px 0' }}>
-                    <button className='btn btn-primary'>
-                        Click here to log in
-                    </button>
-                    </Link>
-                </div>
-                <LoginLogo/>
-            </div>
-        );
-    }
+
     
     return (
         <div>
@@ -125,9 +127,10 @@ function Feed({ postsList, setPostsList}) {
                     <div className='col-6 middle-section'>
                         <CreatePostField userData={userData}/>
                         <div className='post-list'>
+                            {console.log("Printing posts:", postsList)}
                             {postsList.map(post => (
                                 <PostCard
-                                    key={post.post_id}
+                                    key={post._id}
                                     {...post}
                                     onDeletePost={onDeletePost}
                                     onEditPost={onEditPost}
@@ -144,7 +147,7 @@ function Feed({ postsList, setPostsList}) {
                 </div>
             </div>
             
-            <CreatePostWindow userData={userData} postsList={postsList} setPostsList={setPostsList}/>
+            <CreatePostWindow userToken={token} userData={userData} postsList={postsList} setPostsList={setPostsList} getPosts={getPosts}/>
             </div>
     );
 }
