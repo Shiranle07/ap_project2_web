@@ -44,7 +44,7 @@ import {useNavigate} from 'react-router-dom';
         }
         
 
-        const data = await fetch('http://localhost:8080/users', { 
+        const data = await fetch('http://localhost:8080/api/users', { 
             method: "POST",
             headers: {
                 "Content-Type" : "application/json",
@@ -57,7 +57,7 @@ import {useNavigate} from 'react-router-dom';
         } else {
             const user = await data.json();
             if (user) {
-                navigate('/tokens');
+                navigate('/api/tokens');
             }
         };
     }

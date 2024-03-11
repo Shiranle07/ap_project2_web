@@ -25,7 +25,7 @@ function LoginPage({userData, setUserData}) {
             password: password
         }
 
-        const response = await fetch("http://localhost:8080/tokens", {
+        const response = await fetch("http://localhost:8080/api/tokens", {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json",
@@ -41,7 +41,7 @@ function LoginPage({userData, setUserData}) {
           const json = await response.json();
           const userToken = json.token;
           const loggedUser = json.user
-          navigate('/feed', { state: { token: userToken, user: loggedUser } });
+          navigate('/api/posts', { state: { token: userToken, user: loggedUser } });
 
 
 

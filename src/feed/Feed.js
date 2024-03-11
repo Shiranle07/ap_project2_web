@@ -26,7 +26,7 @@ function Feed({postsList, setPostsList, getPosts}) {
                     <h2 className='error-noLogIn'>
                 You must log in first
                 </h2>
-                <Link to="/tokens" style={{ display: 'block', textAlign: 'center', margin: '10px 0' }}>
+                <Link to="/api/tokens" style={{ display: 'block', textAlign: 'center', margin: '10px 0' }}>
                     <button className='btn btn-primary'>
                         Click here to log in
                     </button>
@@ -86,32 +86,43 @@ function Feed({postsList, setPostsList, getPosts}) {
         }
     };
     
-    const onDeletePost = (postId) => {
-        console.log(`deleting post... ${postId}`)
-        // Filter out the post with the given postId
-        const updatedPosts = postsList.filter(post => post.post_id !== postId);
-        
-        // Update the state with the filtered posts
-        setPostsList(updatedPosts);
+    async function onDeletePost(postId) {
+        console.log(`deleting post... ${postId}`);
+        const res = await fetch(`http://localhost:8080/api/posts/${postId}`, {
+            method: "DELETE",
+            headers: {
+                'authorization': 'Bearer ' + token // attach the token
+            }
+        });
+        getPosts();
+
     };
-    
   
-    const onEditPost = (postId, newPostContent, newPostPhoto) => {
+    async function onEditPost(postId, newPostContent, newPostPhoto){
+        const res = await fetch(`http://localhost:8080/api/posts/${postId}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type" : "application/json",
+                'authorization': 'bearer ' + token // attach the token
+            },
+            body: JSON.stringify({postBody: newPostContent, postPhoto: newPostPhoto})
+        });
+        getPosts();
+
         // Find the index of the post in the posts array using its ID
-        const postIndex = postsList.findIndex(post => post.post_id === postId);
+        // const postIndex = postsList.findIndex(post => post.post_id === postId);
         
-        if (postIndex !== -1) {
-            // Create a new array with the updated post at the correct index
-            const updatedPosts = [...postsList];
-            updatedPosts[postIndex] = {
-                ...updatedPosts[postIndex],
-                postBody: newPostContent,
-                postPhoto: newPostPhoto
-            };  
+        // if (postIndex !== -1) {
+        //     // Create a new array with the updated post at the correct index
+        //     const updatedPosts = [...postsList];
+        //     updatedPosts[postIndex] = {
+        //         ...updatedPosts[postIndex],
+        //         postBody: newPostContent,
+        //         postPhoto: newPostPhoto
+        //     };  
   
             // Update the state with the new array of posts
-            setPostsList(updatedPosts);
-        }
+           // setPostsList(updatedPosts);
     };
 
 

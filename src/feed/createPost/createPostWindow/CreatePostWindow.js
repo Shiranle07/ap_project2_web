@@ -28,7 +28,7 @@ function CreatePostWindow({userToken, userData, postsList, setPostsList, getPost
         //       "publication_date" : "now", //from server?
         //       "comments" : [] //from...?
         // }
-        const data = await fetch('http://localhost:8080/feed', { //posts or feed?
+        const data = await fetch('http://localhost:8080/api/posts', { //posts or feed?
             method: "POST",
             headers: {
                 "Content-Type" : "application/json",
