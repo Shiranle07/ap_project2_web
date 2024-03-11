@@ -8,7 +8,7 @@ import Post from '../../post/Post.js';
 import PostComponent from '../postComponent/PostComponent.js';
 
 
-function PostCard({ post_id, user_firstName, user_lastName, user_photo, postBody, postPhoto, likesNumber, publication_date, comments, onDeletePost, onEditPost, userData, addCommentToPost, deleteCommentFromPost}) {
+function PostCard({ post_id, user_firstName, user_lastName, user_photo, postBody, postPhoto, likesNumber, publication_date_formatted, comments, onDeletePost, onEditPost, userData, addCommentToPost, deleteCommentFromPost}) {
     const [isLiked, setIsLiked] = useState(false); // State to track if button is liked
     const [commentsCount, setCommentsCount] = useState(comments.length);
 
@@ -27,11 +27,11 @@ function PostCard({ post_id, user_firstName, user_lastName, user_photo, postBody
         <div class="container mb-3">
             <div class="card">
                 <div class="card-body">
-                <PostComponent post_id={post_id} user_firstName={user_firstName} user_lastName={user_lastName} user_photo={user_photo} postBody={postBody} postPhoto={postPhoto} likesNumber={likesNumber} commentsNumber={commentsCount} publication_date={publication_date} isLiked={isLiked} setIsLiked={setIsLiked} onDeletePost={onDeletePost} onEditPost={onEditPost}/>
+                <PostComponent post_id={post_id} user_firstName={user_firstName} user_lastName={user_lastName} user_photo={user_photo} postBody={postBody} postPhoto={postPhoto} likesNumber={likesNumber} commentsNumber={commentsCount} publication_date={publication_date_formatted} isLiked={isLiked} setIsLiked={setIsLiked} onDeletePost={onDeletePost} onEditPost={onEditPost}/>
                 </div>
             </div>
 
-            <Post post_id={post_id} user_firstName={user_firstName} user_lastName={user_lastName} user_photo={user_photo} postBody={postBody} postPhoto={postPhoto} likesNumber={likesNumber} publication_date={publication_date} comments={comments} isLiked={isLiked} setIsLiked={setIsLiked} onDeletePost={onDeletePost} onEditPost={onEditPost} userData={userData} addCommentToPost={addCommentToPost} deleteCommentFromPost={deleteCommentFromPost}/>
+            <Post post_id={post_id} user_firstName={user_firstName} user_lastName={user_lastName} user_photo={user_photo} postBody={postBody} postPhoto={postPhoto} likesNumber={likesNumber} publication_date={publication_date_formatted} comments={comments} isLiked={isLiked} setIsLiked={setIsLiked} onDeletePost={onDeletePost} onEditPost={onEditPost} userData={userData} addCommentToPost={addCommentToPost} deleteCommentFromPost={deleteCommentFromPost}/>
 
         </div>
         
