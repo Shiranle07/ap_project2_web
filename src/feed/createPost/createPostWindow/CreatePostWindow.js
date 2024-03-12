@@ -34,7 +34,7 @@ function CreatePostWindow({userToken, userData, postsList, setPostsList, getPost
                 "Content-Type" : "application/json",
                 'authorization': 'bearer ' + userToken // attach the token
             },
-            body: JSON.stringify({postBody: postContent, postPhoto: preview})
+            body: JSON.stringify({ postBody: postContent, postPhoto: preview})
         })
         getPosts();
         // setPostsList(posts)

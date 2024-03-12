@@ -3,13 +3,33 @@ import DeletePostModal from "./DeletePostModal";
 import ShareOption from './ShareOption';
 import EditPostWindow from "./EditPostWindow";
 import "./PostComponent.css"
-import { Link } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 
 
-function PostComponent({post_id, user_email, user_firstName, user_lastName, user_photo, postBody, postPhoto, likesNumber, commentsNumber, publication_date, isLiked, setIsLiked, onDeletePost, onEditPost}){
+function PostComponent({post_id, user_email, user_firstName, user_lastName, user_photo, postBody, postPhoto, likesNumber, commentsNumber, publication_date, isLiked, setIsLiked, onDeletePost, onEditPost, token}){
     const handleLikeClick = () => {
         setIsLiked(!isLiked);
     };
+    const navigate = useNavigate();
+
+    const handleNavigate = async (e) => {
+        // Prevent default link behavior to stop immediate navigation
+        //e.preventDefault();
+        console.log("!!!!!!!!!!!!!!!!!!!!!!!")
+
+        const res = await fetch(`http://localhost:8080/api/users/${user_email}`,{
+            headers: {
+                "Content-Type" : "application/json",
+                'authorization': 'bearer ' + token // attach the token
+            }
+        })
+
+        const user = await res.json();
+        console.log("founded user:", user)
+
+        // Now navigate to the specified URL
+        navigate(`/api/users/${user_email}`, { state: { token: token, user: user } });
+    }
 
     return(
         <div>
@@ -23,7 +43,7 @@ function PostComponent({post_id, user_email, user_firstName, user_lastName, user
             </button>
                 <DeletePostModal onDeletePost={onDeletePost} post_id={post_id}/>
         </div>
-        <Link to={`/api/users/${user_email}`} class="d-flex align-items-center">
+        <Link to={`/api/users/${user_email}`} className="d-flex align-items-center user-link" onClick={handleNavigate} data-bs-dismiss="modal">
             <img src={user_photo ? user_photo : profilePhoto} alt="profile" width="40" height="40" class="d-inline-block align-text-center profile-photo mr-2" id="display-user"></img>
             <p class="fw-bolder m-0">
                 {user_firstName} {user_lastName}

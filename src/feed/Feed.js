@@ -91,9 +91,15 @@ function Feed({postsList, setPostsList, getPosts}) {
         const res = await fetch(`http://localhost:8080/api/posts/${postId}`, {
             method: "DELETE",
             headers: {
+                "Content-Type" : "application/json",
                 'authorization': 'Bearer ' + token // attach the token
             }
         });
+        if (res.status !== 200) {
+            alert("You can't delete someone else's post!");
+            return;
+          }
+
         getPosts();
 
     };
@@ -107,6 +113,10 @@ function Feed({postsList, setPostsList, getPosts}) {
             },
             body: JSON.stringify({postBody: newPostContent, postPhoto: newPostPhoto})
         });
+        if (res.status !== 200) {
+            alert("You can't edit someone else's post!");
+            return;
+          }
         getPosts();
 
         // Find the index of the post in the posts array using its ID
@@ -148,6 +158,7 @@ function Feed({postsList, setPostsList, getPosts}) {
                                     userData={userData}
                                     addCommentToPost={addCommentToPost}
                                     deleteCommentFromPost={deleteCommentFromPost}
+                                    token={token}
                                 />
                             ))}
                         </div>

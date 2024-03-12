@@ -34,3 +34,8 @@
 .dark-mode .editAndDelete-icon{
     color: rgb(184, 184, 184);
 }
+
+.user-link{
+    color: black;
+    text-decoration: none;
+}
