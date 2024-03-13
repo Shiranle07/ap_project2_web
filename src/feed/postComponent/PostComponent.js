@@ -14,8 +14,7 @@ function PostComponent({post_id, user_email, user_firstName, user_lastName, user
 
     const handleNavigate = async (e) => {
         // Prevent default link behavior to stop immediate navigation
-        //e.preventDefault();
-        console.log("!!!!!!!!!!!!!!!!!!!!!!!")
+        e.preventDefault();
 
         const res = await fetch(`http://localhost:8080/api/users/${user_email}`,{
             headers: {
@@ -23,12 +22,9 @@ function PostComponent({post_id, user_email, user_firstName, user_lastName, user
                 'authorization': 'bearer ' + token // attach the token
             }
         })
-
         const user = await res.json();
-        console.log("founded user:", user)
-
         // Now navigate to the specified URL
-        navigate(`/api/users/${user_email}`, { state: { token: token, user: user } });
+        navigate(`/users/${user_email}`, { state: { token: token, res: res, user: user } });
     }
 
     return(
@@ -43,7 +39,7 @@ function PostComponent({post_id, user_email, user_firstName, user_lastName, user
             </button>
                 <DeletePostModal onDeletePost={onDeletePost} post_id={post_id}/>
         </div>
-        <Link to={`/api/users/${user_email}`} className="d-flex align-items-center user-link" onClick={handleNavigate} data-bs-dismiss="modal">
+        <Link to={`/users/${user_email}`} className="d-flex align-items-center user-link" onClick={handleNavigate} data-bs-dismiss="modal">
             <img src={user_photo ? user_photo : profilePhoto} alt="profile" width="40" height="40" class="d-inline-block align-text-center profile-photo mr-2" id="display-user"></img>
             <p class="fw-bolder m-0">
                 {user_firstName} {user_lastName}

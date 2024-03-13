@@ -44,15 +44,15 @@ useEffect(() => {
           <Routes>
             <Route path="/" element={<Feed postsList={postsList} setPostsList={setPostsList} getPosts={getPosts}/>}></Route>
 
-            <Route path="/api/tokens" element={<LoginPage userData={userData} setUserData={setUserData} />}></Route>
+            <Route path="/tokens" element={<LoginPage userData={userData} setUserData={setUserData} />}></Route>
 
-            <Route path="/api/users" element={<SignUp userData={userData} setUserData={setUserData} />}></Route>
+            <Route path="/users" element={<SignUp userData={userData} setUserData={setUserData} />}></Route>
 
-            <Route path="/api/posts" element={<Feed postsList={postsList} setPostsList={setPostsList} getPosts={getPosts}/>}></Route>
+            <Route path="/posts" element={<Feed postsList={postsList} setPostsList={setPostsList} getPosts={getPosts}/>}></Route>
 
-            <Route path="/api/users/:id" element={<ProfilePage user={userData}/>}></Route>
-            <Route path="/api/users/:id/posts" element={<ProfilePage user={userData}/>}></Route>
-            <Route path="/api/users/:id/friends" element={<ProfilePage user={userData}/>}></Route>
+            <Route path="/users/:id" element={<ProfilePage user={userData}/>}></Route>
+            {/* <Route path="/users/:id/posts" element={<ProfilePage user={userData}/>}></Route>
+            <Route path="/users/:id/friends" element={<ProfilePage user={userData}/>}></Route> */}
 
 
           </Routes>

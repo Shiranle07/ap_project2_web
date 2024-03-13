@@ -57,13 +57,13 @@ import {useNavigate} from 'react-router-dom';
         } else {
             const user = await data.json();
             if (user) {
-                navigate('/api/tokens');
+                navigate('/tokens');
             }
         };
     }
 
         const handleClose = (e) => {
-            navigate('/')
+            navigate('/tokens')
         }
 
 

@@ -41,30 +41,7 @@ function LoginPage({userData, setUserData}) {
           const json = await response.json();
           const userToken = json.token;
           const loggedUser = json.user
-          navigate('/api/posts', { state: { token: userToken, user: loggedUser } });
-
-
-
-
-        // // Check if email and password match the user data
-        // if (email==userData.Email && password==userData.Password) {
-        //     setUserData({
-        //         "FirstName" : userData.FirstName,
-        //         "LastName" : userData.LastName,
-        //         "Email" : userData.Email,
-        //         "Password" : userData.Password,
-        //         "ProfilePhoto" : userData.ProfilePhoto,
-        //         "IsLogIn" : true}
-        //     )
-        //     setError('');
-        //     // call to the server to get all the posts
-
-            
-        //     navigate('/posts');
-        // } else {
-        //     // email or password incorrect
-        //     setError('Email or password is incorrect');
-        // }
+          navigate('/posts', { state: { token: userToken, user: loggedUser } });
     };
 
     return (

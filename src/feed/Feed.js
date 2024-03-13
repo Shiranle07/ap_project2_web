@@ -26,7 +26,7 @@ function Feed({postsList, setPostsList, getPosts}) {
                     <h2 className='error-noLogIn'>
                 You must log in first
                 </h2>
-                <Link to="/api/tokens" style={{ display: 'block', textAlign: 'center', margin: '10px 0' }}>
+                <Link to="/tokens" style={{ display: 'block', textAlign: 'center', margin: '10px 0' }}>
                     <button className='btn btn-primary'>
                         Click here to log in
                     </button>
@@ -119,20 +119,6 @@ function Feed({postsList, setPostsList, getPosts}) {
           }
         getPosts();
 
-        // Find the index of the post in the posts array using its ID
-        // const postIndex = postsList.findIndex(post => post.post_id === postId);
-        
-        // if (postIndex !== -1) {
-        //     // Create a new array with the updated post at the correct index
-        //     const updatedPosts = [...postsList];
-        //     updatedPosts[postIndex] = {
-        //         ...updatedPosts[postIndex],
-        //         postBody: newPostContent,
-        //         postPhoto: newPostPhoto
-        //     };  
-  
-            // Update the state with the new array of posts
-           // setPostsList(updatedPosts);
     };
 
 

@@ -38,3 +38,11 @@
     padding: 10px;
 
 }
+
+.user-card p{
+    font-size: 28px;
+}
+
+.friends-request{
+    float: right !important;
+}
