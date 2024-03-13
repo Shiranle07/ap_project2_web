@@ -22,9 +22,10 @@ function PostComponent({post_id, user_email, user_firstName, user_lastName, user
                 'authorization': 'bearer ' + token // attach the token
             }
         })
-        const user = await res.json();
+        const data = await res.json();
         // Now navigate to the specified URL
-        navigate(`/users/${user_email}`, { state: { token: token, res: res, user: user } });
+        console.log("navigate...")
+        navigate(`/users/${user_email}`, { state: { token: token, user: data.user, status: data.status } });
     }
 
     return(

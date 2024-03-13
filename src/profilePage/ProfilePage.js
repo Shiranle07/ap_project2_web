@@ -10,15 +10,15 @@ import DeleteUserModal from "./DeleteUserModal";
 function ProfilePage(){
     const { userEmail, section } = useParams();
     const [activeButton, setActiveButton] = useState(section || 'About');
-    const [activeFriendsButton, setActiveFriendsButton] = useState();
     const navigate = useNavigate();
     const location = useLocation();
     const token = location.state.token;
-    const res = location.state.res;
     const user = location.state.user;
+    const status = location.state.status;
+    const [activeFriendsButton, setActiveFriendsButton] = useState(status);
     console.log("the user here:", token)
 
-    if(res.status == 200){
+    if(activeFriendsButton == "user"){
         return (
             <div>
                 <TopNavbar userData={user} />
@@ -27,7 +27,7 @@ function ProfilePage(){
                     <p className="fw-bolder m-0">
                         {user.firstName} {user.lastName}
                     </p>
-                    <div className="editAndDelete">
+                    <div className="editAndDelete d-flex align-items-center justify-content-end">
                         <button className="btn" data-bs-toggle="modal" data-bs-target={`#editUser-${user.email}`}>
                             <i class="bi bi-pencil editAndDelete-icon"></i>
                              </button>
@@ -72,21 +72,6 @@ function ProfilePage(){
         );
     }
 
-    switch(res.status){
-        case 201:
-            setActiveFriendsButton('Friends')
-        break;
-        case 202:
-            setActiveFriendsButton('Requested')
-        break;
-        case 203:
-            setActiveFriendsButton('Confirm')
-        break;
-        case 204:
-            setActiveFriendsButton('Add friend')
-        break;
-    }
-
 
     const handleButtonClick = (buttonName) => {
         setActiveButton(buttonName);
@@ -111,14 +96,20 @@ function ProfilePage(){
     const getFriends = async (buttonName) => {
         setActiveButton(buttonName);
         const res = await fetch(`http://localhost:8080/api/users/${user.email}/friends`,{
-            'authorization': 'bearer ' + token // attach the token
+            headers: {
+                "Content-Type" : "application/json",
+                'authorization': 'bearer ' + token // attach the token
+            }
         })
     }
 
     const addFriend = async () => {
         const res = await fetch(`http://localhost:8080/api/users/${user.email}/friends`,{
             "method" : "POST",
-            'authorization': 'bearer ' + token // attach the token
+            headers: {
+                "Content-Type" : "application/json",
+                'authorization': 'bearer ' + token // attach the token
+            }
         })
         setActiveFriendsButton("Requested")
     }
@@ -134,25 +125,25 @@ function ProfilePage(){
                 <div className="d-flex align-items-center justify-content-end"> 
                     {activeFriendsButton === 'Add friend' && (
                         <button className="btn col-2 friends-request btn-primary" onClick={addFriend}>
-                            <i className="bi bi-person-fill-add me-1"></i>
+                            <i className="bi bi-person-fill-add ml-1"></i>
                             Add friend
                         </button>
                     )}
                     {activeFriendsButton === 'Requested' && (
                         <button className="btn col-2 friends-request btn-secondary" disabled>
-                            <i className="bi bi-person-fill-check me-1"></i>
+                            <i className="bi bi-person-fill-check ml-1"></i>
                             Requested
                         </button>
                     )}
                     {activeFriendsButton === 'Confirm' && (
                         <button className="btn col-2 friends-request btn-secondary" disabled>
-                            <i class="bi bi-check2-all me-1"></i>
+                            <i class="bi bi-check2-all ml-1"></i>
                             {user.firstName} sent you a friend request
                         </button>
                     )}
                     {activeFriendsButton === 'Friends' && (
                         <button className="btn col-2 friends-request btn-secondary">
-                            <i className="bi bi-person-check-fill me-1"></i>
+                            <i className="bi bi-person-check-fill ml-1"></i>
                             Friends
                         </button>
                     )}
