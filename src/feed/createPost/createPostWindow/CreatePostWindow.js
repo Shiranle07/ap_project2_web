@@ -1,5 +1,4 @@
 import "./CreatePostWindow.css"
-import profilePhoto from "../../../signUp/profilePhotoField/defaultProfilePhoto.jpg";
 import PostAdditionals from './PostAdditionals';
 import { React, useRef, useState, useEffect } from 'react';
 
@@ -16,18 +15,6 @@ function CreatePostWindow({userToken, userData, postsList, setPostsList, getPost
     }, [postContent]);
 
     async function addNewPost(){
-        // countId.current = countId.current + 1;
-        // const post = {
-        //       "post_id" : countId.current, // from db?
-        //       "user_firstName" : userData.FirstName, //from server?
-        //       "user_lastName" : userData.LastName, //from server?
-        //       "user_photo" : userData.ProfilePhoto, //from server?
-        //       "postBody" : postContent,
-        //       "postPhoto" : preview,
-        //       "likesNumber" : 0, // ?
-        //       "publication_date" : "now", //from server?
-        //       "comments" : [] //from...?
-        // }
         const data = await fetch('http://localhost:8080/api/posts', { //posts or feed?
             method: "POST",
             headers: {
@@ -37,8 +24,6 @@ function CreatePostWindow({userToken, userData, postsList, setPostsList, getPost
             body: JSON.stringify({ postBody: postContent, postPhoto: preview})
         })
         getPosts();
-        // setPostsList(posts)
-        // setPostsList([post, ...postsList])
         setPostContent("");
         setPreview(null);
       }
@@ -74,7 +59,7 @@ function CreatePostWindow({userToken, userData, postsList, setPostsList, getPost
                 </div>
                 <div class="modal-body">
                     <div class="d-flex align-items-center">
-                        <img src={userData.profilePhoto ? userData.profilePhoto : profilePhoto} alt="profile" width="40" height="40" class="d-inline-block align-text-center profile-photo mr-2" id="display-user"></img>
+                        <img src={userData.profilePhoto} alt="profile" width="40" height="40" class="d-inline-block align-text-center profile-photo mr-2" id="display-user"></img>
                         <p class="fw-bolder m-0">
                             {userData.firstName} {userData.lastName}
                         </p>

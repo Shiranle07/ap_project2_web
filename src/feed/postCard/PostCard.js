@@ -1,6 +1,5 @@
 // PostCard.jsx
 import React, { useState, useEffect } from 'react';
-import profilePhoto from "../../signUp/profilePhotoField/defaultProfilePhoto.jpg";
 import "./PostCard.css";
 import post from "../../post/Post.js"
 import ShareOption from '../postComponent/ShareOption.js';
@@ -27,7 +26,7 @@ function PostCard({ _id, user_email, user_firstName, user_lastName, user_photo, 
         <div class="container mb-3">
             <div class="card">
                 <div class="card-body">
-                <PostComponent post_id={_id} user_email={user_email} user_firstName={user_firstName} user_lastName={user_lastName} user_photo={user_photo} postBody={postBody} postPhoto={postPhoto} likesNumber={likesNumber} commentsNumber={commentsCount} publication_date={publication_date_formatted} isLiked={isLiked} setIsLiked={setIsLiked} onDeletePost={onDeletePost} onEditPost={onEditPost} token={token}/>
+                <PostComponent post_id={_id} user_email={user_email} user_firstName={user_firstName} user_lastName={user_lastName} user_photo={user_photo} postBody={postBody} postPhoto={postPhoto} likesNumber={likesNumber} commentsNumber={commentsCount} userData={userData} publication_date={publication_date_formatted} isLiked={isLiked} setIsLiked={setIsLiked} onDeletePost={onDeletePost} onEditPost={onEditPost} token={token}/>
                 </div>
             </div>
 

@@ -1,5 +1,4 @@
 import './LeftMenu.css'
-import profilePhoto from "../../signUp/profilePhotoField/defaultProfilePhoto.jpg";
 import {react, useState} from 'react'
 import LeftMenuItem from './LeftMenuItem';
 import yoga from "./images/yoga.jpg"
@@ -19,7 +18,7 @@ function LeftMenu({userData}){
     return(
     <div class="left-menu-container list-group mt-2" style={{ height: menuHeight - 85}}>
         <div className="list-group-item list-group-item-action left-menu-item">
-            <img src={userData.profilePhoto ? userData.profilePhoto : profilePhoto} alt="profile" width="40" height="40" class="d-inline-block align-text-center    profile-photo " id="display-user"></img>
+            <img src={userData.profilePhoto} alt="profile" width="40" height="40" class="d-inline-block align-text-center    profile-photo " id="display-user"></img>
              {userData.firstName} {userData.lastName}
         </div>
 

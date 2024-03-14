@@ -1,4 +1,3 @@
-import profilePhoto from "../../signUp/profilePhotoField/defaultProfilePhoto.jpg";
 import DeletePostModal from "./DeletePostModal";
 import ShareOption from './ShareOption';
 import EditPostWindow from "./EditPostWindow";
@@ -6,7 +5,7 @@ import "./PostComponent.css"
 import { Link, useNavigate  } from "react-router-dom";
 
 
-function PostComponent({post_id, user_email, user_firstName, user_lastName, user_photo, postBody, postPhoto, likesNumber, commentsNumber, publication_date, isLiked, setIsLiked, onDeletePost, onEditPost, token}){
+function PostComponent({post_id, user_email, user_firstName, user_lastName, user_photo, postBody, postPhoto, likesNumber, commentsNumber, userData, publication_date, isLiked, setIsLiked, onDeletePost, onEditPost, token}){
     const handleLikeClick = () => {
         setIsLiked(!isLiked);
     };
@@ -25,7 +24,8 @@ function PostComponent({post_id, user_email, user_firstName, user_lastName, user
         const data = await res.json();
         // Now navigate to the specified URL
         console.log("navigate...")
-        navigate(`/users/${user_email}`, { state: { token: token, user: data.user, status: data.status } });
+        console.log("The logged in user:", userData)
+        navigate(`/users/${user_email}`, { state: { loggedUser: userData, token: token, user: data.user, status: data.status } });
     }
 
     return(
@@ -41,7 +41,7 @@ function PostComponent({post_id, user_email, user_firstName, user_lastName, user
                 <DeletePostModal onDeletePost={onDeletePost} post_id={post_id}/>
         </div>
         <Link to={`/users/${user_email}`} className="d-flex align-items-center user-link" onClick={handleNavigate} data-bs-dismiss="modal">
-            <img src={user_photo ? user_photo : profilePhoto} alt="profile" width="40" height="40" class="d-inline-block align-text-center profile-photo mr-2" id="display-user"></img>
+            <img src={user_photo} alt="profile" width="40" height="40" class="d-inline-block align-text-center profile-photo mr-2" id="display-user"></img>
             <p class="fw-bolder m-0">
                 {user_firstName} {user_lastName}
             </p>

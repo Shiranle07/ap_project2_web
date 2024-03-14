@@ -10,7 +10,7 @@ import {useNavigate } from 'react-router-dom';
 import LoginLogo from './loginLogo/LoginLogo';
 
 
-function LoginPage({userData, setUserData}) {
+function LoginPage({userData, token, setToken}) {
     const [email, setEmail] = useState(userData.Email || ''); //if user hasn't entered email, initilize as empty
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -36,12 +36,13 @@ function LoginPage({userData, setUserData}) {
         if (response.status !== 201) {
             alert('Invalid username and/or password');
             return;
-          }
+        }
 
           const json = await response.json();
-          const userToken = json.token;
+          setToken(json.token);
+          console.log("the new token", token)
           const loggedUser = json.user
-          navigate('/posts', { state: { token: userToken, user: loggedUser } });
+          navigate('/posts', { state: { token: token, user: loggedUser } });
     };
 
     return (

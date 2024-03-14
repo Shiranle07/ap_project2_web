@@ -5,11 +5,11 @@ import EmailField from './emailField/EmailField';
 import PasswordFields from './passwordFields/PasswordFields';
 import GenderField from './genderField/GenderField';
 import TitleSignup from './titleSignUp/TitleSignUp';
-import ProfilePhotoField from './profilePhotoField/ProfilePhotoField';
 import BirthdayField from './birthdayField/BirthdayField';
 import AgreeTermsField from './argeeTermsField/AgreeTermsField';
 import LoginLogo from '../loginPage/loginLogo/LoginLogo';
 import {useNavigate} from 'react-router-dom';
+import ProfilePhotoField from './profilePhotoField/ProfilePhotoField';
 
 
  function SignUp({ userData, setUserData}) {
@@ -42,6 +42,7 @@ import {useNavigate} from 'react-router-dom';
             "password" : password,
             "profilePhoto" : profilePhoto
         }
+        console.log(newUser)
         
 
         const data = await fetch('http://localhost:8080/api/users', { 
@@ -85,7 +86,7 @@ import {useNavigate} from 'react-router-dom';
 
                 <GenderField option1 = "Female" option2 = "Male" option3 = "Other" required/>
 
-                <ProfilePhotoField setProfilePhoto={setProfilePhoto}/>
+                <ProfilePhotoField setProfilePhoto={setProfilePhoto} required/>
 
                 <AgreeTermsField required/>
 

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import profilePhoto from "../../signUp/profilePhotoField/defaultProfilePhoto.jpg";
 import PostAdditionals from '../createPost/createPostWindow/PostAdditionals';
 
 
@@ -47,7 +46,7 @@ function EditPostWindow({post_id, user_firstName, user_lastName, user_photo, pos
                     </div>
                     <div className="modal-body">
                         <div className="d-flex align-items-center">
-                            <img src={user_photo || profilePhoto} alt="profile" width="40" height="40" className="d-inline-block align-text-center profile-photo mr-2" id="display-user" />
+                            <img src={user_photo} alt="profile" width="40" height="40" className="d-inline-block align-text-center profile-photo mr-2" id="display-user" />
                             <p className="fw-bolder m-0">
                                 {user_firstName} {user_lastName}
                             </p>

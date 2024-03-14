@@ -1,6 +1,5 @@
 import { Link, useLocation, useParams, useNavigate  } from "react-router-dom";
 import TopNavbar from "../feed/topNavbar/TopNavbar";
-import profilePhoto from "../signUp/profilePhotoField/defaultProfilePhoto.jpg";
 import './ProfilePage.css'
 import React, { useState, useEffect } from 'react';
 import EditUserWindow from "./EditUserWindow";
@@ -15,15 +14,17 @@ function ProfilePage(){
     const token = location.state.token;
     const user = location.state.user;
     const status = location.state.status;
+    const loggedUser = location.state.loggedUser;
+    console.log("the logged in user from profile", loggedUser)
     const [activeFriendsButton, setActiveFriendsButton] = useState(status);
     console.log("the user here:", token)
 
     if(activeFriendsButton == "user"){
         return (
             <div>
-                <TopNavbar userData={user} />
+                <TopNavbar userData={loggedUser} />
                 <div className="card user-card">
-                    <img src={user.profilePhoto ? user.profilePhoto : profilePhoto} alt="profile" width="200" height="200" className="d-inline-block align-text-center profile-photo mr-2" id="display-user" />
+                    <img src={user.profilePhoto} alt="profile" width="200" height="200" className="d-inline-block align-text-center profile-photo mr-2" id="display-user" />
                     <p className="fw-bolder m-0">
                         {user.firstName} {user.lastName}
                     </p>
@@ -116,9 +117,9 @@ function ProfilePage(){
 
     return (
         <div>
-            <TopNavbar userData={user} />
+            <TopNavbar userData={loggedUser} />
             <div className="card user-card">
-                <img src={user.profilePhoto ? user.profilePhoto : profilePhoto} alt="profile" width="200" height="200" className="d-inline-block align-text-center profile-photo mr-2" id="display-user" />
+                <img src={user.profilePhoto} alt="profile" width="200" height="200" className="d-inline-block align-text-center profile-photo mr-2" id="display-user" />
                 <p className="fw-bolder m-0">
                     {user.firstName} {user.lastName}
                 </p>

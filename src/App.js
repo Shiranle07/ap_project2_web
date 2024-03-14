@@ -11,6 +11,7 @@ import ProfilePage from './profilePage/ProfilePage';
 function App() {
   // const [postsList, setPostsList] = useState(posts);
   const [postsList, setPostsList] = useState();
+  const [token, setToken] = useState();
   const [isSignUp, setIsSignUp] = useState(true);
   const [userData, setUserData] = useState({
     "FirstName" : '',
@@ -20,13 +21,13 @@ function App() {
     "ProfilePhoto" : null,
     "IsLogIn" : false
   });
-  console.log(userData)
+  console.log("the token:", token)
 
   async function getPosts() {
     const data = await fetch("http://localhost:8080/api/posts",{
         'headers': {
             'Content-Type': 'application/json',
-            // 'authorization': 'bearer ' + token // attach the token
+             'authorization': 'bearer ' + token // attach the token
             },
     })
     const posts = await data.json()
@@ -34,8 +35,8 @@ function App() {
     setPostsList(posts)
 }
 useEffect(() => {
-  getPosts();
-},[])
+  if(token){getPosts();}
+},[token])
 
 
   return (
@@ -44,7 +45,7 @@ useEffect(() => {
           <Routes>
             <Route path="/" element={<Feed postsList={postsList} setPostsList={setPostsList} getPosts={getPosts}/>}></Route>
 
-            <Route path="/tokens" element={<LoginPage userData={userData} setUserData={setUserData} />}></Route>
+            <Route path="/tokens" element={<LoginPage userData={userData} token={token} setToken={setToken} />}></Route>
 
             <Route path="/users" element={<SignUp userData={userData} setUserData={setUserData} />}></Route>
 

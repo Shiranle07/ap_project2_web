@@ -1,4 +1,3 @@
-import profilePhoto from "../signUp/profilePhotoField/defaultProfilePhoto.jpg";
 import React, { useState } from 'react';
 
 function CommentCard({comment_id, commenter_firstName, commenter_lastName, commenter_photo, commentBody, onDeleteComment, onSaveComment}){
@@ -32,7 +31,7 @@ function CommentCard({comment_id, commenter_firstName, commenter_lastName, comme
 
     return(
 <div className="d-flex">
-    <img src={commenter_photo ? commenter_photo : profilePhoto} alt="profile" width="40" height="40" class="d-inline-block align-text-center profile-photo mr-2" id="display-user"></img>
+    <img src={commenter_photo} alt="profile" width="40" height="40" class="d-inline-block align-text-center profile-photo mr-2" id="display-user"></img>
     <div className="pb-3 comment-card d-flex flex-column">
         <div class="d-flex justify-content-between align-items-center">
             <p class="fw-bolder m-0">

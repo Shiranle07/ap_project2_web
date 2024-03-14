@@ -1,4 +1,3 @@
-import profilePhoto from "../../signUp/profilePhotoField/defaultProfilePhoto.jpg";
 import logo from "../logo.svg"
 import { Link } from 'react-router-dom';
 import React from 'react';
@@ -9,6 +8,7 @@ import DropdownMenu from "./dropdownMenu/DropdownMenu";
 
 
 function TopNavbar({userData}){
+    console.log("user from navbar", userData)
     return(
         <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
         <div class="container-fluid">
