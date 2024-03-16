@@ -12,8 +12,8 @@ import PostCard from "./postCard/PostCard";
 
 function Feed({postsList, setPostsList, getPosts}) {
     const location = useLocation();
-    const token = location.state?.token || null;
     const userData = location.state?.user;
+    const token = location.state?.token || null;
     console.log("Token received in Feed component:", token)
     console.log("The looged in user:", userData)
     
@@ -101,7 +101,7 @@ function Feed({postsList, setPostsList, getPosts}) {
             return;
           }
 
-        getPosts();
+        await getPosts(token);
 
     };
   
@@ -118,7 +118,7 @@ function Feed({postsList, setPostsList, getPosts}) {
             alert("You can't edit someone else's post!");
             return;
           }
-        getPosts();
+        await getPosts(token);
 
     };
 
@@ -126,7 +126,7 @@ function Feed({postsList, setPostsList, getPosts}) {
     
     return (
         <div>
-            <TopNavbar userData={userData}/>
+            <TopNavbar userData={userData} token={token}/>
             <div className='feed-container'>
                 <div className='row'>
                     <div className='col-3 left-section'>

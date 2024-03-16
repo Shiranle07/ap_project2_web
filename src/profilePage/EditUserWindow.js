@@ -1,35 +1,62 @@
 import { useState } from "react";
+import NameField from "../signUp/nameField/NameField";
+import PasswordFields from "../signUp/passwordFields/PasswordFields";
+import ProfilePhotoField from "../signUp/profilePhotoField/ProfilePhotoField";
 
-function EditUserWindow(loggedUser){
-    const [userFirstName, setUserFirstName] = useState(loggedUser.firstName);
-    const [userLastName, setUserLastName] = useState(loggedUser.lastName);
-    const [userPassword, setUserPassword] = useState(loggedUser.password);
-    const [userPhoto, setUserPhoto] = useState(loggedUser.profilePhoto);
+function EditUserWindow(user){
+    const [userFirstName, setUserFirstName] = useState(user.user.firstName);
+    const [userLastName, setUserLastName] = useState(user.user.lastName);
+    const [userPassword, setUserPassword] = useState(user.user.password);
+    const [userPhoto, setUserPhoto] = useState(user.user.profilePhoto);
+    const [userPasswordVerify, setUserPasswordVerify] = useState(user.user.password)
     const updatedUser = {
         firstName: userFirstName,
         lastName: userLastName, 
         password: userPassword, 
         profilePhoto: userPhoto
     }
+
+    async function handleUpdate(){
+        const response = await fetch(`http://localhost:8080/api/users/${user.user.email}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type" : "application/json",
+                'authorization': 'bearer ' + user.token // attach the token
+            },
+            body: JSON.stringify(updatedUser)
+        })
+    }
     return (
-        <div>
-            {/* <div className='form-box-signUp justify-content-center align-items-center'>
-            <button type="button" className="btn-close" aria-label="Close" onClick={handleClose}></button>
-
-            <form className="row justify-content-center d-flex needs-validation" onSubmit={handleSignUp}>
-                <NameField  setFirstName={setUserFirstName} setLastName={setUserLastName}/>
-                <PasswordFields  setUserPassword={setUserPassword} setUserPasswordVerify={setPasswordVerify}/>
-                <ProfilePhotoField setProfilePhoto={setUserPhoto} />
-
-                <div className="row justify-content-center align-items-center signup">
-                    <div className="col-12 text-center">
-                        <button className="btn btn-success btn-sign" type="submit">Sign up</button>
-                    </div>
-                </div>
-            </form>
-            </div> */}
+<div className="modal fade editUserModal" id={`editUser`} aria-hidden="true" tabIndex="-1">
+<div className="modal-dialog modal-dialog-centered">
+    <div className="modal-content">
+        <div className="modal-header">
+            <h1 className="modal-title fs-5 text-center flex-grow-1">Edit User Details</h1>
+            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div className="modal-body">
+            <form className="row justify-content-center d-flex needs-validation">
+            <div className="col-md-6 d-flex form-field">
+                <label for="validationCustom01" className="form-label"></label>
+                <input type="text" className="form-control" value={userFirstName} onChange={(e) => setUserFirstName(e.target.value)}></input>
+            </div>
+            <div className="col-md-6 d-flex form-field">
+                <label for="validationCustom01" className="form-label"></label>
+                <input type="text" className="form-control" value={userLastName} onChange={(e) => setUserLastName(e.target.value)}></input>
+            </div>
+                <PasswordFields  setUserPassword={setUserPassword} setUserPasswordVerify={setUserPasswordVerify}/>
+                <ProfilePhotoField setProfilePhoto={setUserPhoto} photo = {userPhoto} />
+            </form>
+            </div>
+        <div className="modal-footer justify-content-center">
+            <button className="btn btn-primary w-100 new-post-btn" data-bs-dismiss="modal" onClick={() => handleUpdate()}>Save Changes</button>
+        </div>
+    </div>
+</div>
+</div>
         
     );
 }
 export default EditUserWindow;
+
+

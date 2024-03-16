@@ -11,6 +11,8 @@ function PostCard({ _id, user_email, user_firstName, user_lastName, user_photo, 
     const [isLiked, setIsLiked] = useState(false); // State to track if button is liked
     const [commentsCount, setCommentsCount] = useState(comments.length);
 
+    console.log("token from post card:", token)
+
     useEffect(() => {
         // Update comments count when comments change
         setCommentsCount(comments.length);
@@ -26,7 +28,8 @@ function PostCard({ _id, user_email, user_firstName, user_lastName, user_photo, 
         <div class="container mb-3">
             <div class="card">
                 <div class="card-body">
-                <PostComponent post_id={_id} user_email={user_email} user_firstName={user_firstName} user_lastName={user_lastName} user_photo={user_photo} postBody={postBody} postPhoto={postPhoto} likesNumber={likesNumber} commentsNumber={commentsCount} userData={userData} publication_date={publication_date_formatted} isLiked={isLiked} setIsLiked={setIsLiked} onDeletePost={onDeletePost} onEditPost={onEditPost} token={token}/>
+                    
+                <PostComponent post_id={_id} user_email={user_email} user_firstName={user_firstName} user_lastName={user_lastName} user_photo={user_photo} postBody={postBody} postPhoto={postPhoto} likesNumber={likesNumber} commentsNumber={commentsCount} userData={userData} publication_date={publication_date_formatted} isLiked={isLiked} setIsLiked={setIsLiked} onDeletePost={onDeletePost} onEditPost={onEditPost} addCommentToPost={addCommentToPost} deleteCommentFromPost={deleteCommentFromPost} token={token}/>
                 </div>
             </div>
 

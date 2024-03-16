@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-function ProfilePhotoField({ setProfilePhoto }) {
-    const [preview, setPreview] = useState(null);
+function ProfilePhotoField({ setProfilePhoto, photo }) {
+    const [preview, setPreview] = useState(photo || null);
 
     const handleFileChange = (e) => {
         const file = e.target.files[0];

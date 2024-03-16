@@ -8,6 +8,7 @@ function Post({post_id, user_email, user_firstName, user_lastName, user_photo, p
     const [commentsList, setCommentsList] = useState(comments);
     const [newComment, setNewComment] = useState("");
 
+
     useEffect(() => {
         // Update the commentsList state whenever the comments prop changes
         setCommentsList(comments);
@@ -66,7 +67,8 @@ function Post({post_id, user_email, user_firstName, user_lastName, user_photo, p
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
-                    <PostComponent post_id={post_id} user_email={user_email} user_firstName={user_firstName} user_lastName={user_lastName} user_photo={user_photo} postBody={postBody} postPhoto={postPhoto} likesNumber={likesNumber} commentsNumber={commentsList.length} publication_date={publication_date} comments={comments} isLiked={isLiked} setIsLiked={setIsLiked} onDeletePost={onDeletePost} onEditPost={onEditPost} token={token}/>
+                        
+                    <PostComponent post_id={post_id} user_email={user_email} user_firstName={user_firstName} user_lastName={user_lastName} user_photo={user_photo} postBody={postBody} postPhoto={postPhoto} likesNumber={likesNumber} commentsNumber={commentsList.length} userData={userData} publication_date={publication_date} comments={comments} isLiked={isLiked} setIsLiked={setIsLiked} onDeletePost={onDeletePost} onEditPost={onEditPost} token={token}/>
                         <hr />
 
                         <div className='post-list'>

@@ -23,7 +23,7 @@ function CreatePostWindow({userToken, userData, postsList, setPostsList, getPost
             },
             body: JSON.stringify({ postBody: postContent, postPhoto: preview})
         })
-        getPosts();
+        getPosts(userToken);
         setPostContent("");
         setPreview(null);
       }

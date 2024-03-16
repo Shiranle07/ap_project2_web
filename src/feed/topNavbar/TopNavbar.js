@@ -1,5 +1,5 @@
 import logo from "../logo.svg"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import React from 'react';
 import CenterButtons from "./CenterButtons";
 import LeftButtons from "./LeftButtons";
@@ -7,7 +7,12 @@ import "./TopNavbar.css"
 import DropdownMenu from "./dropdownMenu/DropdownMenu";
 
 
-function TopNavbar({userData}){
+function TopNavbar({userData, token}){
+    const navigate = useNavigate();
+    console.log("token and user from navbar:", token)
+    const onHomeClick = () => {
+        navigate('/posts', { state: { user: userData, token: token } });
+    }
     console.log("user from navbar", userData)
     return(
         <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
@@ -23,7 +28,7 @@ function TopNavbar({userData}){
                         <input class="form-control search-bar" type="search" placeholder="Search in Fakebook" aria-label="Search"></input>
                 </form>
                 <ul className='navbar-nav justify-content-center'>
-                    <CenterButtons iconClass={"bi bi-house-door-fill"} infoText={"Home"} id="home-button"/>
+                    <CenterButtons iconClass={"bi bi-house-door-fill"} infoText={"Home"} id="home-button" onClick={onHomeClick}/>
                     <CenterButtons iconClass={"bi bi-play-btn"} infoText={"Video"}/>
                     <CenterButtons iconClass={"bi bi-cart4"} infoText={"Marketplace"}/>
                     <CenterButtons iconClass={"bi bi-people"} infoText={"Groups"}/>
