@@ -9,11 +9,9 @@ import DropdownMenu from "./dropdownMenu/DropdownMenu";
 
 function TopNavbar({userData, token}){
     const navigate = useNavigate();
-    console.log("token and user from navbar:", token)
     const onHomeClick = () => {
         navigate('/posts', { state: { user: userData, token: token } });
     }
-    console.log("user from navbar", userData)
     return(
         <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
         <div class="container-fluid">

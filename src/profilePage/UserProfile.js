@@ -5,7 +5,7 @@ import TopNavbar from "../feed/topNavbar/TopNavbar";
 function UserProfile({loggedUser, user, token, handleInfo, handlePosts, getFriends, activeButton, userPostsList, userFriendsList, activeFriendsButton, addFriend}){
     return (
         <div>
-            <TopNavbar userData={loggedUser} />
+            <TopNavbar userData={loggedUser} token={token}/>
             <div className="card user-card">
                 <img src={user.profilePhoto} alt="profile" width="200" height="200" className="d-inline-block align-text-center profile-photo mr-2" id="display-user" />
                 <p className="fw-bolder m-0">

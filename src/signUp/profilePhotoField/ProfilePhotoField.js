@@ -28,6 +28,7 @@ function ProfilePhotoField({ setProfilePhoto, photo }) {
                     type="file"
                     id="formFile"
                     onChange={handleFileChange}
+                    required
                 ></input>
             </div>
             <div className="col-md-6 mt-2">

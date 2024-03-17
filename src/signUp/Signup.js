@@ -55,6 +55,7 @@ import ProfilePhotoField from './profilePhotoField/ProfilePhotoField';
         if (data.status === 409) {
             // Handle the case where email already exists
             console.error("Email already exists");
+            alert("Email already exists");
         } else {
             const user = await data.json();
             if (user) {

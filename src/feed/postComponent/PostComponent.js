@@ -10,10 +10,6 @@ function PostComponent({post_id, user_email, user_firstName, user_lastName, user
         setIsLiked(!isLiked);
     };
     const navigate = useNavigate();
-    console.log("token from post componant:", token)
-    console.log("user from post componant:", userData)
-
-
 
     const handleNavigate = async (e) => {
         // Prevent default link behavior to stop immediate navigation

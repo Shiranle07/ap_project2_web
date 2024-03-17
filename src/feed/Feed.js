@@ -17,7 +17,6 @@ function Feed({postsList, setPostsList, getPosts}) {
     console.log("Token received in Feed component:", token)
     console.log("The looged in user:", userData)
     
-
     if (!token) {
         return( 
             <div>
@@ -35,8 +34,6 @@ function Feed({postsList, setPostsList, getPosts}) {
             </div>
         );
     }
-
-
     
     const addCommentToPost = (postId, comment_id, newComment) => {
         const postIndex = postsList.findIndex(post => post.post_id === postId);

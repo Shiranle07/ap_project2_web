@@ -37,7 +37,7 @@ function EditPostWindow({post_id, user_firstName, user_lastName, user_photo, pos
     };
 
     return (
-        <div className="modal fade editModal" id={`editUser-${post_id}`} aria-hidden="true" tabIndex="-1">
+        <div className="modal fade editModal" id={`editPost-${post_id}`} aria-hidden="true" tabIndex="-1">
             <div className="modal-dialog modal-dialog-centered">
                 <div className="modal-content">
                     <div className="modal-header">

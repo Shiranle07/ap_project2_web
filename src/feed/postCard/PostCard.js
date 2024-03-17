@@ -11,8 +11,6 @@ function PostCard({ _id, user_email, user_firstName, user_lastName, user_photo, 
     const [isLiked, setIsLiked] = useState(false); // State to track if button is liked
     const [commentsCount, setCommentsCount] = useState(comments.length);
 
-    console.log("token from post card:", token)
-
     useEffect(() => {
         // Update comments count when comments change
         setCommentsCount(comments.length);

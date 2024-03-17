@@ -11,7 +11,7 @@ import LoginLogo from './loginLogo/LoginLogo';
 
 
 function LoginPage({userData, getPosts}) {
-    const [email, setEmail] = useState(userData.Email || ''); //if user hasn't entered email, initilize as empty
+    const [email, setEmail] = useState(); //if user hasn't entered email, initilize as empty
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();

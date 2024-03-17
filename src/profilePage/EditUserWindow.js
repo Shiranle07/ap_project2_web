@@ -3,7 +3,7 @@ import NameField from "../signUp/nameField/NameField";
 import PasswordFields from "../signUp/passwordFields/PasswordFields";
 import ProfilePhotoField from "../signUp/profilePhotoField/ProfilePhotoField";
 
-function EditUserWindow(user){
+function EditUserWindow(user, token){
     const [userFirstName, setUserFirstName] = useState(user.user.firstName);
     const [userLastName, setUserLastName] = useState(user.user.lastName);
     const [userPassword, setUserPassword] = useState(user.user.password);
@@ -15,6 +15,7 @@ function EditUserWindow(user){
         password: userPassword, 
         profilePhoto: userPhoto
     }
+    console.log(user.token)
 
     async function handleUpdate(){
         const response = await fetch(`http://localhost:8080/api/users/${user.user.email}`, {
@@ -23,8 +24,11 @@ function EditUserWindow(user){
                 "Content-Type" : "application/json",
                 'authorization': 'bearer ' + user.token // attach the token
             },
-            body: JSON.stringify(updatedUser)
+            body: JSON.stringify({userBody: updatedUser})
         })
+        if(response.ok){
+            alert("Your account updated successfully! \n Log in again to see the changes");
+        }
     }
     return (
 <div className="modal fade editUserModal" id={`editUser`} aria-hidden="true" tabIndex="-1">
