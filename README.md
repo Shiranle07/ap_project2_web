@@ -4,7 +4,7 @@ https://github.com/Shiranle07/ap_project2_web.git
 
 Fakebook is a social networking platform that enables users to create profiles, log in, post content, and interact with existing posts through likes and comments.
 
-In its present iteration, the platform allows for the registration of a single user and loads ten predefined posts from a JSON file upon login. Refreshing the application will result in the deletion of the registered user's information along with any content created during the session.
+In its new version the application connect to a server.
 
 Registration is contingent upon users being aged 14 or older.
 
@@ -26,9 +26,9 @@ npm install
 npm start
 ```
 
-Open http://localhost:3000 to view the application in your browser. 
+Open http://localhost:3000 to view the application in your browser. make sure you start the server as written on Fakebook server repository. 
 
-To register, it is necessary to complete all fields within the registration form, adhering to the instructions provided. Users who do not want to upload a profile picture will be assigned a default profile image.
+To register, it is necessary to complete all fields within the registration form, adhering to the instructions provided. 
 
 Following registration, you can sign in using the email address and password provided during registration. Access to the feed page is restricted to logged-in users exclusively.
 
@@ -45,6 +45,7 @@ The first task was to divide the work, we decided that each one creates a differ
 We used different branches on GitHub for every feature, and merge the branches only after making sure the code works.
 The code is structured into components to facilitate organization and allow for easier modifications.
 The code also incorporates tests for the primary components. These tests ensure the functionality of features such as toggling the menu, submitting login credentials, creating and editing posts, and creating and deleting comments.
+On the 3rd step of the project we implement a server that connect to our application.
 
 
 
