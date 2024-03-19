@@ -41,7 +41,7 @@ function PostComponent({post_id, user_email, user_firstName, user_lastName, user
                 <DeletePostModal onDeletePost={onDeletePost} post_id={post_id}/>
         </div>
         <Link to={`/users/${user_email}`} className="d-flex align-items-center user-link" onClick={handleNavigate} data-bs-dismiss="modal">
-            <img src={user_photo} alt="profile" width="40" height="40" class="d-inline-block align-text-center profile-photo mr-2" id="display-user"></img>
+            <img src={user_photo} alt="profile" width="40" height="40" className="d-inline-block align-text-center profile-photo mr-2" id="display-user"></img>
             <p class="fw-bolder m-0">
                 {user_firstName} {user_lastName}
             </p>

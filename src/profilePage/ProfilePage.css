@@ -46,3 +46,21 @@
 .friends-request{
     float: right !important;
 }
+
+.friend-display{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.friend-photo{
+    border-radius: 25%;
+}
+
+.deleteF{
+    float: right !important;
+}
+
+.req-btn{
+    float: right !important;
+
+}

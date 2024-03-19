@@ -13,6 +13,7 @@ function ProfilePage(){
     const { userEmail, section } = useParams();
     const [userPostsList, setUserPostsList] = useState([]);
     const [userFriendsList, setUserFriendsList] = useState([]);
+    const [userReqList, setUserReqList] = useState([]);
     const [activeButton, setActiveButton] = useState(section || 'About');
     const navigate = useNavigate();
     const location = useLocation();
@@ -20,13 +21,8 @@ function ProfilePage(){
     const user = location.state.user;
     const status = location.state.status;
     const loggedUser = location.state.loggedUser;
-    console.log("the logged in user from profile", loggedUser)
     const [activeFriendsButton, setActiveFriendsButton] = useState(status);
-    console.log("the user here:", token)
 
-    // useEffect(() => {
-    //     getUserPosts();
-    // }, []);    
 
     const handleInfo = (buttonName) => {
         setActiveButton(buttonName);
@@ -60,7 +56,9 @@ function ProfilePage(){
             }
         });
         const usersFriends = await res.json();
-        setUserFriendsList(usersFriends.friendsList);
+        setUserFriendsList(usersFriends.friendsData);
+        setUserReqList(usersFriends.reqData)
+
     }
 
     const addFriend = async () => {
@@ -74,9 +72,10 @@ function ProfilePage(){
         setActiveFriendsButton("Requested")
     }
 
+
     if(activeFriendsButton == "user"){
         return(
-            <MyProfile loggedUser={loggedUser} user={user} token={token} handleInfo={handleInfo} handlePosts={handlePosts} getFriends={getFriends} activeButton={activeButton} userPostsList={userPostsList} userFriendsList={userFriendsList}/>
+            <MyProfile loggedUser={loggedUser} user={user} token={token} handleInfo={handleInfo} handlePosts={handlePosts} getFriends={getFriends} activeButton={activeButton} userPostsList={userPostsList} userFriendsList={userFriendsList} userReqList={userReqList}/>
         )
     }
 

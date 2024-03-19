@@ -4,7 +4,17 @@ import TopNavbar from "../feed/topNavbar/TopNavbar";
 import DeleteUserModal from "./DeleteUserModal";
 import EditUserWindow from "./EditUserWindow";
 
-function MyProfile({loggedUser, user, token, handleInfo, handlePosts, getFriends, activeButton, userPostsList, userFriendsList}){
+function MyProfile({loggedUser, user, token, handleInfo, handlePosts, getFriends, activeButton, userPostsList, userFriendsList, userReqList}){
+    const confirm = async(fid) => {
+        const res = await fetch(`http://localhost:8080/api/users/${user.email}/friends/${fid}`,{
+            "method" : "PATCH",
+            headers: {
+                "Content-Type" : "application/json",
+                'authorization': 'bearer ' + token // attach the token
+            }
+        })
+        getFriends('Friends');
+    }
     return (
         <div>
             <TopNavbar userData={loggedUser} token={token}/>
@@ -18,7 +28,7 @@ function MyProfile({loggedUser, user, token, handleInfo, handlePosts, getFriends
                         <i class="bi bi-pencil editAndDelete-icon"></i>
                          </button>
                         <EditUserWindow user={user} token={token}/>
-                    <button className="btn" data-bs-toggle="modal" data-bs-target={`#deleteUser}`}>
+                    <button className="btn" data-bs-toggle="modal" data-bs-target={`#deleteUser`}>
                         <i class="bi bi-trash3 editAndDelete-icon"></i>
                         </button>
                         <DeleteUserModal/>
@@ -59,19 +69,32 @@ function MyProfile({loggedUser, user, token, handleInfo, handlePosts, getFriends
             )}
 
             {activeButton === 'Friends' && (
+                <div>
                 <div className="row align-content-center justify-content-center">
                     <div className="card posts-card col-10">
                         <p className="fw-bolder m-0">
                             Friends
                         </p>
                     </div>
-                    <div className="col-10"> 
-                        {userFriendsList ? (
+                    <div className="row col-10 d-flex align-items-center"> 
+                        {userFriendsList | userFriendsList.length>0 ? (
                             userFriendsList.map(friend => (
-                                <div className="card posts-card col-10">
-                                     <img src={friend.profilePhoto} alt="profile" width="40" height="40" class="d-inline-block align-text-center    profile-photo " id="display-user"></img>
-                                    {friend.firstName} {friend.lastName}
-                                </div>
+                    <div className="card friends-card col-10 d-flex p-2">
+                        <span className="friend-display">
+                        <button className="btn deleteF">
+                        <i className="bi bi-trash3 editAndDelete-icon"></i>
+                        </button>
+                            <img
+                                src={friend.profilePhoto}
+                                alt="profile"
+                                width="100"
+                                height="100"
+                                className="d-inline-block align-text-center friend-photo m-2"
+                                id="display-friend"
+                            />                   
+                            {friend.firstName} {friend.lastName}
+                        </span> 
+                    </div>
                             ))
                         ) : (
                             <p className="fw m-0">
@@ -80,6 +103,46 @@ function MyProfile({loggedUser, user, token, handleInfo, handlePosts, getFriends
                         )}
                     </div>
                 </div>
+                                <div className="row align-content-center justify-content-center">
+                                <div className="card posts-card col-10">
+                                    <p className="fw-bolder m-0">
+                                        Friend Requests
+                                    </p>
+                                </div>
+                                <div className="col-10"> 
+                                    {userReqList ? (
+                                        userReqList.map(req => (
+                                            <div className="card friends-card col-10 d-flex p-2">
+                                            <span className="friend-display col-6">
+                                            <img
+                                                 src={req.profilePhoto}
+                                                 alt="profile"
+                                                 width="100"
+                                                 height="100"
+                                                 className="d-inline-block align-text-center friend-photo m-2"
+                                                 id="display-friend"
+                                             />                   
+                                              {req.firstName} {req.lastName}
+                                             </span>
+                                             <div class="buttons-container ml-auto">
+                                            <button className="req-btn btn btn-secondary col-2 m-1">
+                                                    Delete
+                                                </button>
+                                                <button className="req-btn btn btn-primary col-2 m-1" onClick={() => confirm(req.email)}>
+                                                    Confirm
+                                                </button>
+
+                                            </div> 
+                                         </div>
+                                        ))
+                                    ) : (
+                                        <p className="fw m-0">
+                                        You don't have friend requests
+                                    </p>
+                                    )}
+                                </div>
+                            </div>
+                            </div>
             )}
         </div>
     );
