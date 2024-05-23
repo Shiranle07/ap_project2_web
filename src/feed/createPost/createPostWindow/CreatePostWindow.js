@@ -22,7 +22,15 @@ function CreatePostWindow({userToken, userData, postsList, setPostsList, getPost
                 'authorization': 'bearer ' + userToken // attach the token
             },
             body: JSON.stringify({ postBody: postContent, postPhoto: preview})
-        })
+        });
+
+        if (data.status !== 200) {
+            const errorData = await data.json();
+            const errorMessage = errorData.errors.join(', ');
+            alert('Error: ' + errorMessage);
+            return;
+        }
+
         getPosts(userToken);
         setPostContent("");
         setPreview(null);

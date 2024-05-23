@@ -112,7 +112,9 @@ function Feed({postsList, setPostsList, getPosts}) {
             body: JSON.stringify({postBody: newPostContent, postPhoto: newPostPhoto})
         });
         if (res.status !== 200) {
-            alert("You can't edit someone else's post!");
+            const errorData = await res.json();
+            const errorMessage = errorData.errors.join(', ');
+            alert('Error: ' + errorMessage);
             return;
           }
         await getPosts(token);
