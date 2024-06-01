@@ -1,3 +1,7 @@
+for targil 4- please look in the servers repositorys WIKI.
+### link to the servers repository
+https://github.com/Shiranle07/Fakebook_Server
+
 # AP_Project - Ex2 web
 ### link to repository
 https://github.com/Shiranle07/ap_project2_web.git
